@@ -1,0 +1,20 @@
+{
+  "name": "iwan-platform",
+  "version": "1.0.0",
+  "description": "إيوان للبرمجيات — منصة حلول ذكية ومتطورة لإدارة التعليم والموارد المدرسية",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve@latest -l 3000",
+    "start": "npx -y serve@latest -l 3000",
+    "build": "echo 'Static site — no build needed'"
+  },
+  "keywords": [
+    "education",
+    "school-management",
+    "e-learning",
+    "ewan-software",
+    "iwan"
+  ],
+  "author": "إيوان للبرمجيات",
+  "license": "MIT"
+}

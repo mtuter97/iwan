@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ewan Software - إيوان للبرمجيات">
+    <meta name="description" content="منصة إيوان للبرمجيات - أدوات وبرامج تدعم التعليم في السعودية والشرق الأوسط. حلول رقمية ذكية للمعلمين والطلاب والمؤسسات التعليمية.">
+    <meta name="keywords" content="إيوان, ewan, برمجيات تعليمية, إدارة المدارس, أدوات المعلم, المحتوى التعليمي, تقارير وتحليلات, تعليم إلكتروني, السعودية">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+
+    <!-- Page Title -->
+    <title>إيوان للبرمجيات — أدوات وبرامج تدعم التعليم</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar-custom" data-offset="80">
+
+    <!-- ============================================
+         Preloader
+         ============================================ -->
+    <div class="loader" id="preloader">
+        <div class="loader-spinner">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         Navigation
+         ============================================ -->
+    <nav class="navbar-custom" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand" id="nav-logo">
+                <span class="logo-badge">Ewan</span>
+                <span class="logo-text">إيوان <span>للبرمجيات</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="scroll active" id="nav-home">الرئيسية</a></li>
+                <li><a href="#programs" class="scroll" id="nav-programs">البرامج</a></li>
+                <li><a href="#features" class="scroll" id="nav-features">المميزات</a></li>
+                <li><a href="#stats" class="scroll" id="nav-stats">إنجازاتنا</a></li>
+                <li><a href="#testimonials" class="scroll" id="nav-testimonials">آراء العملاء</a></li>
+                <li><a href="#contact" class="scroll" id="nav-contact">تواصل معنا</a></li>
+                <li><a href="#contact" class="scroll nav-cta" id="nav-demo">طلب عرض تجريبي</a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="فتح القائمة">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ============================================
+         Hero Section
+         ============================================ -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg"></div>
+        
+        <!-- Video Background -->
+        <video class="hero-video" autoplay muted loop playsinline poster="images/ewan-cover.png">
+            <source src="images/hero-video.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-overlay"></div>
+
+        <!-- Animated Particles -->
+        <div class="hero-particles" id="heroParticles"></div>
+
+        <div class="hero-content">
+            <p class="hero-subtitle wow fadeInDown" data-wow-delay="0.2s">
+                🎓 مرحباً بك في منصة إيوان للبرمجيات
+            </p>
+
+            <h1 class="hero-title wow fadeInUp" data-wow-delay="0.4s">
+                أدوات وبرامج <span>تدعم التعليم</span><br>في السعودية والشرق الأوسط
+            </h1>
+
+            <h2 id="type_it_slider" class="wow fadeInUp" data-wow-delay="0.6s"></h2>
+
+            <div class="hero-buttons wow fadeInUp" data-wow-delay="0.8s">
+                <a href="#programs" class="btn-primary-custom scroll" id="hero-btn-programs">
+                    <i class="fa fa-th-large"></i>
+                    استعرض البرامج
+                </a>
+                <a href="#contact" class="btn-outline-custom scroll" id="hero-btn-contact">
+                    <i class="fa fa-envelope-o"></i>
+                    تواصل معنا
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator wow fadeIn" data-wow-delay="1.2s">
+            <a href="#programs" class="scroll">
+                <i class="fa fa-angle-double-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Programs Section
+         ============================================ -->
+    <section class="programs-section section-padding" id="programs">
+        <div class="container">
+
+            <div class="section-header">
+                <div class="section-icon wow fadeIn">
+                    <i class="fa fa-laptop"></i>
+                </div>
+                <h2 class="section-title wow fadeInUp">برامجنا التعليمية</h2>
+                <hr class="section-divider wow fadeIn">
+                <p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">
+                    نقدم مجموعة متكاملة من البرامج المصممة خصيصاً لتلبية احتياجات المؤسسات التعليمية
+                </p>
+            </div>
+
+            <div class="row">
+
+                <!-- Program 1: School Management -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.1s" id="program-school-mgmt">
+                        <div class="card-image">
+                            <img src="images/program-1.jpg" alt="نظام إدارة المدارس">
+                            <div class="card-overlay">
+                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fa fa-university"></i>
+                            </div>
+                            <h3 class="card-title">نظام إدارة المدارس</h3>
+                            <p class="card-desc">نظام شامل لإدارة جميع عمليات المدرسة من التسجيل والجداول إلى التقارير الإدارية.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 2: Student Tracking -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.2s" id="program-student-tracking">
+                        <div class="card-image">
+                            <img src="images/program-2.jpg" alt="نظام تتبع الطلاب">
+                            <div class="card-overlay">
+                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <h3 class="card-title">نظام تتبع الطلاب</h3>
+                            <p class="card-desc">تتبع الأداء الأكاديمي والحضور والسلوك لكل طالب مع تقارير مفصلة لأولياء الأمور.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 3: Resource Management -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.3s" id="program-resource-mgmt">
+                        <div class="card-image">
+                            <img src="images/program-3.jpg" alt="نظام إدارة الموارد">
+                            <div class="card-overlay">
+                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fa fa-cogs"></i>
+                            </div>
+                            <h3 class="card-title">نظام إدارة الموارد</h3>
+                            <p class="card-desc">إدارة ذكية للموارد المالية والمادية والبشرية مع تحليلات متقدمة لتحسين الكفاءة.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 4: E-Learning -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.4s" id="program-elearning">
+                        <div class="card-image">
+                            <img src="images/program-4.jpg" alt="منصة التعلم الإلكتروني">
+                            <div class="card-overlay">
+                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="card-title">منصة التعلم الإلكتروني</h3>
+                            <p class="card-desc">منصة تعليمية متكاملة تدعم الفصول الافتراضية والمحتوى التفاعلي والاختبارات الإلكترونية.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 5: Reports & Analytics -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.5s" id="program-reports">
+                        <div class="card-image">
+                            <img src="images/program-5.jpg" alt="نظام التقارير والتحليلات">
+                            <div class="card-overlay">
+                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fa fa-line-chart"></i>
+                            </div>
+                            <h3 class="card-title">التقارير والتحليلات</h3>
+                            <p class="card-desc">لوحات بيانات ذكية وتقارير تحليلية شاملة لاتخاذ قرارات مبنية على البيانات.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 6: Library Management -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.6s" id="program-library">
+                        <div class="card-image">
+                            <img src="images/program-6.jpg" alt="نظام إدارة المكتبات">
+                            <div class="card-overlay">
+                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <i class="fa fa-book"></i>
+                            </div>
+                            <h3 class="card-title">نظام إدارة المكتبات</h3>
+                            <p class="card-desc">نظام رقمي متطور لإدارة المكتبات المدرسية يشمل الفهرسة والإعارة والمحتوى الرقمي.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Features Section
+         ============================================ -->
+    <section class="features-section section-padding" id="features">
+        <div class="container">
+
+            <div class="section-header">
+                <div class="section-icon wow fadeIn">
+                    <i class="fa fa-star"></i>
+                </div>
+                <h2 class="section-title wow fadeInUp">لماذا تختار إيوان؟</h2>
+                <hr class="section-divider wow fadeIn">
+                <p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">
+                    نتميز بمجموعة من المزايا التي تجعل برامجنا الخيار الأمثل للمؤسسات التعليمية
+                </p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="feature-item wow fadeInUp" data-wow-delay="0.1s" id="feature-design">
+                        <div class="feature-icon">
+                            <i class="fa fa-paint-brush"></i>
+                        </div>
+                        <h3 class="feature-title">تصميم عصري</h3>
+                        <p class="feature-desc">واجهات مستخدم حديثة وسهلة الاستخدام مصممة وفق أحدث معايير تجربة المستخدم.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="feature-item wow fadeInUp" data-wow-delay="0.2s" id="feature-responsive">
+                        <div class="feature-icon">
+                            <i class="fa fa-mobile"></i>
+                        </div>
+                        <h3 class="feature-title">متوافق مع الجوال</h3>
+                        <p class="feature-desc">جميع برامجنا تعمل بسلاسة على الهواتف الذكية والأجهزة اللوحية وأجهزة الكمبيوتر.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="feature-item wow fadeInUp" data-wow-delay="0.3s" id="feature-easy">
+                        <div class="feature-icon">
+                            <i class="fa fa-hand-pointer-o"></i>
+                        </div>
+                        <h3 class="feature-title">سهل الاستخدام</h3>
+                        <p class="feature-desc">تم تصميم كل برنامج ليكون بديهياً وسهل التعلم دون الحاجة لخبرة تقنية مسبقة.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="feature-item wow fadeInUp" data-wow-delay="0.4s" id="feature-support">
+                        <div class="feature-icon">
+                            <i class="fa fa-headphones"></i>
+                        </div>
+                        <h3 class="feature-title">دعم فني متواصل</h3>
+                        <p class="feature-desc">فريق دعم فني متخصص متاح على مدار الساعة لمساعدتك في أي استفسار أو مشكلة.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="feature-item wow fadeInUp" data-wow-delay="0.5s" id="feature-updates">
+                        <div class="feature-icon">
+                            <i class="fa fa-refresh"></i>
+                        </div>
+                        <h3 class="feature-title">تحديثات مستمرة</h3>
+                        <p class="feature-desc">نعمل باستمرار على تطوير وتحسين برامجنا بناءً على ملاحظات العملاء وأحدث التقنيات.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="feature-item wow fadeInUp" data-wow-delay="0.6s" id="feature-security">
+                        <div class="feature-icon">
+                            <i class="fa fa-shield"></i>
+                        </div>
+                        <h3 class="feature-title">أمان عالي</h3>
+                        <p class="feature-desc">نستخدم أحدث تقنيات التشفير وحماية البيانات لضمان أمان معلومات مؤسستك التعليمية.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Parallax CTA Section
+         ============================================ -->
+    <section class="parallax-cta" id="cta">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="content">
+                <h2 class="cta-title wow fadeInUp">ابدأ رحلتك في تحسين إدارة مدرستك</h2>
+                <p class="cta-desc wow fadeInUp" data-wow-delay="0.2s">
+                    انضم إلى أكثر من 500 مؤسسة تعليمية تثق في حلول إيوان للبرمجيات لتحقيق التميز الإداري والأكاديمي.
+                </p>
+                <a href="#contact" class="btn-cta scroll wow fadeInUp" data-wow-delay="0.4s" id="cta-btn">
+                    <i class="fa fa-rocket"></i>
+                    اطلب عرض تجريبي مجاني
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Stats Section
+         ============================================ -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-item wow fadeInUp" data-wow-delay="0.1s" id="stat-schools">
+                        <div class="stat-icon"><i class="fa fa-university"></i></div>
+                        <span class="stat-number counter" data-target="500">0</span>
+                        <span class="stat-label">مدرسة ومؤسسة</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-item wow fadeInUp" data-wow-delay="0.2s" id="stat-users">
+                        <div class="stat-icon"><i class="fa fa-users"></i></div>
+                        <span class="stat-number counter" data-target="10000">0</span>
+                        <span class="stat-label">مستخدم نشط</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-item wow fadeInUp" data-wow-delay="0.3s" id="stat-programs">
+                        <div class="stat-icon"><i class="fa fa-cube"></i></div>
+                        <span class="stat-number counter" data-target="50">0</span>
+                        <span class="stat-label">برنامج وأداة</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-item wow fadeInUp" data-wow-delay="0.4s" id="stat-satisfaction">
+                        <div class="stat-icon"><i class="fa fa-smile-o"></i></div>
+                        <span class="stat-number counter" data-target="98">0</span>
+                        <span class="stat-label">% رضا العملاء</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Testimonials Section
+         ============================================ -->
+    <section class="testimonials-section section-padding" id="testimonials">
+        <div class="container">
+
+            <div class="section-header">
+                <div class="section-icon wow fadeIn">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <h2 class="section-title wow fadeInUp">ماذا يقول عملاؤنا</h2>
+                <hr class="section-divider wow fadeIn">
+                <p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">
+                    تجارب حقيقية من مديري مدارس ومشرفين يستخدمون حلول إيوان
+                </p>
+            </div>
+
+            <div class="owl-carousel owl-theme testimonial-carousel wow fadeInUp" data-wow-delay="0.3s" id="testimonialCarousel">
+
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" id="testimonial-1">
+                    <div class="testimonial-avatar">أ.م</div>
+                    <div class="testimonial-stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"منذ أن بدأنا استخدام نظام إدارة المدارس من إيوان، تحسنت كفاءة العمل الإداري بنسبة 70%. النظام سهل الاستخدام ودعمهم الفني ممتاز."</p>
+                    <h4 class="testimonial-name">أ. محمد العتيبي</h4>
+                    <span class="testimonial-role">مدير مدرسة النور الأهلية</span>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" id="testimonial-2">
+                    <div class="testimonial-avatar">د.س</div>
+                    <div class="testimonial-stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"نظام التقارير والتحليلات ساعدنا في اتخاذ قرارات أفضل مبنية على بيانات حقيقية. أنصح كل مؤسسة تعليمية بتجربة حلول إيوان."</p>
+                    <h4 class="testimonial-name">د. سارة الحربي</h4>
+                    <span class="testimonial-role">مشرفة تربوية — إدارة التعليم</span>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" id="testimonial-3">
+                    <div class="testimonial-avatar">أ.خ</div>
+                    <div class="testimonial-stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <p class="testimonial-text">"منصة التعلم الإلكتروني من إيوان غيرت طريقة تقديم المحتوى التعليمي في مدارسنا. الطلاب والمعلمون يحبون سهولة استخدامها."</p>
+                    <h4 class="testimonial-name">أ. خالد الشمري</h4>
+                    <span class="testimonial-role">مدير مجموعة مدارس الريادة</span>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card" id="testimonial-4">
+                    <div class="testimonial-avatar">أ.ن</div>
+                    <div class="testimonial-stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"نظام إدارة الموارد وفّر لنا ساعات من العمل اليدوي. الآن نستطيع تتبع كل شيء رقمياً بدقة عالية وشفافية كاملة."</p>
+                    <h4 class="testimonial-name">أ. نورة القحطاني</h4>
+                    <span class="testimonial-role">مديرة الشؤون الإدارية</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Contact Section
+         ============================================ -->
+    <section class="contact-section section-padding" id="contact">
+        <div class="container">
+
+            <div class="section-header">
+                <div class="section-icon wow fadeIn">
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <h2 class="section-title wow fadeInUp">تواصل معنا</h2>
+                <hr class="section-divider wow fadeIn">
+                <p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">
+                    نحن هنا لمساعدتك. تواصل معنا للاستفسارات أو لطلب عرض تجريبي
+                </p>
+            </div>
+
+            <div class="row">
+
+                <!-- Contact Info -->
+                <div class="col-md-5">
+                    <div class="contact-info-card wow fadeInRight" id="contact-info">
+                        <h3>معلومات التواصل</h3>
+                        <p>لا تتردد في التواصل معنا بأي وقت. فريقنا جاهز لمساعدتك.</p>
+
+                        <div class="contact-detail">
+                            <div class="icon"><i class="fa fa-map-marker"></i></div>
+                            <div class="info">
+                                <span>العنوان</span>
+                                <p>المملكة العربية السعودية — الرياض</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <div class="info">
+                                <span>الهاتف</span>
+                                <a href="tel:+966500000000">+966 50 000 0000</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                            <div class="info">
+                                <span>البريد الإلكتروني</span>
+                                <a href="mailto:info@ewan-soft.com">info@ewan-soft.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="icon"><i class="fa fa-clock-o"></i></div>
+                            <div class="info">
+                                <span>ساعات العمل</span>
+                                <p>الأحد — الخميس: 8 صباحاً — 5 مساءً</p>
+                            </div>
+                        </div>
+
+                        <div class="footer-social" style="margin-top: 30px;">
+                            <a href="#" aria-label="تويتر" id="social-twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" aria-label="لينكدإن" id="social-linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" aria-label="واتساب" id="social-whatsapp"><i class="fa fa-whatsapp"></i></a>
+                            <a href="#" aria-label="يوتيوب" id="social-youtube"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-md-7">
+                    <div class="contact-form wow fadeInLeft" id="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="input-name">الاسم الكامل</label>
+                                    <input type="text" class="form-control-custom" id="input-name" placeholder="أدخل اسمك الكامل" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="input-email">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control-custom" id="input-email" placeholder="أدخل بريدك الإلكتروني" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="input-phone">رقم الجوال</label>
+                                    <input type="tel" class="form-control-custom" id="input-phone" placeholder="05xxxxxxxx">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="input-subject">الموضوع</label>
+                                    <select class="form-control-custom" id="input-subject">
+                                        <option value="">اختر الموضوع</option>
+                                        <option value="demo">طلب عرض تجريبي</option>
+                                        <option value="pricing">استفسار عن الأسعار</option>
+                                        <option value="support">دعم فني</option>
+                                        <option value="partnership">شراكة</option>
+                                        <option value="other">أخرى</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-message">الرسالة</label>
+                            <textarea class="form-control-custom" id="input-message" placeholder="اكتب رسالتك هنا..." rows="5"></textarea>
+                        </div>
+                        <button type="button" class="btn-submit" id="btn-send">
+                            <i class="fa fa-paper-plane"></i>
+                            إرسال الرسالة
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Footer
+         ============================================ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <div class="footer-logo">إيوان <span>للبرمجيات</span></div>
+                    <p>أدوات وبرامج تدعم التعليم في السعودية والشرق الأوسط. حلول رقمية ذكية للمعلمين والطلاب والمؤسسات التعليمية.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="تويتر"><i class="fa fa-twitter"></i></a>
+                        <a href="#" aria-label="لينكدإن"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" aria-label="واتساب"><i class="fa fa-whatsapp"></i></a>
+                        <a href="#" aria-label="يوتيوب"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home" class="scroll">الرئيسية</a></li>
+                        <li><a href="#programs" class="scroll">البرامج</a></li>
+                        <li><a href="#features" class="scroll">المميزات</a></li>
+                        <li><a href="#testimonials" class="scroll">آراء العملاء</a></li>
+                        <li><a href="#contact" class="scroll">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>البرامج</h4>
+                    <ul>
+                        <li><a href="#programs" class="scroll">إدارة المدارس</a></li>
+                        <li><a href="#programs" class="scroll">تتبع الطلاب</a></li>
+                        <li><a href="#programs" class="scroll">إدارة الموارد</a></li>
+                        <li><a href="#programs" class="scroll">التعلم الإلكتروني</a></li>
+                        <li><a href="#programs" class="scroll">التقارير والتحليلات</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>الدعم</h4>
+                    <ul>
+                        <li><a href="#contact" class="scroll">مركز المساعدة</a></li>
+                        <li><a href="#contact" class="scroll">الأسئلة الشائعة</a></li>
+                        <li><a href="#contact" class="scroll">سياسة الخصوصية</a></li>
+                        <li><a href="#contact" class="scroll">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 إيوان للبرمجيات. جميع الحقوق محفوظة. صُنع بـ ❤️ في المملكة العربية السعودية.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ============================================
+         Back to Top Button
+         ============================================ -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <!-- ============================================
+         Scripts
+         ============================================ -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- WOW.js -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- TypeIt CDN -->
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/owl.animate.js"></script>
+    <script src="js/owl.autoplay.js"></script>
+    <script src="js/owl.navigation.js"></script>
+    <script src="js/owl.support.js"></script>
+
+    <!-- Parallax -->
+    <script src="js/parallax.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
