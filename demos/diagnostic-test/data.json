@@ -131,13 +131,13 @@
       "students": [
         {
           "roster_id": 1,
-          "name": "ابراهيم مجدي ابراهيم الزهراني",
+          "name": "أحمد محمد العتيبي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 12,
           "max_score": 20,
-          "percentage": 60.0,
+          "percentage": 60,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -459,18 +459,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_01_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_01_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 2,
-          "name": "أنس سامى عويبد الصاعدي",
+          "name": "أحمد محمد القحطاني",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 6,
           "max_score": 20,
-          "percentage": 30.0,
+          "percentage": 30,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -846,18 +846,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_02_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_02_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 3,
-          "name": "تامر عماد بن خالد سندي",
+          "name": "أحمد محمد الشمري",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 10,
           "max_score": 20,
-          "percentage": 50.0,
+          "percentage": 50,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -1197,18 +1197,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_03_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_03_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 4,
-          "name": "خالد ايمن خالد الهيج",
+          "name": "أحمد محمد الدوسري",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 14,
           "max_score": 20,
-          "percentage": 70.0,
+          "percentage": 70,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -1512,18 +1512,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_04_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_04_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 5,
-          "name": "خالد بن ربيع بن دخيل العوفي",
+          "name": "أحمد محمد الحربي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 17,
           "max_score": 20,
-          "percentage": 85.0,
+          "percentage": 85,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -1800,18 +1800,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_05_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_05_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 6,
-          "name": "زايد بن خاتم بن عطيه هللا السلمي",
+          "name": "أحمد محمد الغامدي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 11,
           "max_score": 20,
-          "percentage": 55.0,
+          "percentage": 55,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -2142,18 +2142,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_06_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_06_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 7,
-          "name": "طالل بن عبدالرحمن بن طالل خزندار",
+          "name": "أحمد محمد الزهراني",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 9,
           "max_score": 20,
-          "percentage": 45.0,
+          "percentage": 45,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -2502,18 +2502,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_07_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_07_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 8,
-          "name": "عادل بن هتان ابن عادل ابن صدقة خوج",
+          "name": "أحمد محمد الشهري",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 11,
           "max_score": 20,
-          "percentage": 55.0,
+          "percentage": 55,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -2844,18 +2844,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_08_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_08_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 9,
-          "name": "عبدالعزيز بن سلطان ابن سعيد الحازمي الحربي",
+          "name": "أحمد محمد العنزي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -2887,18 +2887,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 10,
-          "name": "عبدهللا بن وليد بن عيسى مريعاني",
+          "name": "أحمد محمد المطيري",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 8,
           "max_score": 20,
-          "percentage": 40.0,
+          "percentage": 40,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -3256,18 +3256,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_10_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_10_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 11,
-          "name": "عبدهللا محمد سعيد آل دليم",
+          "name": "أحمد محمد التميمي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 10,
           "max_score": 20,
-          "percentage": 50.0,
+          "percentage": 50,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -3607,18 +3607,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: إكمال الكلمات بالحروف الصحيحة (windy -> d)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_11_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_11_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 12,
-          "name": "عبدالملك بن فيصل بن صديق احمد كمال",
+          "name": "أحمد محمد السبيعي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -3904,18 +3904,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_12_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_12_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 13,
-          "name": "علي بن حامد بن صبغة هللا قطب الدين",
+          "name": "أحمد محمد الخالدي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -4201,18 +4201,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_13_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_13_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 14,
-          "name": "علي بن خالد بن علي بن جابر الثبيتي",
+          "name": "أحمد محمد المالكي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -4525,18 +4525,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_14_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_14_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 15,
-          "name": "عمر بن انمار بن عمر بن محمد بلخي",
+          "name": "أحمد محمد السلمي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 14,
           "max_score": 20,
-          "percentage": 70.0,
+          "percentage": 70,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -4840,18 +4840,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_15_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_15_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 16,
-          "name": "عمرو السيد طلب عاشور",
+          "name": "أحمد محمد البلوي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 17,
           "max_score": 20,
-          "percentage": 85.0,
+          "percentage": 85,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -5128,18 +5128,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_16_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_16_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 17,
-          "name": "فهد بن سامي بن عبدهللا بن سعيد الغامدي",
+          "name": "أحمد محمد الجهني",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -5452,18 +5452,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_17_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_17_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 18,
-          "name": "مجاهد سليمان بركي العصيمي",
+          "name": "أحمد محمد الرشيدي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 8,
           "max_score": 20,
-          "percentage": 40.0,
+          "percentage": 40,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -5821,18 +5821,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_18_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_18_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 19,
-          "name": "مجتبى بن عالء بن عبد العزيز قاضي",
+          "name": "أحمد عبدالله العتيبي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -5864,18 +5864,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 20,
-          "name": "محمد عبدالمنعم عبدهللا القحطانى",
+          "name": "أحمد عبدالله القحطاني",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 8,
           "max_score": 20,
-          "percentage": 40.0,
+          "percentage": 40,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -6233,18 +6233,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_20_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_20_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 21,
-          "name": "مؤيد وليد صالح مكاوي",
+          "name": "أحمد عبدالله الشمري",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -6557,18 +6557,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_21_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_21_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 22,
-          "name": "نوار مؤيد شعيب شالر",
+          "name": "أحمد عبدالله الدوسري",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -6854,18 +6854,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_22_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_22_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 23,
-          "name": "وجيد بن خالد بن علي حسن مليباري",
+          "name": "أحمد عبدالله الحربي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -7124,18 +7124,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_23_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_23_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 24,
-          "name": "ياسر بن عالء بن حسن سمكري",
+          "name": "أحمد عبدالله الغامدي",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -7384,18 +7384,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_2_3/student_24_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_24_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 25,
-          "name": "يوسف ابراهيم محمدسراج نجار",
+          "name": "أحمد عبدالله الزهراني",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 12,
           "max_score": 20,
-          "percentage": 60.0,
+          "percentage": 60,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -7717,18 +7717,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لمفردات الطوارئ (emergency -> m)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_25_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_25_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 26,
-          "name": "يوسف عماد الدين فخرى داغستانى",
+          "name": "أحمد عبدالله الشهري",
           "class_id": "class_2_3",
           "class_name": "الصف 2/3",
           "status": "حاضر",
           "total_score": 15,
           "max_score": 20,
-          "percentage": 75.0,
+          "percentage": 75,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -8023,8 +8023,8 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لمفردات الطوارئ (emergency -> m)"
             }
           ],
-          "evidence_p1": "evidence/class_2_3/student_26_p1.jpg",
-          "evidence_p2": "evidence/class_2_3/student_26_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         }
       ]
     },
@@ -8037,13 +8037,13 @@
       "students": [
         {
           "roster_id": 1,
-          "name": "ابراهيم مصعب عبداللطيف السلمي",
+          "name": "أحمد عبدالله العنزي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 9,
           "max_score": 20,
-          "percentage": 45.0,
+          "percentage": 45,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -8392,18 +8392,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_01_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_01_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 2,
-          "name": "أحمد بن سعيد بن فايز الشريف",
+          "name": "أحمد عبدالله المطيري",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -8435,18 +8435,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 3,
-          "name": "اسعد بن احمد بن اسعد بن تاج طيب",
+          "name": "أحمد عبدالله التميمي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -8732,18 +8732,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_03_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_03_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 4,
-          "name": "أسيد بن أيمن بن سعيد حميدة",
+          "name": "أحمد عبدالله السبيعي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -8775,18 +8775,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 5,
-          "name": "الحسين بن عالء بن عمر أولياء السيد",
+          "name": "أحمد عبدالله الخالدي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 12,
           "max_score": 20,
-          "percentage": 60.0,
+          "percentage": 60,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -9108,18 +9108,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_05_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_05_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 6,
-          "name": "اياد بن شادي ابن محمد ابن احمد منشي",
+          "name": "أحمد عبدالله المالكي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 9,
           "max_score": 20,
-          "percentage": 45.0,
+          "percentage": 45,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -9468,18 +9468,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_06_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_06_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 7,
-          "name": "بسام ناصر بن مريزيق العتيبي",
+          "name": "أحمد عبدالله السلمي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -9511,18 +9511,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 8,
-          "name": "جهاد أمين تاج باي",
+          "name": "أحمد عبدالله البلوي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 10,
           "max_score": 20,
-          "percentage": 50.0,
+          "percentage": 50,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -9862,18 +9862,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_08_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_08_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 9,
-          "name": "سامي بن نواف بن سامي سنان",
+          "name": "أحمد عبدالله الجهني",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -10186,18 +10186,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_09_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_09_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 10,
-          "name": "صامل بن صالح بن صامل بن صالح السواط",
+          "name": "أحمد عبدالله الرشيدي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -10229,18 +10229,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 11,
-          "name": "طالل بن ممدوح بن سلطان المطيري",
+          "name": "أحمد سعد العتيبي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -10272,18 +10272,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 12,
-          "name": "عادل بن ناصر بن جروض السوادي الزهراني",
+          "name": "أحمد سعد القحطاني",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -10596,18 +10596,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_12_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_12_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 13,
-          "name": "عبد الرحمن بن فواد بن خالد قدس",
+          "name": "أحمد سعد الشمري",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -10893,18 +10893,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_13_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_13_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 14,
-          "name": "عبد الكريم ابن امجد بن ابراهيم حنبلى",
+          "name": "أحمد سعد الدوسري",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -11163,18 +11163,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_14_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_14_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 15,
-          "name": "عبدالعزيز براء بن فياض االنصاري",
+          "name": "أحمد سعد الحربي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 9,
           "max_score": 20,
-          "percentage": 45.0,
+          "percentage": 45,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -11523,18 +11523,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_15_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_15_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 16,
-          "name": "عبدهللا بن ماجد بن بخيت بن بخيت اللقماني",
+          "name": "أحمد سعد الغامدي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -11783,18 +11783,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_2_4/student_16_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_16_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 17,
-          "name": "عبدهللا حسن- عبدالكريم ماسينج صالح",
+          "name": "أحمد سعد الزهراني",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -12080,18 +12080,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام صيغة الماضي البسيط مع الأفعال الشاذة (did)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_17_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_17_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 18,
-          "name": "عمرو بن ايمن بن عباس عالم",
+          "name": "أحمد سعد الشهري",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -12377,18 +12377,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_18_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_18_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 19,
-          "name": "فارس بن حسن بن محمد بن عمر برناوي",
+          "name": "أحمد سعد العنزي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 12,
           "max_score": 20,
-          "percentage": 60.0,
+          "percentage": 60,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -12710,18 +12710,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_19_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_19_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 20,
-          "name": "فيصل ابراهيم فيصل حلواني",
+          "name": "أحمد سعد المطيري",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -12753,18 +12753,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 21,
-          "name": "مجد بن محمد بن عبدالرشيد االفغاني",
+          "name": "أحمد سعد التميمي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 15,
           "max_score": 20,
-          "percentage": 75.0,
+          "percentage": 75,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -13059,18 +13059,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_21_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_21_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 22,
-          "name": "محمد بن ايهاب بن عمر بن محمد بلخي",
+          "name": "أحمد سعد السبيعي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -13383,18 +13383,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_22_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_22_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 23,
-          "name": "محمد بن وجدي بن عريش بن غريب رعيدي",
+          "name": "أحمد سعد الخالدي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -13680,18 +13680,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_23_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_23_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 24,
-          "name": "محمد سعود مساعد الصبحي",
+          "name": "أحمد سعد المالكي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 14,
           "max_score": 20,
-          "percentage": 70.0,
+          "percentage": 70,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -13995,18 +13995,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_24_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_24_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 25,
-          "name": "محمد يحى محمد بن نبهان",
+          "name": "أحمد سعد السلمي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -14255,18 +14255,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_2_4/student_25_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_25_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 26,
-          "name": "مشاري عبدالرحمن احمد غالب",
+          "name": "أحمد سعد البلوي",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 8,
           "max_score": 20,
-          "percentage": 40.0,
+          "percentage": 40,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -14624,18 +14624,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_26_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_26_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 27,
-          "name": "منصور بن عبدهللا بن عطية هللا الصبحي",
+          "name": "أحمد سعد الجهني",
           "class_id": "class_2_4",
           "class_name": "الصف 2/4",
           "status": "حاضر",
           "total_score": 10,
           "max_score": 20,
-          "percentage": 50.0,
+          "percentage": 50,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -14975,8 +14975,8 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_2_4/student_27_p1.jpg",
-          "evidence_p2": "evidence/class_2_4/student_27_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         }
       ]
     },
@@ -14989,13 +14989,13 @@
       "students": [
         {
           "roster_id": 1,
-          "name": "إبراهيم بن نبيل بن معروف جان تركستاني",
+          "name": "أحمد سعد الرشيدي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -15027,18 +15027,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 2,
-          "name": "أحمد حسان خالد",
+          "name": "أحمد علي العتيبي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -15324,18 +15324,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_02_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_02_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 3,
-          "name": "ايهم محمد محمد صالح الهويدي",
+          "name": "أحمد علي القحطاني",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -15594,18 +15594,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لمفردات الطوارئ (emergency -> m)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_03_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_03_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 4,
-          "name": "بتال بن سمير بن عطية الله بن سعيد السلمي",
+          "name": "أحمد علي الشمري",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -15891,18 +15891,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_04_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_04_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 5,
-          "name": "جاد احمد شافعى جوهور",
+          "name": "أحمد علي الدوسري",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -16161,18 +16161,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: صياغة النفي في زمن المستقبل البسيط (won't)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_05_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_05_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 6,
-          "name": "حسن ايمن حسن جان",
+          "name": "أحمد علي الحربي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 18,
           "max_score": 20,
-          "percentage": 90.0,
+          "percentage": 90,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -16440,18 +16440,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: إكمال الكلمات بالحروف الصحيحة (windy -> d)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_06_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_06_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 7,
-          "name": "حسن بن عماد بن حسن بن سليمان مطر",
+          "name": "أحمد علي الغامدي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 12,
           "max_score": 20,
-          "percentage": 60.0,
+          "percentage": 60,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -16773,18 +16773,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_07_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_07_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 8,
-          "name": "خبيب عبدالرحمن الأحمد",
+          "name": "أحمد علي الزهراني",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 9,
           "max_score": 20,
-          "percentage": 45.0,
+          "percentage": 45,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -17133,18 +17133,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_08_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_08_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 9,
-          "name": "رائف بن ياسر بن نايف بن نجم السويهري",
+          "name": "أحمد علي الشهري",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -17176,18 +17176,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 10,
-          "name": "ريان محمد عبدالمنعم محمد هجرس",
+          "name": "أحمد علي العنزي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -17446,18 +17446,18 @@
               "remedial_plan": "تدريب علاجي في المفردات وتوظيفها: توظيف صفات الأماكن والمعاني المعجمية"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_10_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_10_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 11,
-          "name": "سفيان ابراهيم سيداتي الشنقيطي",
+          "name": "أحمد علي المطيري",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 14,
           "max_score": 20,
-          "percentage": 70.0,
+          "percentage": 70,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -17761,18 +17761,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_11_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_11_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 12,
-          "name": "عبدالرحمن باسم عبدالرحمن اللهيبي",
+          "name": "أحمد علي التميمي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -18085,18 +18085,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_12_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_12_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 13,
-          "name": "عبدالرحمن بن خالد بن صالح آل جنون الغامدي",
+          "name": "أحمد علي السبيعي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -18345,18 +18345,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_3/student_13_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_13_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 14,
-          "name": "عبدالعزيز بن بدر بن سالم سفري المجنوني",
+          "name": "أحمد علي الخالدي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 17,
           "max_score": 20,
-          "percentage": 85.0,
+          "percentage": 85,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -18633,18 +18633,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_14_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_14_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 15,
-          "name": "عبدالعزيز بن سالم بن فيصل بن سالم الدوسري",
+          "name": "أحمد علي المالكي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -18676,18 +18676,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 16,
-          "name": "عبدالله بن محمد بن عيدروس الحبشي",
+          "name": "أحمد علي السلمي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 18,
           "max_score": 20,
-          "percentage": 90.0,
+          "percentage": 90,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -18955,18 +18955,18 @@
               "remedial_plan": "تدريب علاجي في المفردات وتوظيفها: التعرف على مسميات المطبوعات (brochure)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_16_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_16_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 17,
-          "name": "عبدالله بن ملهم بن علي بن عبدالغني مقلان",
+          "name": "أحمد علي البلوي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 15,
           "max_score": 20,
-          "percentage": 75.0,
+          "percentage": 75,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -19261,18 +19261,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_17_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_17_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 18,
-          "name": "عبدالله بن هاني بن حمدان بن عواد الرفاعي",
+          "name": "أحمد علي الجهني",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -19585,18 +19585,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_18_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_18_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 19,
-          "name": "عمر بن عبدالرحمن بن طلال بن احمد طيب",
+          "name": "أحمد علي الرشيدي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 10,
           "max_score": 20,
-          "percentage": 50.0,
+          "percentage": 50,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -19936,18 +19936,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_19_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_19_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 20,
-          "name": "فارس محمد مبارك كلنتن",
+          "name": "أحمد خالد العتيبي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -20260,18 +20260,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_20_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_20_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 21,
-          "name": "محمد ابراهيم احمد هادي",
+          "name": "أحمد خالد القحطاني",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -20530,18 +20530,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_21_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_21_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 22,
-          "name": "محمد بشير محمد جعودي",
+          "name": "أحمد خالد الشمري",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 15,
           "max_score": 20,
-          "percentage": 75.0,
+          "percentage": 75,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -20836,18 +20836,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لمفردات الطوارئ (emergency -> m)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_22_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_22_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 23,
-          "name": "مشاري بن سمير بن محمد عيد عليان الصبحي",
+          "name": "أحمد خالد الدوسري",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -21160,18 +21160,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_23_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_23_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 24,
-          "name": "معاذ بن نواف بن علي اللهيبي الحربي",
+          "name": "أحمد خالد الحربي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "غائب",
           "total_score": 0,
           "max_score": 20,
-          "percentage": 0.0,
+          "percentage": 0,
           "level": "غائب",
           "level_color": "#9ca3af",
           "level_badge": "neutral",
@@ -21203,18 +21203,18 @@
               "remedial_plan": "إعادة تطبيق الاختبار التشخيصي للطالب لتحديد الفاقد التعليمي"
             }
           ],
-          "evidence_p1": null,
-          "evidence_p2": null
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 25,
-          "name": "نور احمد علي ابكر",
+          "name": "أحمد خالد الغامدي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 17,
           "max_score": 20,
-          "percentage": 85.0,
+          "percentage": 85,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -21491,18 +21491,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_25_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_25_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 26,
-          "name": "هاشم بن طلال بن هاشم الجيزاني الشريف",
+          "name": "أحمد خالد الزهراني",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 12,
           "max_score": 20,
-          "percentage": 60.0,
+          "percentage": 60,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -21824,18 +21824,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_26_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_26_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 27,
-          "name": "وليد بن محمد بن منصور بن محمد الطيار",
+          "name": "أحمد خالد الشهري",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 17,
           "max_score": 20,
-          "percentage": 85.0,
+          "percentage": 85,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -22112,18 +22112,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_3_3/student_27_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_27_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 28,
-          "name": "يامن بن يوسف بن صالح بن احمد الغامدي",
+          "name": "أحمد خالد العنزي",
           "class_id": "class_3_3",
           "class_name": "الصف 3/3",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -22372,8 +22372,8 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_3/student_28_p1.jpg",
-          "evidence_p2": "evidence/class_3_3/student_28_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         }
       ]
     },
@@ -22386,13 +22386,13 @@
       "students": [
         {
           "roster_id": 1,
-          "name": "ابراهيم طلحة حاج علي",
+          "name": "أحمد خالد المطيري",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -22678,18 +22678,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_01_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_01_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 2,
-          "name": "أديب مجدي محمد سندي",
+          "name": "أحمد خالد التميمي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 11,
           "max_score": 20,
-          "percentage": 55.0,
+          "percentage": 55,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -23020,18 +23020,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_02_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_02_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 3,
-          "name": "تميم بن ناصر بن جروض السوادي الزهراني",
+          "name": "أحمد خالد السبيعي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 15,
           "max_score": 20,
-          "percentage": 75.0,
+          "percentage": 75,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -23326,18 +23326,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_03_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_03_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 4,
-          "name": "رائد بن غسان بن سمير بن عبدالرحمن افندي",
+          "name": "أحمد خالد الخالدي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -23596,18 +23596,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_04_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_04_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 5,
-          "name": "زيد بن صالح بن زيد اللهيبي الحربي",
+          "name": "أحمد خالد المالكي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 8,
           "max_score": 20,
-          "percentage": 40.0,
+          "percentage": 40,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -23965,18 +23965,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_05_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_05_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 6,
-          "name": "سعد جهاد ابن سالم المولد",
+          "name": "أحمد خالد السلمي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -24225,18 +24225,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_06_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_06_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 7,
-          "name": "سعود خالد بن منصور جعمل",
+          "name": "أحمد خالد البلوي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 14,
           "max_score": 20,
-          "percentage": 70.0,
+          "percentage": 70,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -24540,18 +24540,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_07_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_07_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 8,
-          "name": "عبدالرحمن بن ماجد بن حميد الصاعدي",
+          "name": "أحمد خالد الجهني",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 12,
           "max_score": 20,
-          "percentage": 60.0,
+          "percentage": 60,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -24873,18 +24873,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_08_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_08_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 9,
-          "name": "عبدالرحمن محمد عبدالرحمن عجيمى",
+          "name": "أحمد خالد الرشيدي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -25133,18 +25133,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_09_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_09_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 10,
-          "name": "عبدالعزيز ابراهيم عبد العزيز مصطفى",
+          "name": "أحمد فهد العتيبي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 17,
           "max_score": 20,
-          "percentage": 85.0,
+          "percentage": 85,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -25421,18 +25421,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_10_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_10_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 11,
-          "name": "عبدالعزيز وليد محمود قدوري",
+          "name": "أحمد فهد القحطاني",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -25681,18 +25681,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_11_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_11_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 12,
-          "name": "عبدالله بن عبدالرحمن بن سليمان الرحيلي",
+          "name": "أحمد فهد الشمري",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -25941,18 +25941,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_12_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_12_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 13,
-          "name": "عبدالمجيد خالد عبدالخالق الحربي",
+          "name": "أحمد فهد الدوسري",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -26201,18 +26201,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_13_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_13_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 14,
-          "name": "عبدالملك سلطان سعيد بغدادي",
+          "name": "أحمد فهد الحربي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -26461,18 +26461,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_14_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_14_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 15,
-          "name": "عدنان بن عبدالغني بن عدنان الصائغ",
+          "name": "أحمد فهد الغامدي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 13,
           "max_score": 20,
-          "percentage": 65.0,
+          "percentage": 65,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -26785,18 +26785,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_15_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_15_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 16,
-          "name": "عمار محمد بن مروان الخياط",
+          "name": "أحمد فهد الزهراني",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -27045,18 +27045,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_16_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_16_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 17,
-          "name": "عمر موفق بن حسين شيخ",
+          "name": "أحمد فهد الشهري",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -27305,18 +27305,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_17_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_17_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 18,
-          "name": "عمير موسى بن عبدالرحمن الزهراني",
+          "name": "أحمد فهد العنزي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -27575,18 +27575,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_18_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_18_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 19,
-          "name": "فارس بن نايف بن ابراهيم بن احمد المحمادي",
+          "name": "أحمد فهد المطيري",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -27872,18 +27872,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_19_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_19_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 20,
-          "name": "فايز بن موسى بن فايز بن محمد المغامسي",
+          "name": "أحمد فهد التميمي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -28132,18 +28132,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_20_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_20_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 21,
-          "name": "فيصل بن عبدالله بن فيصل بن محمد عالم",
+          "name": "أحمد فهد السبيعي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 17,
           "max_score": 20,
-          "percentage": 85.0,
+          "percentage": 85,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -28420,18 +28420,18 @@
               "remedial_plan": "تدريب علاجي في القواعد والتراكيب: استخدام المضارع البسيط للروتين مع ضمائر الجمع (sleep)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_21_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_21_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 22,
-          "name": "محمد ايمن بن محمد الياسى",
+          "name": "أحمد فهد الخالدي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 16,
           "max_score": 20,
-          "percentage": 80.0,
+          "percentage": 80,
           "level": "متوسط / متمكن",
           "level_color": "#f59e0b",
           "level_badge": "warning",
@@ -28717,18 +28717,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: إكمال الكلمات بالحروف الصحيحة (windy -> d)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_22_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_22_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 23,
-          "name": "محمد بن ريان بن محمد بن عيد الزين",
+          "name": "أحمد فهد المالكي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 20,
           "max_score": 20,
-          "percentage": 100.0,
+          "percentage": 100,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -28977,18 +28977,18 @@
             }
           ],
           "learning_loss": [],
-          "evidence_p1": "evidence/class_3_4/student_23_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_23_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 24,
-          "name": "محمد بن علي بن محمد بن عايض القحطاني",
+          "name": "أحمد فهد السلمي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -29247,18 +29247,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_24_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_24_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 25,
-          "name": "محمد مصطفى محمد برناوى",
+          "name": "أحمد فهد البلوي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -29517,18 +29517,18 @@
               "remedial_plan": "تدريب علاجي في المفردات وتوظيفها: توظيف صفات الأماكن والمعاني المعجمية"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_25_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_25_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 26,
-          "name": "محمد ناصر عبدالله الضمدي",
+          "name": "أحمد فهد الجهني",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 18,
           "max_score": 20,
-          "percentage": 90.0,
+          "percentage": 90,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -29796,18 +29796,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_26_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_26_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 27,
-          "name": "مصطفى حسان مصطفى الخليل",
+          "name": "أحمد فهد الرشيدي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 19,
           "max_score": 20,
-          "percentage": 95.0,
+          "percentage": 95,
           "level": "متقن",
           "level_color": "#10b981",
           "level_badge": "success",
@@ -30066,18 +30066,18 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: التهجئة الصحيحة لمفردات الطوارئ (emergency -> m)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_27_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_27_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         },
         {
           "roster_id": 28,
-          "name": "يزن نايل عباد السفياني",
+          "name": "أحمد صالح العتيبي",
           "class_id": "class_3_4",
           "class_name": "الصف 3/4",
           "status": "حاضر",
           "total_score": 10,
           "max_score": 20,
-          "percentage": 50.0,
+          "percentage": 50,
           "level": "يحتاج دعم وتدخل",
           "level_color": "#ef4444",
           "level_badge": "danger",
@@ -30417,8 +30417,8 @@
               "remedial_plan": "تدريب علاجي في الرسم الإملائي: تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)"
             }
           ],
-          "evidence_p1": "evidence/class_3_4/student_28_p1.jpg",
-          "evidence_p2": "evidence/class_3_4/student_28_p2.jpg"
+          "evidence_p1": "",
+          "evidence_p2": ""
         }
       ]
     }

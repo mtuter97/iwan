@@ -1188,7 +1188,7 @@
       if (format === 'sms') {
         return `المكرم ولي أمر الطالب/ ${student.name} (${student.class_name})، نفيدكم بغياب ابنكم عن الاختبار التشخيصي للغة الإنجليزية. نرجو التنسيق مع المدرسة لتطبيق الاختبار الاستدراكي. متوسطة الفلاح بمكة.`;
       }
-      return `السلام عليكم ورحمة الله وبركاته،\nالمكرم ولي أمر الطالب/ *${student.name}* الموقر (${student.class_name})\nتحية طيبة وبعد،،\n\nنود إحاطتكم علماً بأن ابننا الغالي كان *غائباً* عن أداء الاختبار التشخيصي لمادة اللغة الإنجليزية للعام الدراسي 1448هـ.\nنظراً للأهمية التربوية البالغة للاختبار في قياس المعايير وبناء خطط الدعم المناسبة، نرجو التكرم بالتنسيق مع معلم المادة لتطبيق الاختبار الاستدراكي في أقرب وقت.\n\nشاكرين كريم اهتمامكم ومتابعتكم.\nمعلم المادة: *أ. محمود السعيد*\nإدارة مدرسة *متوسطة الفلاح بمكة المكرمة*`;
+      return `السلام عليكم ورحمة الله وبركاته،\nالمكرم ولي أمر الطالب/ *${student.name}* الموقر (${student.class_name})\nتحية طيبة وبعد،،\n\nنود إحاطتكم علماً بأن ابننا الغالي كان *غائباً* عن أداء الاختبار التشخيصي لمادة اللغة الإنجليزية للعام الدراسي 1448هـ.\nنظراً للأهمية التربوية البالغة للاختبار في قياس المعايير وبناء خطط الدعم المناسبة، نرجو التكرم بالتنسيق مع معلم المادة لتطبيق الاختبار الاستدراكي في أقرب وقت.\n\nشاكرين كريم اهتمامكم ومتابعتكم.\nمعلم المادة: *أ. عبدالله بن سعد المنصور*\nإدارة مدرسة *متوسطة الفلاح بمكة المكرمة*`;
     }
 
     const weakItems = student.learning_loss || [];
@@ -1249,7 +1249,7 @@ ${homeAdvice}
 سائلين المولى عز وجل لابننا الغالي دوام التوفيق والنجاح وأعلى المراتب.
 
 مع تحيات:
-معلم المادة: *أ. محمود السعيد*
+معلم المادة: *أ. عبدالله بن سعد المنصور*
 إدارة مدرسة *متوسطة الفلاح بمكة المكرمة*`;
   }
 
@@ -1483,7 +1483,7 @@ ${homeAdvice}
         <div class="print-signatures-box">
           <div class="print-sig-col">
             <div class="role">معلم المادة</div>
-            <div class="name">أ. محمود السعيد</div>
+            <div class="name">أ. عبدالله بن سعد المنصور</div>
             <div style="margin-top: 15px; font-size: 8pt;">التوقيع: .....................</div>
           </div>
           <div class="print-sig-col">
@@ -1873,7 +1873,7 @@ ${homeAdvice}
         <div class="print-signatures-box">
           <div class="print-sig-col">
             <div class="role">معلم المادة</div>
-            <div class="name">أ. محمود السعيد</div>
+            <div class="name">أ. عبدالله بن سعد المنصور</div>
             <div style="margin-top: 15px; font-size: 8pt;">التوقيع: .....................</div>
           </div>
           <div class="print-sig-col">
@@ -1913,7 +1913,7 @@ ${homeAdvice}
           <div class="side-meta">
             الفصول: 2/3 ، 2/4 ، 3/4<br>
             المدة: 3 أسابيع مكثفة<br>
-            معلم المادة: أ. محمود السعيد
+            معلم المادة: أ. عبدالله بن سعد المنصور
           </div>
         </div>
 
@@ -1998,7 +1998,7 @@ ${homeAdvice}
         <div class="print-signatures-box">
           <div class="print-sig-col">
             <div class="role">معلم المادة</div>
-            <div class="name">أ. محمود السعيد</div>
+            <div class="name">أ. عبدالله بن سعد المنصور</div>
             <div style="margin-top: 15px; font-size: 8pt;">التوقيع: .....................</div>
           </div>
           <div class="print-sig-col">
@@ -2120,7 +2120,7 @@ ${homeAdvice}
         <div class="print-signatures-box">
           <div class="print-sig-col">
             <div class="role">معلم المادة</div>
-            <div class="name">أ. محمود السعيد</div>
+            <div class="name">أ. عبدالله بن سعد المنصور</div>
             <div style="margin-top: 15px; font-size: 8pt;">التوقيع: .....................</div>
           </div>
           <div class="print-sig-col">
@@ -2231,7 +2231,7 @@ ${homeAdvice}
         <div class="print-signatures-box">
           <div class="print-sig-col">
             <div class="role">معلم المادة</div>
-            <div class="name">أ. محمود السعيد</div>
+            <div class="name">أ. عبدالله بن سعد المنصور</div>
             <div style="margin-top: 15px; font-size: 8pt;">التوقيع: .....................</div>
           </div>
           <div class="print-sig-col">
@@ -2306,7 +2306,7 @@ ${homeAdvice}
 
         <!-- Official Signatures -->
         <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
-          <div>معلم المادة: <strong>أ. محمود السعيد</strong> (التوقيع: ............)</div>
+          <div>معلم المادة: <strong>أ. عبدالله بن سعد المنصور</strong> (التوقيع: ............)</div>
           <div>مدير المدرسة: <strong>أ. ...........................</strong> (الختم والتوقيع: ............)</div>
         </div>
 
