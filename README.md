@@ -64,12 +64,13 @@ http://localhost:3000
 
 ---
 
-## 🌐 النشر (Deployment)
+## 🌐 النشر والرابط الحي (Live Production)
 
-المشروع عبارة عن موقع ثابت (Static Site) جاهز للنشر مباشرة على منصات مثل:
-- **Vercel** (مرفق ملف `vercel.json`)
-- **GitHub Pages**
-- **Netlify**
+الموقع منشور ومتاح عالمياً برابط حي مباشر على Vercel:
+🔗 **الرابط الرسمي:** [https://iwan-theta.vercel.app](https://iwan-theta.vercel.app)  
+🚀 **رابط النشر التلقائي:** [https://iwan-bby6t3ygb-alfalah2.vercel.app](https://iwan-bby6t3ygb-alfalah2.vercel.app)
+
+---
 
 ## 📞 قنوات التواصل الرسمية
 
