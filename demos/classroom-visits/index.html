@@ -1,0 +1,2867 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أداة الزيارات الصفية — متوسطة الفلاح بجدة</title>
+  <!-- Google Fonts: Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-bg: #eff6ff;
+      --success: #16a34a;
+      --success-bg: #dcfce7;
+      --warning: #d97706;
+      --warning-bg: #fef3c7;
+      --danger: #dc2626;
+      --danger-bg: #fee2e2;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light-gray: #f8fafc;
+      --border: #cbd5e1;
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background-color: #f1f5f9;
+      color: var(--dark);
+      min-height: 100vh;
+      direction: rtl;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      background: white;
+      border-bottom: 2px solid var(--primary);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .navbar-brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+    .navbar-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .navbar-subtitle {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+    .evaluator-badge {
+      background: var(--primary-bg);
+      border: 1px solid #bfdbfe;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .evaluator-badge button {
+      background: none;
+      border: none;
+      color: var(--primary-light);
+      cursor: pointer;
+      font-size: 0.75rem;
+      text-decoration: underline;
+      padding-right: 6px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    /* Card Component */
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--card-shadow);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-header h2, .card-header h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-body {
+      padding: 20px;
+    }
+
+    /* Evaluator Selection Modal / Screen */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 16px;
+      max-width: 520px;
+      width: 100%;
+      padding: 32px 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      text-align: center;
+      animation: modalFadeIn 0.3s ease;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .modal-logo {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 16px;
+    }
+    .evaluator-btn {
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .evaluator-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-bg);
+      transform: translateY(-2px);
+    }
+    .evaluator-btn .name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .evaluator-btn .role {
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Forms & Inputs */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #334155;
+    }
+    .form-control {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      background: white;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    /* Live Score Bar */
+    .live-score-bar {
+      background: linear-gradient(135deg, #1e3a8a, #1e40af);
+      color: white;
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(30, 58, 138, 0.25);
+    }
+    .live-score-value {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .live-score-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* Observation Domain & Standard Table */
+    .domain-title {
+      background: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      font-size: 1rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .standard-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    .standard-table th {
+      background: #f8fafc;
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--border);
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+    .standard-table td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .standard-num {
+      width: 50px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+    .standard-content {
+      line-height: 1.5;
+    }
+    .standard-text {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+    .indicators-box {
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .indicator-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #334155;
+      cursor: pointer;
+    }
+    .indicator-item input[type="checkbox"] {
+      margin-top: 3px;
+      cursor: pointer;
+      accent-color: var(--primary);
+      width: 15px;
+      height: 15px;
+    }
+
+    /* Rating Buttons */
+    .rating-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 175px;
+    }
+    .rating-btn {
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: white;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s;
+    }
+    .rating-btn.active-1 { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); font-weight: 800; }
+    .rating-btn.active-2 { background: var(--warning-bg); border-color: var(--warning); color: var(--warning); font-weight: 800; }
+    .rating-btn.active-3 { background: var(--primary-bg); border-color: var(--primary-light); color: var(--primary-light); font-weight: 800; }
+    .rating-btn.active-4 { background: var(--success-bg); border-color: var(--success); color: var(--success); font-weight: 800; }
+
+    /* Action Buttons */
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: #172554; }
+    .btn-success { background: var(--success); color: white; }
+    .btn-success:hover { background: #15803d; }
+    .btn-outline { background: white; border: 1px solid var(--border); color: var(--dark); }
+    .btn-outline:hover { background: #f8fafc; }
+    .btn-lg { padding: 14px 28px; font-size: 1.05rem; }
+
+    /* Treatment Plan */
+    .plan-box {
+      border-right: 4px solid var(--warning);
+      background: #fffbeb;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .plan-box h4 {
+      color: #b45309;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    /* Print & Report Screen Styling */
+    #reportView {
+      display: none;
+    }
+    .report-paper {
+      background: white;
+      padding: 32px 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Print Media Query */
+    @media print {
+      body { background: white !important; font-size: 11pt; }
+      .navbar, .no-print, .btn, .live-score-bar { display: none !important; }
+      .container { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+      .card { box-shadow: none !important; border: none !important; margin-bottom: 0 !important; }
+      #observationFormView { display: none !important; }
+      #reportView { display: block !important; }
+      .report-paper { box-shadow: none !important; padding: 0 !important; }
+      .page-break { page-break-before: always; }
+    }
+
+    @media (max-width: 768px) {
+      .standard-table th:nth-child(1), .standard-table td:nth-child(1) { display: none; }
+      .rating-buttons { width: 100%; }
+      .rating-btn { padding: 8px; font-size: 0.8rem; }
+      .nav-tabs-group { order: 3; width: 100%; justify-content: center; margin-top: 8px; }
+      .navbar { flex-wrap: wrap; }
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-tab {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gray);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-tab:hover {
+      background: #f1f5f9;
+      color: var(--primary);
+    }
+    .nav-tab.active {
+      background: var(--primary-bg);
+      color: var(--primary);
+      border-color: #bfdbfe;
+    }
+    .badge-count {
+      background: var(--primary);
+      color: white;
+      font-size: 0.7rem;
+      padding: 1px 7px;
+      border-radius: 10px;
+    }
+
+    /* Editable Plan Boxes */
+    .editable-box {
+      outline: none;
+      padding: 4px 6px;
+      border-radius: 4px;
+      border: 1px dashed transparent;
+      transition: all 0.2s;
+    }
+    .editable-box:hover {
+      border-color: #f59e0b;
+      background: rgba(254, 243, 199, 0.4);
+    }
+    .editable-box:focus {
+      border-color: #d97706;
+      background: #fef3c7;
+      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+    }
+
+    /* KPI Dashboard Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: var(--card-shadow);
+    }
+    .kpi-card .kpi-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .kpi-card .kpi-label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="logo.png" alt="شعار المدرسة" onerror="this.style.display='none'">
+      <div>
+        <div class="navbar-title">نظام الزيارات الصفية والملاحظة</div>
+        <div class="navbar-subtitle">متوسطة الفلاح بجدة — الإدارة العامة للتعليم بمحافظة جدة</div>
+      </div>
+    </div>
+    <div class="nav-tabs-group no-print">
+      <button type="button" class="nav-tab active" id="tabForm" onclick="switchView('form')">
+        📝 بطاقة الزيارة
+      </button>
+      <button type="button" class="nav-tab" id="tabArchive" onclick="switchView('archive')">
+        📂 سجل الزيارات <span class="badge-count" id="archiveCountBadge">0</span>
+      </button>
+      <button type="button" class="nav-tab" id="tabDashboard" onclick="switchView('dashboard')">
+        📊 لوحة المؤشرات
+      </button>
+    </div>
+    <div class="evaluator-badge">
+      <span id="activeEvaluatorDisplay">👤 المشرف: لم يتم التحديد</span>
+      <button onclick="openEvaluatorModal()">[تغيير]</button>
+    </div>
+  </nav>
+
+  <!-- Evaluator Selection Modal -->
+  <div id="evaluatorModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <img src="logo.png" alt="شعار المدرسة" class="modal-logo" onerror="this.style.display='none'">
+      <h2 style="font-size: 1.3rem; color: var(--primary); margin-bottom: 8px;">بطاقة الملاحظة والزيارات الصفية</h2>
+      <p style="font-size: 0.85rem; color: var(--gray); margin-bottom: 24px;">يرجى اختيار المشرف الزائر / المسؤول المتابع لبدء الزيارة:</p>
+
+      <button class="evaluator-btn" onclick="selectEvaluator('عبدالله محمد الجهبلي', 'مدير المدرسة')">
+        <div>
+          <div class="name">عبدالله محمد الجهبلي</div>
+          <div class="role">مدير المدرسة</div>
+        </div>
+        <span>←</span>
+      </button>
+
+      <button class="evaluator-btn" onclick="selectEvaluator('حسن محمد محنشي', 'وكيل المدرسة')">
+        <div>
+          <div class="name">حسن محمد محنشي</div>
+          <div class="role">وكيل المدرسة</div>
+        </div>
+        <span>←</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Teachers Manager Modal -->
+  <div id="teachersModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 650px; max-height: 90vh; overflow-y: auto; text-align: right;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+        <h3 style="color: var(--primary); font-size: 1.2rem; font-weight: 800;">👥 إدارة وتحديث قائمة المعلمين</h3>
+        <button onclick="closeTeachersManagerModal()" style="background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--gray);">&times;</button>
+      </div>
+
+      <!-- Add Teacher Form -->
+      <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px;">
+        <h4 style="font-size: 0.95rem; color: var(--primary); margin-bottom: 10px;">➕ إضافة معلم جديد للقائمة الثابتة</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #334155;">اسم المعلم</label>
+            <input type="text" id="newTeacherName" class="form-control" placeholder="مثال: خالد محمد العمري">
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #334155;">رقم السجل المدني / الهوية</label>
+            <input type="text" id="newTeacherEmpId" class="form-control" placeholder="مثال: 1098273621">
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #334155;">التخصص / المادة</label>
+            <input type="text" id="newTeacherSubject" class="form-control" placeholder="مثال: لغتي الخالدة">
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #334155;">الصف التدريسي</label>
+            <input type="text" id="newTeacherGrade" class="form-control" placeholder="مثال: ثالث متوسط">
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" style="margin-top: 12px; width: 100%; justify-content: center;" onclick="addNewTeacher()">
+          💾 إضافة وحفظ المعلم
+        </button>
+      </div>
+
+      <!-- Current Teachers Table -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--dark);">المعلمون المسجلون حالياً:</div>
+        <button type="button" style="font-size: 0.75rem; background: none; border: none; color: var(--danger); text-decoration: underline; cursor: pointer;" onclick="resetTeachersToDefault()">
+          استعادة القائمة الافتراضية
+        </button>
+      </div>
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; border: 1px solid var(--border); margin-bottom: 10px;">
+        <thead>
+          <tr style="background: var(--primary-bg); color: var(--primary);">
+            <th style="padding: 8px; text-align: right;">الاسم</th>
+            <th style="padding: 8px; text-align: right;">المادة</th>
+            <th style="padding: 8px; text-align: right;">الصف</th>
+            <th style="padding: 8px; width: 60px; text-align: center;">إجراء</th>
+          </tr>
+        </thead>
+        <tbody id="teachersListTbody">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
+      <div style="text-align: left; margin-top: 10px;">
+        <button type="button" class="btn btn-outline" onclick="closeTeachersManagerModal()">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- View 1: Observation Form View -->
+    <div id="observationFormView">
+
+      <!-- Live Score Floating Banner -->
+      <div class="live-score-bar">
+        <div>
+          <div style="font-size: 0.85rem; opacity: 0.9;">الدرجة الكلية المرصودة (من 100):</div>
+          <div class="live-score-value"><span id="liveTotalScore">25</span> / 100</div>
+        </div>
+        <div style="text-align: left;">
+          <div class="live-score-badge" id="liveLevelBadge">متحقق بدرجة منخفضة</div>
+          <div style="font-size: 0.75rem; margin-top: 4px; opacity: 0.85;">
+            المعايير المكتملة: <span id="completedStandardsCount">0</span> / 25
+          </div>
+        </div>
+      </div>
+
+      <!-- Visit General Details Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3>📋 بيانات الحصة والمعلم</h3>
+          <button type="button" class="btn btn-outline" style="font-size: 0.8rem; padding: 6px 12px;" onclick="openTeachersManagerModal()">
+            👥 إدارة المعلمين
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">المعلم المزار</label>
+              <select id="teacherSelect" class="form-control" onchange="handleTeacherChange()">
+                <option value="">-- اختر المعلم --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">المادة الدراسية</label>
+              <input type="text" id="visitSubject" class="form-control" list="subjectsDatalist" placeholder="مثال: الرياضيات">
+              <datalist id="subjectsDatalist"></datalist>
+            </div>
+            <div class="form-group">
+              <label class="form-label">الصف والفصل</label>
+              <input type="text" id="visitGrade" class="form-control" list="classesDatalist" placeholder="مثال: ثالث متوسط / 1">
+              <datalist id="classesDatalist"></datalist>
+            </div>
+            <div class="form-group">
+              <label class="form-label">عنوان الدرس</label>
+              <input type="text" id="visitLesson" class="form-control" placeholder="مثال: نظرية فيثاغورس">
+            </div>
+            <div class="form-group">
+              <label class="form-label">تاريخ الزيارة</label>
+              <input type="date" id="visitDate" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label">رقم الحصة</label>
+              <select id="visitPeriod" class="form-control">
+                <option value="الحصة الأولى">الحصة الأولى</option>
+                <option value="الحصة الثانية">الحصة الثانية</option>
+                <option value="الحصة الثالثة">الحصة الثالثة</option>
+                <option value="الحصة الرابعة">الحصة الرابعة</option>
+                <option value="الحصة الخامسة">الحصة الخامسة</option>
+                <option value="الحصة السادسة">الحصة السادسة</option>
+                <option value="الحصة السابعة">الحصة السابعة</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">نوع الزيارة</label>
+              <select id="visitType" class="form-control">
+                <option value="أولى">أولى</option>
+                <option value="ثانية">ثانية</option>
+                <option value="ثالثة">ثالثة</option>
+                <option value="متابعة">متابعة</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">عدد الحضور</label>
+              <input type="number" id="visitAttendance" class="form-control" value="28">
+            </div>
+            <div class="form-group">
+              <label class="form-label">عدد الغياب</label>
+              <input type="number" id="visitAbsence" class="form-control" value="2">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Bulk Rating Toolbar -->
+      <div class="card no-print" style="margin-bottom: 16px; padding: 12px 18px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-right: 4px solid var(--primary);">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 800; color: var(--primary);">
+          <span>⚡ رصد سريع لكافة المعايير (لتوفير وقت المشرف داخل الصف):</span>
+        </div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-outline" style="font-size: 0.78rem; padding: 6px 12px; border-color: #86efac; color: #166534; background: #f0fdf4;" onclick="quickBulkRate(4)">
+            🟢 الكل مرتفع جداً (4)
+          </button>
+          <button type="button" class="btn btn-outline" style="font-size: 0.78rem; padding: 6px 12px; border-color: #93c5fd; color: #1e40af; background: #eff6ff;" onclick="quickBulkRate(3)">
+            🔵 الكل مرتفع (3)
+          </button>
+          <button type="button" class="btn btn-outline" style="font-size: 0.78rem; padding: 6px 12px; border-color: #fde68a; color: #92400e; background: #fffbeb;" onclick="quickBulkRate(2)">
+            🟠 الكل متوسط (2)
+          </button>
+          <button type="button" class="btn btn-outline" style="font-size: 0.78rem; padding: 6px 12px; border-color: #fca5a5; color: #991b1b; background: #fef2f2;" onclick="quickBulkRate(1)">
+            🔴 الكل منخفض (1)
+          </button>
+        </div>
+      </div>
+
+      <!-- Standards Form Sections -->
+      <div id="domainsContainer">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Actions Bar -->
+      <div class="card" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap: 12px;">
+        <div>
+          <button class="btn btn-outline" onclick="resetForm()">🔄 إعادة ضبط البطاقة</button>
+        </div>
+        <div>
+          <button class="btn btn-success btn-lg" onclick="finishAndGenerateReport()">
+            📄 إنهاء وتوليد التقرير والخطة العلاجية ←
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- View 2: Official Printable Report View -->
+    <div id="reportView">
+      <div class="no-print" style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <button class="btn btn-outline" onclick="backToForm()">← العودة للبطاقة والتعديل</button>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-outline" style="border-color: #93c5fd; color: var(--primary);" onclick="switchView('archive')">📂 فتح سجل الزيارات</button>
+          <button class="btn btn-primary btn-lg" onclick="window.print()">🖨 طباعة / حفظ PDF مباشر</button>
+        </div>
+      </div>
+
+      <div class="report-paper">
+        <img src="logo.png" alt="علامة مائية" class="watermark" onerror="this.style.display='none'">
+
+        <!-- Report Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--primary); padding-bottom: 16px; margin-bottom: 20px;">
+          <div>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: var(--gray);">المملكة العربية السعودية — وزارة التعليم</div>
+            <div style="font-size: 0.8rem; color: var(--gray);">الإدارة العامة للتعليم بمحافظة جدة | المدرسة: متوسطة الفلاح بجدة</div>
+            <h1 style="font-size: 1.5rem; font-weight: 900; color: var(--primary); margin: 4px 0;">أداة وبطاقة الزيارة الصفية — متوسطة الفلاح بجدة</h1>
+            <div style="font-size: 0.8rem; color: var(--gray);" id="reportMetaSubtitle"></div>
+          </div>
+          <img src="logo.png" alt="شعار المدرسة" style="width: 80px; height: 80px; object-fit: contain;" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Visit Info Grid Table -->
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 24px; border: 1px solid var(--border);">
+          <tbody>
+            <tr style="background: #f8fafc; border-bottom: 1px solid var(--border);">
+              <td style="padding: 8px 12px; font-weight: 700; color: var(--primary); width: 15%;">اسم المعلم</td>
+              <td style="padding: 8px 12px; font-weight: 600; width: 35%;" id="repTeacherName">-</td>
+              <td style="padding: 8px 12px; font-weight: 700; color: var(--primary); width: 15%; border-right: 1px solid var(--border);">رقم الهوية</td>
+              <td style="padding: 8px 12px; font-weight: 600; width: 35%;" id="repTeacherId">-</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 8px 12px; font-weight: 700; color: var(--primary);">المادة الدراسية</td>
+              <td style="padding: 8px 12px; font-weight: 600;" id="repSubject">-</td>
+              <td style="padding: 8px 12px; font-weight: 700; color: var(--primary); border-right: 1px solid var(--border);">الصف والفصل</td>
+              <td style="padding: 8px 12px; font-weight: 600;" id="repGrade">-</td>
+            </tr>
+            <tr style="background: #f8fafc; border-bottom: 1px solid var(--border);">
+              <td style="padding: 8px 12px; font-weight: 700; color: var(--primary);">عنوان الدرس</td>
+              <td style="padding: 8px 12px; font-weight: 600;" colspan="3" id="repLessonTitle">-</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px; font-weight: 700; color: var(--primary);">تاريخ الزيارة</td>
+              <td style="padding: 8px 12px; font-weight: 600;" id="repDate">-</td>
+              <td style="padding: 8px 12px; font-weight: 700; color: var(--primary); border-right: 1px solid var(--border);">الحضور / الغياب</td>
+              <td style="padding: 8px 12px; font-weight: 600;" id="repAttendance">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Overall Score Box -->
+        <div style="display: flex; justify-content: space-between; align-items: center; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px 20px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <span style="font-size: 1.4rem; font-weight: 900; line-height: 1;" id="repOverallScoreNum">0</span>
+              <span style="font-size: 0.6rem; opacity: 0.85;">من 100</span>
+            </div>
+            <div>
+              <div style="font-size: 1.15rem; font-weight: 900; color: var(--primary);" id="repOverallLevelText">متحقق بدرجة ...</div>
+              <div style="font-size: 0.8rem; color: var(--gray);">الدرجة الكلية للزيارة الصفية</div>
+            </div>
+          </div>
+          <div style="text-align: left;">
+            <span style="font-size: 1.1rem; font-weight: 800; color: var(--primary);" id="repOverallScorePercent">0%</span>
+            <div style="font-size: 0.75rem; color: var(--gray);">نسبة التحقق الإجمالية</div>
+          </div>
+        </div>
+
+        <!-- Domains Summary Table -->
+        <h3 style="font-size: 1rem; color: #1e293b; margin-bottom: 10px; font-weight: 800;">أولاً: ملخص نتائج المجالات الخمسة</h3>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; border: 1px solid var(--border); margin-bottom: 24px;">
+          <thead>
+            <tr style="background: var(--primary); color: white;">
+              <th style="padding: 8px 12px; text-align: right; width: 40%;">المجال</th>
+              <th style="padding: 8px 12px; text-align: center;">الدرجة (من 100)</th>
+              <th style="padding: 8px 12px; text-align: center;">مستوى التحقق</th>
+              <th style="padding: 8px 12px; text-align: center;">النسبة المئوية</th>
+            </tr>
+          </thead>
+          <tbody id="repDomainSummaryRows">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+
+        <!-- Strengths & Improvement Areas -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px;">
+            <h4 style="color: var(--success); font-size: 0.9rem; font-weight: 800; margin-bottom: 8px;">✅ نقاط القوة:</h4>
+            <ul id="repStrengthsList" style="padding-right: 20px; font-size: 0.85rem; color: #166534; line-height: 1.6;"></ul>
+          </div>
+          <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 14px;">
+            <h4 style="color: var(--warning); font-size: 0.9rem; font-weight: 800; margin-bottom: 8px;">📈 مجالات التحسين:</h4>
+            <ul id="repWeaknessesList" style="padding-right: 20px; font-size: 0.85rem; color: #92400e; line-height: 1.6;"></ul>
+          </div>
+        </div>
+
+        <!-- Treatment / Improvement Plan -->
+        <div style="margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h3 style="font-size: 1rem; color: #1e293b; font-weight: 800;">ثانياً: الخطة العلاجية والتوصيات المقترحة</h3>
+            <span class="no-print" style="font-size: 0.75rem; color: #b45309; background: #fef3c7; padding: 4px 10px; border-radius: 6px; font-weight: 700;">
+              💡 يمكنك النقر على أي نص أدناه لتعديله أو تخصيصه قبل الطباعة
+            </span>
+          </div>
+          <div id="repTreatmentPlanContainer">
+            <!-- Dynamically populated -->
+          </div>
+          <div class="no-print" style="margin-top: 10px; text-align: left;">
+            <button type="button" class="btn btn-outline" style="font-size: 0.8rem; padding: 6px 14px;" onclick="addCustomTreatmentGoal()">
+              ➕ إضافة هدف علاجي وتوصية مخصصة
+            </button>
+          </div>
+        </div>
+
+                <!-- Visitor General Notes & Feedback -->
+        <div id="repNotesContainer" style="margin-bottom: 24px; display: none;">
+          <h3 style="font-size: 1rem; color: #1e293b; font-weight: 800; margin-bottom: 8px;">📝 ملحوظات وتوصيات الزائر الميداني:</h3>
+          <div id="repNotesText" style="background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 14px; font-size: 0.85rem; line-height: 1.7; color: #1e293b; white-space: pre-line;"></div>
+        </div>
+
+        <!-- Detailed Standards Observation Record -->
+        <h3 style="font-size: 1rem; color: #1e293b; margin-bottom: 10px; font-weight: 800;">ثالثاً: بطاقة الملاحظة الصفية التفصيلية والشواهد المرصودة</h3>
+        <div id="repDetailedStandardsContainer" style="margin-bottom: 30px;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Signatures Section (Clean Physical Signature Lines - Without Digital Signatures) -->
+                <!-- Signatures Section (Clean Physical Signature Lines - Without Digital Signatures) -->
+        <div style="margin-top: 36px; padding-top: 20px; border-top: 2px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.85rem;" id="repSignaturesBlock">
+          <div style="width: 45%; text-align: center;">
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.95rem;" id="repEvaluatorSignatureTitle">المشرف الزائر:</div>
+            <div style="font-size: 1rem; font-weight: 800; margin: 4px 0; color: #0f172a;" id="repEvaluatorSignatureName">عبدالله محمد الجهبلي</div>
+            <div style="min-height: 60px; display: flex; align-items: flex-end; justify-content: center; margin: 6px 0;">
+              <div style="border-bottom: 1.5px dashed #64748b; width: 80%; height: 35px;"></div>
+            </div>
+            <div style="color: var(--gray); font-size: 0.78rem; font-weight: 600;">توقيع المشرف الزائر</div>
+          </div>
+
+          <div style="width: 45%; text-align: center;">
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.95rem;">المعلم المزار:</div>
+            <div style="font-size: 1rem; font-weight: 800; margin: 4px 0; color: #0f172a;" id="repTeacherSignatureName">-</div>
+            <div style="min-height: 60px; display: flex; align-items: flex-end; justify-content: center; margin: 6px 0;">
+              <div style="border-bottom: 1.5px dashed #64748b; width: 80%; height: 35px;"></div>
+            </div>
+            <div style="color: var(--gray); font-size: 0.78rem; font-weight: 600;">توقيع المعلم بالعلم</div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- View 3: Archive View -->
+    <div id="archiveView" style="display: none;">
+      <div class="card">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <h3>📂 أرشيف وسجل الزيارات الصفية المنفذة</h3>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+            <button class="btn btn-outline" style="border-color: #86efac; color: #166534; font-size: 0.85rem;" onclick="exportVisitsToCSV()" title="تصدير جدول الزيارات لملف إكسل">
+              📊 تصدير Excel (CSV)
+            </button>
+            <button class="btn btn-outline" style="border-color: #93c5fd; color: #1e40af; font-size: 0.85rem;" onclick="exportBackupJSON()" title="تنزيل نسخة احتياطية لكافة بيانات النظام">
+              💾 حفظ نسخة احتياطية
+            </button>
+            <button class="btn btn-outline" style="font-size: 0.85rem;" onclick="triggerImportBackup()" title="استعادة نسخة احتياطية سابقة من ملف">
+              📥 استيراد نسخة
+            </button>
+            <input type="file" id="backupFileInput" accept=".json" style="display: none;" onchange="handleImportBackupFile(event)">
+            <button class="btn btn-primary" onclick="switchView('form')">➕ بدء زيارة صفية جديدة</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+            <div style="flex: 1; min-width: 250px;">
+              <input type="text" id="archiveSearchInput" class="form-control" placeholder="🔍 بحث سريع باسم المعلم، المادة، الصف، أو المشرف..." oninput="renderArchiveTable()">
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                                      <select id="archiveEvaluatorFilter" class="form-control" style="width: auto; font-size: 0.85rem;" onchange="renderArchiveTable()">
+              <option value="all">جميع المسؤولين والزائرين</option>
+              <option value="عبدالله محمد الجهبلي">عبدالله محمد الجهبلي (مدير المدرسة)</option>
+              <option value="حسن محمد محنشي">حسن محمد محنشي (وكيل المدرسة)</option>
+            </select>
+              <button class="btn btn-outline" style="color: var(--danger); font-size: 0.8rem;" onclick="clearAllArchiveVisits()">🗑 مسح الأرشيف</button>
+            </div>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="standard-table" style="width: 100%; border: 1px solid var(--border);">
+              <thead>
+                <tr style="background: var(--primary); color: white;">
+                  <th style="padding: 10px; width: 40px; text-align: center;">#</th>
+                  <th style="padding: 10px; text-align: right;">التاريخ والحصة</th>
+                  <th style="padding: 10px; text-align: right;">المعلم المزار</th>
+                  <th style="padding: 10px; text-align: right;">المادة والصف</th>
+                  <th style="padding: 10px; text-align: right;">المشرف الزائر</th>
+                  <th style="padding: 10px; text-align: center;">الدرجة الكلية</th>
+                  <th style="padding: 10px; text-align: center; width: 160px;">الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="archiveTableTbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View 4: Analytics Dashboard View -->
+    <div id="dashboardView" style="display: none;">
+      
+      <!-- KPI Top Summary Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">إجمالي الزيارات المنفذة</div>
+          <div class="kpi-num" id="dashTotalVisits">0</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">متوسط أداء المدرسة العام</div>
+          <div class="kpi-num" id="dashAvgScore">0 <span style="font-size: 0.9rem; font-weight: 600; color: var(--gray);">من 100</span></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">نسبة الإنجاز المرتفع (≥65%)</div>
+          <div class="kpi-num" id="dashHighPercent" style="color: var(--success);">0%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">المعلمون المزارون</div>
+          <div class="kpi-num" id="dashTeachersCovered">0 <span style="font-size: 0.85rem; font-weight: 600; color: var(--gray);">/ 24</span></div>
+        </div>
+      </div>
+
+      <!-- Evaluator Workload & Domains Breakdown -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 20px;">
+        <div class="card">
+          <div class="card-header">
+            <h3>👥 الزيارات المنفذة لكل مسؤول</h3>
+          </div>
+          <div class="card-body" id="dashEvaluatorsList">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>📊 متوسط إنجاز المجالات الخمسة</h3>
+          </div>
+          <div class="card-body" id="dashDomainsList">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Training Needs / Strengths and Areas of Improvement -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+        <div class="card">
+          <div class="card-header">
+            <h3 style="color: var(--success);">🌟 أعلى المعايير تميزاً بالمدرسة (نقاط القوة المدرسية)</h3>
+          </div>
+          <div class="card-body">
+            <div id="dashTopStandardsList" style="font-size: 0.85rem; line-height: 1.6;"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 style="color: var(--warning);">🎯 أولويات التطوير والاحتياج التدريبي (أدنى المعايير)</h3>
+          </div>
+          <div class="card-body">
+            <div id="dashLowestStandardsList" style="font-size: 0.85rem; line-height: 1.6;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    // Signatures without embedded digital images (Clean for physical signing)
+    const OFFICIAL_SIGNATURES = {};
+
+    // ─── 1. Official Standards Data (5 Domains, 25 Standards, Indicators) ─────────────
+    const OFFICIAL_DATA = [
+      {
+        id: 1,
+        name: 'بيئة التعلم',
+        standards: [
+          {
+            id: 1,
+            num: 1,
+            text: 'تُنفّذ المدرسة برامج وأنشطة؛ لتعزيز القيم الإسلامية والهوية الوطنية لدى المتعلمين.',
+            indicators: [
+              'توظيف أمثلة أو أنشطة مرتبطة بالقيم الإسلامية',
+              'ربط المحتوى بالهوية الوطنية وتضمين أنشطة تعزز الانتماء للوطن'
+            ]
+          },
+          {
+            id: 2,
+            num: 2,
+            text: 'تنفذ المدرسة إجراءات تضمن مناخا آمنا للتعلم والنمو نفسيا واجتماعيا.',
+            indicators: [
+              'التعامل باحترام مع جميع المتعلمين',
+              'شعور المتعلمين بالأمان داخل الصف والتعبير عن آرائهم دون خوف من الخطأ',
+              'خلو البيئة من التنمر أو التهديد'
+            ]
+          },
+          {
+            id: 3,
+            num: 3,
+            text: 'يتوافر في بيئة التعلم مصادر وأنشطة متنوعة للتعلم تلبي احتياجات المتعلمين، ومنهم ذوو الإعاقة والموهوبون.',
+            indicators: [
+              'تنوع الأنشطة وفق مستويات المتعلمين',
+              'مراعاة الفروق الفردية (الإعاقة والموهوبين).'
+            ]
+          },
+          {
+            id: 4,
+            num: 4,
+            text: 'يُدار الوقت في بيئة التعلم بفاعلية؛ لدعم التعلم وتلبية احتياجات المتعلمين، ومنهم ذوو الإعاقة والموهوبون.',
+            indicators: [
+              'الالتزام بتوقيت كل مرحلة من الدرس ( مقدمة - عرض - تطبيق – غلق )',
+              'منح المتعلمين الذي يحتاجون وقتاً إضافياً فرصة إضافية دون الإخلال بجدول الحصة',
+              'الانتقال السلس بين الأنشطة'
+            ]
+          },
+          {
+            id: 5,
+            num: 5,
+            text: 'يُتاح للمتعلمين فرص متكافئة في الأنشطة والمناقشة الصفية، واستخدام مصادر التعلم.',
+            indicators: [
+              'إشراك جميع المتعلمين',
+              'تنوع أساليب المشاركة',
+              'عدالة توزيع الفرص وتشجيع الطلاب المنعزلين عن المشاركة'
+            ]
+          }
+        ]
+      },
+      {
+        id: 2,
+        name: 'التدريس والتعلم',
+        standards: [
+          {
+            id: 6,
+            num: 6,
+            text: 'توفر المدرسة مصادر تعلم متنوعة تدعم تنفيذ المناهج؛ لتحقيق نواتج التعلم المستهدفة.',
+            indicators: [
+              'استخدام مصادر تعلم متنوعة داخل الحصة (عرض، فيديو، أوراق عمل، منصة رقمية).',
+              'توظيف المصادر بشكل مباشر لخدمة هدف الدرس وليس للعرض فقط',
+              'يظهر أثر استخدام المصادر على فهم المتعلمين ومشاركتهم أثناء الحصة'
+            ]
+          },
+          {
+            id: 7,
+            num: 7,
+            text: 'ينفذ المعلم أنشطة واستراتيجيات تدريس تستوفي نواتج التعلم المستهدفة في المنهج، وتتسق معها بوضوح.',
+            indicators: [
+              'تنوع الأنشطة والاستراتيجيات المرتبطة بأهداف الدرس.',
+              'وضوح ارتباط الأنشطة بنواتج التعلم.',
+              'تحقق نواتج التعلم من خلال تنفيذ الأنشطة.'
+            ]
+          },
+          {
+            id: 8,
+            num: 8,
+            text: 'تتنوع استراتيجيات التدريس وفقا لقدرات المتعلمين، وتراعي الفروق الفردية بينهم.',
+            indicators: [
+              'تنوع الاستراتيجيات وفق مستويات المتعلمين',
+              'مراعاة الفروق الفردية أثناء التنفيذ',
+              'مشاركة جميع المتعلمين حسب قدراتهم'
+            ]
+          },
+          {
+            id: 9,
+            num: 9,
+            text: 'يستخدم المعلم مصادر تعلم رقمية تلبي احتياجات المتعلمين بمختلف فئاتهم.',
+            indicators: [
+              'استخدام مصادر رقمية متنوعة (منصة، فيديو، تطبيق) تخدم أهداف الدرس.',
+              'تكييف استخدام المصادر الرقمية لتناسب مستويات واحتياجات جميع المتعلمين.'
+            ]
+          },
+          {
+            id: 10,
+            num: 10,
+            text: 'تنفذ المدرسة أنشطة تعليم وتعلم تركز على تطبيقات عملية ترتبط بحياة المتعلمين:',
+            indicators: [
+              'تنفيذ أنشطة عملية يطبق فيها الطلاب ما تعلموه في مواقف من حياتهم اليومية.',
+              'ربط المهارات والدرس بتجارب واقعية (مثل أمثلة من البيت أو المجتمع) لزيادة الفهم.'
+            ]
+          }
+        ]
+      },
+      {
+        id: 3,
+        name: 'تنمية المهارات',
+        standards: [
+          {
+            id: 11,
+            num: 11,
+            text: 'تشجع بيئة التعلم داخل الصف على تنمية مهارات القراءة والكتابة لدى المتعلمين.',
+            indicators: [
+              'تضمين أنشطة قراءة وكتابة مرتبطة بالدرس',
+              'تشجيع المتعلمين على التعبير والكتابة والمشاركة',
+              'تصحيح الأخطاء والسلامة اللغوية'
+            ]
+          },
+          {
+            id: 12,
+            num: 12,
+            text: 'تشجع بيئة التعلم داخل الصف على تنمية المهارات العددية (الحساب) لدى المتعلمين.',
+            indicators: [
+              'دمج أرقام، إحصائيات، أو تواريخ ضمن سياق الدرس لتعزيز الفهم',
+              'تشجيع المتعلمين على استخدام مهارات التقدير (مثل: تقدير زمن المهمة، تقدير المسافات)',
+              'استخدام المتعلمين للمصطلحات العددية (أكثر، أقل، ضعف، نسبة مئوية، الترتيب التسلسلي)'
+            ]
+          },
+          {
+            id: 13,
+            num: 13,
+            text: 'تشجع الممارسات التدريسية على تنمية مهارات التفكير والبحث والابتكار لدى المتعلمين.',
+            indicators: [
+              'طرح أسئلة تفكير عليا (تحليل – تفسير – استنتاج) لماذا؟ كيف؟',
+              'توجيه المتعلمين لاستخراج المعلومات من (الكتاب، مصادر خارجية، أو تجربة ذهنية)',
+              'التشجيع على تقديم حلول غير معتادة أو اقتراح "نهاية مختلفة" أو "تصميم فكرة"'
+            ]
+          },
+          {
+            id: 14,
+            num: 14,
+            text: 'تشجع بيئة التعلم تنمية المهارات العاطفية والاجتماعية لدى المتعلمين.',
+            indicators: [
+              'تعزيز التعاون والعمل الجماعي بين الطلاب وبمهام محددة',
+              'تنمية مهارات التواصل واحترام آراء الآخرين',
+              'دعم الثقة بالنفس والتعبير عن المشاعر بشكل إيجابي'
+            ]
+          },
+          {
+            id: 15,
+            num: 15,
+            text: 'يستخدم المعلم أساليب تحفيز تعزز الدافعية لدى المتعلمين.',
+            indicators: [
+              'يستخدم المعلم التعزيز الإيجابي (لفظي أو معنوي) لتحفيز جميع الطلاب',
+              'يوظف أساليب تشجيعية متنوعة (نقاط – مسابقات – مكافآت - أوسمة)',
+              'النجاح في جعل المتعلمين يبادرون بالمشاركة والحماس للأنشطة طوال وقت الحصة'
+            ]
+          },
+          {
+            id: 16,
+            num: 16,
+            text: 'يشارك المتعلمون في أنشطة التعلم بفاعلية، ويستمتعون بها.',
+            indicators: [
+              'مبادرة المتعلمين للمشاركة وطرح الأسئلة بوضوح وحماس طوال الحصة',
+              'انخراط المتعلمين في تنفيذ الأنشطة الصفية بتركيز عالٍ، مع الالتزام التام بالعمل الجماعي',
+              'ظهور علامات البهجة والارتياح أثناء التعلم، مع الرغبة المستمرة في إكمال التحديات'
+            ]
+          }
+        ]
+      },
+      {
+        id: 4,
+        name: 'التقويم',
+        standards: [
+          {
+            id: 17,
+            num: 17,
+            text: 'يستخدم المعلمون أساليب وأدوات تقويم متنوعة تشخيصية وبنائية وختامية؛ للكشف عن الفروق الفردية في مستويات أداء المتعلمين المختلفة.',
+            indicators: [
+              'استخدام التقويم في كافة مراحل الحصة (قبلي، بنائي أثناء الشرح، وختامي)',
+              'توظيف أدوات متنوعة (مثل: الأسئلة الشفهية، الاختبارات القصيرة أو تطبيقات التقويم التقني).',
+              'تصميم أسئلة ومهام تتناسب مع مستويات الطلاب المختلفة (المحتاجين للدعم، المتوسطين، والمتميزين)'
+            ]
+          },
+          {
+            id: 18,
+            num: 18,
+            text: 'يطبق المعلم أساليب وأدوات تقويم متنوعة؛ لقياس مستوى تحقق نواتج التعلم المستهدفة في المنهج لدى المتعلمين.',
+            indicators: [
+              'يستخدم طرقاً مختلفة للقياس (مثل: الاختبارات القصيرة، الأنشطة الشفهية، أو المهام الأدائية).',
+              'يتأكد أن كل سؤال أو نشاط يقيس فعلياً هدفاً محدداً من أهداف الدرس (نواتج التعلم)',
+              'يستطيع من خلال التقويم تحديد مستوى كل طالب (من أتقن المهارة ومن يحتاج إلى دعم إضافي)'
+            ]
+          },
+          {
+            id: 19,
+            num: 19,
+            text: 'يقدم المعلم تغذية راجعة متنوعة للمتعلمين حسب الموقف التعليمي تركز على تحسين أدائهم.',
+            indicators: [
+              'تقديم التعليق أو التصحيح للمتعلم أثناء أو فور انتهاء المهمة مباشرة لضمان الاستفادة.',
+              'عدم الاكتفاء بقول (صح أو خطأ)، بل يوضح للمتعلم "لماذا" أخطأ وكيف يصحح مساره للوصول للحل الصحيح.',
+              'استخدام طرقاً مختلفة للتغذية الراجعة (مثل: التصحيح الذاتي، تبادل التصحيح بين الزملاء، أو التوجيه الفردي).'
+            ]
+          }
+        ]
+      },
+      {
+        id: 5,
+        name: 'سلوك المتعلمين',
+        standards: [
+          {
+            id: 20,
+            num: 20,
+            text: 'يظهر المتعلمون الاعتزاز بالقيم والهوية الوطنية.',
+            indicators: [
+              'التزام المتعلمين بالتحدث بلغة عربية سليمة طوال زمن الحصة',
+              'اعتزاز المتعلمين بتاريخ ومنجزات الوطن ورموزه في مشاركاتهم وأثناء الأنشطة',
+              'التمسك بالقيم والأخلاق الإسلامية في التعامل والسمت العام'
+            ]
+          },
+          {
+            id: 21,
+            num: 21,
+            text: 'يظهر المتعلمون الاتجاهات الإيجابية نحو ذواتهم والآخرين.',
+            indicators: [
+              'إظهار الثقة بالنفس أثناء المشاركة وطرح الآراء.',
+              'يحترم المتعلمون آراء زملائهم ويتعاملون بإيجابية ويشجعون بعضهم أثناء الأنشطة'
+            ]
+          },
+          {
+            id: 22,
+            num: 22,
+            text: 'يظهر المتعلمون التزاما بالممارسات الصحية السليمة.',
+            indicators: [
+              'المحافظة على نظافة المكان والأدوات، والحرص على بيئة صفية صحية (تهوية وإضاءة).',
+              'الالتزام بوضعية الجلوس الصحيحة، والاهتمام بالنظافة الشخصية والترتيب العام.'
+            ]
+          },
+          {
+            id: 23,
+            num: 23,
+            text: 'يلتزم المتعلمون بقواعد السلوك والانضباط.',
+            indicators: [
+              'الالتزام بالتعليمات والنظام داخل الحصة دون تكرار التنبيه، والمحافظة على الهدوء',
+              'الحرص على آداب الاستئذان قبل المشاركة، والالتزام بمواعيد بدء ونهاية الحصة.'
+            ]
+          },
+          {
+            id: 24,
+            num: 24,
+            text: 'يظهر المتعلمون الاستقلالية، والقدرة على التعلم الذاتي.',
+            indicators: [
+              'الاعتماد على النفس في إنجاز المهام، والبحث عن المعلومة قبل طلب المساعدة.',
+              'القدرة على التقييم الذاتي وتصحيح الأخطاء بناءً على التغذية الراجعة.'
+            ]
+          },
+          {
+            id: 25,
+            num: 25,
+            text: 'يظهر المتعلمون الاعتزاز بثقافتهم واحترام التنوع الثقافي في المجتمع.',
+            indicators: [
+              'التعبير عن الاعتزاز بالثقافة والهوية الوطنية، وإظهار التقدير لثقافات ولهجات الآخرين.',
+              'تجنب أي تعليقات سلبية تجاه الاختلافات الثقافية، والتعامل بروح الانفتاح والاحترام.'
+            ]
+          }
+        ]
+      }
+    ];
+
+    // Official Teachers List (Extracted from: نسخة اسماء المعلمين.xlsx - متوسطة الفلاح بجدة)
+    const DEFAULT_TEACHERS = [
+  {
+    "id": 1,
+    "name": "علي أحمد الغبيشي",
+    "empId": "1091466290",
+    "specialization": "دين",
+    "subject": "دراسات إسلاميه",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "أول متوسط / 2",
+      "ثاني متوسط / 1",
+      "ثاني متوسط / 2",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "سعيد احمد عسيري",
+    "empId": "1030306466",
+    "specialization": "دين",
+    "subject": "دراسات إسلاميه",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "أول متوسط / 2",
+      "ثاني متوسط / 1",
+      "ثاني متوسط / 2",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "عبدالرحمن عبدالله الزهراني",
+    "empId": "1103094635",
+    "specialization": "دين",
+    "subject": "دراسات إسلاميه",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "أول متوسط / 2",
+      "ثاني متوسط / 1",
+      "ثاني متوسط / 2",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "رامي مسفر المالكي",
+    "empId": "1086505797",
+    "specialization": "لغة عربية",
+    "subject": "لغتي + تفكير ناقد",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "أحمد خليفة",
+    "empId": "2153281494",
+    "specialization": "لغة عربية",
+    "subject": "لغتي الخالدة",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "صابر سيد شلبي",
+    "empId": "2372612529",
+    "specialization": "لغة عربية",
+    "subject": "لغتي + تفكير ناقد",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "إبراهيم عطية الزهراني",
+    "empId": "1091377786",
+    "specialization": "الرياضيات",
+    "subject": "الرياضيات",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "نواف معيض السبعي",
+    "empId": "1109109452",
+    "specialization": "الرياضيات",
+    "subject": "الرياضيات",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "نجد علي عبدالله طفيلي",
+    "empId": "1106967605",
+    "specialization": "الرياضيات",
+    "subject": "الرياضيات",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "عبدالعزيز محمد الزهراني",
+    "empId": "1105731119",
+    "specialization": "كيمياء",
+    "subject": "العلوم",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "فهد موسم العتيبي",
+    "empId": "1098004433",
+    "specialization": "احياء",
+    "subject": "علوم",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "حسن زروق",
+    "empId": "2592212944",
+    "specialization": "انجليزي",
+    "subject": "انجليزي",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "هيثم جبر الجابري",
+    "empId": "2320653815",
+    "specialization": "انجليزي",
+    "subject": "انجليزي",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "هاني بخيت الصبحي",
+    "empId": "1098417056",
+    "specialization": "تاريخ",
+    "subject": "اجتماعيات",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "حسام الدين المهدي",
+    "empId": "2422607966",
+    "specialization": "تاريخ",
+    "subject": "اجتماعيات + حياتية",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "سام سعيد عبدالله",
+    "empId": "2473018063",
+    "specialization": "تربية فنية",
+    "subject": "تربية فنية",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "عبدالرحمن محمد الناشري",
+    "empId": "1103094635",
+    "specialization": "تربية بدنية",
+    "subject": "تربية بدنية",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "انور عباس بازي",
+    "empId": "1006843955",
+    "specialization": "رائد نشاط",
+    "subject": "النشاط الطلابي",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "نشاط طلابي"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "أحمد علي سعيد العمري",
+    "empId": "1093830600",
+    "specialization": "موجه طلابي",
+    "subject": "التوجيه الطلابي",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "توجيه طلابي"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "محمد عبدالله الشهري",
+    "empId": "1014624389",
+    "specialization": "محضر مختبر",
+    "subject": "مختبر العلوم",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "مختبر"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "عطية عبدالله الزهراني",
+    "empId": "10000021",
+    "specialization": "سكرتير المدرسة",
+    "subject": "إدارة وسكرتارية",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "إدارة"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "معلم المهارات الرقمية",
+    "empId": "10000022",
+    "specialization": "مهارات رقمية",
+    "subject": "مهارات رقمية",
+    "grade": "المرحلة المتوسطة",
+    "classes": [
+      "أول متوسط / 1",
+      "ثاني متوسط / 1",
+      "ثالث متوسط / 1"
+    ]
+  }
+];
+
+    // Treatment plan template bank
+    const TREATMENT_PLANS = {
+      'بيئة التعلم': {
+        goal: 'تحسين جودة بيئة التعلم وتنظيمها لتكون محفزة وآمنة لجميع المتعلمين',
+        actions: '1. مراجعة توزيع المقاعد بما يضمن عدالة الرؤية والمشاركة.\n2. إثراء الصف بمصادر تعلم مساندة ووسائل حسية متنوعة.\n3. ضبط إدارة زمن الحصة بين مراحل الدرس (تمهيد، تدريس، تطبيق، غلق).',
+        successIndicators: 'ارتفاع متوسط درجات بيئة التعلم إلى 80% أو أعلى في الزيارة القادمة.'
+      },
+      'التدريس والتعلم': {
+        goal: 'تطوير استراتيجيات التدريس الحديثة وتنويعها لتلبية الفروق الفردية واستثمار التقنية',
+        actions: '1. دمج استراتيجيات التعلم النشط (فكر-زاوج-شارك، التعلم التعاوني).\n2. توظيف المنصات والتطبيقات الرقمية التفاعلية المرتبطة بهدف الحصة.\n3. تقديم أمثلة ومهمات أدائية واقعية ترتبط بحياة الطلاب اليومية.',
+        successIndicators: 'تطبيق استراتيجيتين حديثتين مع توظيف التقنية وتوثيق تفاعل المتعلمين بنسبة تتجاوز 85%.'
+      },
+      'تنمية المهارات': {
+        goal: 'الارتقاء بمهارات التفكير العليا والمهارات اللغوية والعددية والشخصية للطلاب',
+        actions: '1. تضمين أسئلة تفكير ناقد وتفكير إبداعي مفتوحة النهاية (لماذا؟ كيف؟).\n2. تفعيل أنشطة القراءة السريعة والكتابة الإجرائية أثناء المهام الصفية.\n3. تشجيع العمل الجماعي وتبادل الأدوار لتعزيز الثقة والتواصل الإيجابي.',
+        successIndicators: 'مبادرة الطلاب في طرح التساؤلات والتحليل بنسبة ملحوظة ورضا المشرف بنسبة 80% فأكثر.'
+      },
+      'التقويم': {
+        goal: 'تفعيل أساليب التقويم المستمر والمتنوع وتقديم التغذية الراجعة الفورية',
+        actions: '1. تطبيق تقويم تشخيصي وتكويني خلال خطوات الحصة للتأكد من فهم كل مهارة.\n2. استخدام أدوات تقويم سريعة (بطاقات الخروج، استبانات إلكترونية، أسئلة شفهية مدرجة).\n3. تقديم تغذية راجعة تفسيرية توضح للطالب سبب الخطأ وكيفية معالجته.',
+        successIndicators: 'حصر وتشخيص مستويات جميع الطلاب وتقديم دعم فوري للمتعثرين وتوثيق ذلك كتابياً.'
+      },
+      'سلوك المتعلمين': {
+        goal: 'تعزيز الانضباط الإيجابي وغرس الهوية الوطنية والمسؤولية الذاتية لدى المتعلمين',
+        actions: '1. وضع وتذكير ميثاق وقواعد السلوك الصفي بالتراضي الإيجابي.\n2. تحفيز التحدث باللغة العربية السليمة وربط مضامين الدرس بالاعتزاز بالوطن.\n3. تمكين الطلاب من إدارة جزء من النشاط الذاتي لترسيخ الاعتماد على النفس.',
+        successIndicators: 'انضباط تام واختفاء الملاحظات السلوكية ومبادرة ذاتية من الطلاب في تنفيذ المهام.'
+      }
+    };
+
+    // Default Visits (Fresh archive for متوسطة الفلاح بجدة)
+    const DEFAULT_VISITS = [];
+
+    // App State
+    let currentEvaluator = JSON.parse(localStorage.getItem('alfalah_jeddah_evaluator') || 'null') || { name: 'عبدالله محمد الجهبلي', role: 'مدير المدرسة' };
+    let scoresState = {}; // { standardId: { score: 1-4, evidence: '', indicators: [] } }
+
+    // Initialize State
+    OFFICIAL_DATA.forEach(d => {
+      d.standards.forEach(s => {
+        scoresState[s.id] = { score: 1, evidence: '', indicators: [] };
+      });
+    });
+
+    let currentActiveVisitId = null;
+
+    // ─── 2. Setup & Lifecycle Functions ───────────────────────────────────────────
+    window.addEventListener('DOMContentLoaded', () => {
+      sanitizeLegacyFeminineTexts();
+      initTeachers();
+      initVisits();
+      initDate();
+      renderDomains();
+      updateEvaluatorDisplay();
+      updateScoreSummary();
+      updateArchiveBadge();
+
+      if (!currentEvaluator) {
+        openEvaluatorModal();
+      }
+    });
+
+    // Auto-migrate & sanitize any old visits or indicators that might have feminine phrasing in local storage
+    function sanitizeLegacyFeminineTexts() {
+      try {
+        if (visitsRaw) {
+          const replacements = [
+            [/تستخدم المعلمة التعزيز الإيجابي \(لفظي أو معنوي\) لتحفيز جميع الطالبات/g, 'يستخدم المعلم التعزيز الإيجابي (لفظي أو معنوي) لتحفيز جميع الطلاب'],
+            [/توظف أساليب تشجيعية متنوعة/g, 'يوظف أساليب تشجيعية متنوعة'],
+            [/تطبق فيها الطالبات ما تعلمنه في مواقف من حياتهن اليومية/g, 'يطبق فيها الطلاب ما تعلموه في مواقف من حياتهم اليومية'],
+            [/التعاون والعمل الجماعي بين الطالبات/g, 'التعاون والعمل الجماعي بين الطلاب'],
+            [/الإعاقة والموهوبات/g, 'الإعاقة والموهوبين'],
+            [/مستويات الطالبات المختلفة \(الضعيفة، المتوسطة، والمتميزة\)/g, 'مستويات الطلاب المختلفة (المحتاجين للدعم، المتوسطين، والمتميزين)'],
+            [/تستخدم طرقاً مختلفة للقياس/g, 'يستخدم طرقاً مختلفة للقياس'],
+            [/تتأكد أن كل سؤال أو نشاط يقيس فعلياً/g, 'يتأكد أن كل سؤال أو نشاط يقيس فعلياً'],
+            [/تستطيع من خلال التقويم تحديد مستوى كل طالبة \(من أتقنت المهارة ومن تحتاج إلى دعم إضافي\)/g, 'يستطيع من خلال التقويم تحديد مستوى كل طالب (من أتقن المهارة ومن يحتاج إلى دعم إضافي)'],
+            [/أخطأت وكيف تصحح مسارها/g, 'أخطأ وكيف يصحح مساره'],
+            [/تبادل التصحيح بين الزميلات/g, 'تبادل التصحيح بين الزملاء'],
+            [/جميع المتعلمون/g, 'جميع المتعلمين'],
+            [/تشجيع المتعلمون/g, 'تشجيع المتعلمين'],
+            [/استخدام المتعلمون/g, 'استخدام المتعلمين'],
+            [/جعل المتعلمون/g, 'جعل المتعلمين'],
+            [/مبادرة المتعلمون/g, 'مبادرة المتعلمين'],
+            [/انخراط المتعلمون/g, 'انخراط المتعلمين'],
+            [/التزام المتعلمون/g, 'التزام المتعلمين'],
+            [/اعتزاز المتعلمون/g, 'اعتزاز المتعلمين']
+          ];
+          let updated = false;
+          replacements.forEach(([regex, rep]) => {
+            if (regex.test(visitsRaw)) {
+              visitsRaw = visitsRaw.replace(regex, rep);
+              updated = true;
+            }
+          });
+          if (updated) {
+            localStorage.setItem('alfalah_jeddah_visits', visitsRaw);
+          }
+        }
+      } catch (err) {
+        console.error('Migration error:', err);
+      }
+    }
+
+    function initTeachers() {
+      let saved = JSON.parse(localStorage.getItem('alfalah_jeddah_teachers') || 'null');
+      const ver = localStorage.getItem('alfalah_jeddah_teachers_ver');
+      if (!saved || saved.length === 0 || ver !== 'v_alfalah_jeddah_2026') {
+        saved = DEFAULT_TEACHERS;
+        localStorage.setItem('alfalah_jeddah_teachers', JSON.stringify(saved));
+        localStorage.setItem('alfalah_jeddah_teachers_ver', 'v_alfalah_jeddah_2026');
+      }
+      const select = document.getElementById('teacherSelect');
+      const prevVal = select.value;
+      select.innerHTML = '<option value="">-- اختر المعلم المزار --</option>';
+      saved.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.textContent = `${t.name} — (${t.subject || t.specialization}) [سجل: ${t.empId}]`;
+        select.appendChild(opt);
+      });
+      if (prevVal) select.value = prevVal;
+    }
+
+    function initVisits() {
+      let saved = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || 'null');
+      const ver = localStorage.getItem('alfalah_jeddah_visits_ver');
+      if (!saved || saved.length === 0 || ver !== 'v_alfalah_jeddah_visits_2026') {
+        let currentVisits = saved || [];
+        const existingKeys = new Set(currentVisits.map(v => `${v.teacherName}_${v.date}_${v.lessonTitle}`));
+        DEFAULT_VISITS.forEach(v => {
+          const key = `${v.teacherName}_${v.date}_${v.lessonTitle}`;
+          if (!existingKeys.has(key)) {
+            currentVisits.push(v);
+            existingKeys.add(key);
+          }
+        });
+        localStorage.setItem('alfalah_jeddah_visits', JSON.stringify(currentVisits));
+        localStorage.setItem('alfalah_jeddah_visits_ver', 'v_alfalah_jeddah_visits_2026');
+      }
+    }
+
+    function openTeachersManagerModal() {
+      renderTeachersListTable();
+      document.getElementById('teachersModal').style.display = 'flex';
+    }
+
+    function closeTeachersManagerModal() {
+      document.getElementById('teachersModal').style.display = 'none';
+    }
+
+    function renderTeachersListTable() {
+      const teachers = JSON.parse(localStorage.getItem('alfalah_jeddah_teachers') || '[]');
+      const tbody = document.getElementById('teachersListTbody');
+      tbody.innerHTML = '';
+      if (teachers.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; padding: 12px; color: var(--gray);">لا يوجد معلمون مسجلون.</td></tr>';
+        return;
+      }
+      teachers.forEach(t => {
+        const tr = document.createElement('tr');
+        tr.style.borderBottom = '1px solid var(--border)';
+        tr.innerHTML = `
+          <td style="padding: 8px; font-weight: 700;">${t.name}</td>
+          <td style="padding: 8px;">${t.subject || '-'}</td>
+          <td style="padding: 8px;">${t.grade || '-'}</td>
+          <td style="padding: 8px; text-align: center;">
+            <button type="button" style="color: var(--danger); background: none; border: none; cursor: pointer; font-size: 1rem;" onclick="deleteTeacher(${t.id})" title="حذف المعلم">🗑</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function addNewTeacher() {
+      const nameInput = document.getElementById('newTeacherName');
+      const empIdInput = document.getElementById('newTeacherEmpId');
+      const subjectInput = document.getElementById('newTeacherSubject');
+      const gradeInput = document.getElementById('newTeacherGrade');
+
+      const name = nameInput.value.trim();
+      if (!name) {
+        alert('يرجى إدخال اسم المعلم أولاً.');
+        return;
+      }
+
+      const teachers = JSON.parse(localStorage.getItem('alfalah_jeddah_teachers') || '[]');
+      const newTeacher = {
+        id: Date.now(),
+        name: name,
+        empId: empIdInput.value.trim() || `10${Date.now().toString().slice(-6)}`,
+        subject: subjectInput.value.trim() || 'عام',
+        grade: gradeInput.value.trim() || 'متوسط',
+        classes: gradeInput.value.trim() ? [gradeInput.value.trim()] : []
+      };
+
+      teachers.push(newTeacher);
+      localStorage.setItem('alfalah_jeddah_teachers', JSON.stringify(teachers));
+
+      nameInput.value = '';
+      empIdInput.value = '';
+      subjectInput.value = '';
+      gradeInput.value = '';
+
+      renderTeachersListTable();
+      initTeachers();
+      document.getElementById('teacherSelect').value = newTeacher.id;
+      handleTeacherChange();
+      closeTeachersManagerModal();
+    }
+
+    function deleteTeacher(id) {
+      if (!confirm('هل أنت متأكد من رغبتك في حذف هذا المعلم؟')) return;
+      let teachers = JSON.parse(localStorage.getItem('alfalah_jeddah_teachers') || '[]');
+      teachers = teachers.filter(t => t.id !== id);
+      localStorage.setItem('alfalah_jeddah_teachers', JSON.stringify(teachers));
+      renderTeachersListTable();
+      initTeachers();
+    }
+
+    function resetTeachersToDefault() {
+      if (!confirm('هل أنت متأكد من استعادة قائمة المعلمين الافتراضية الرسمية؟')) return;
+      localStorage.setItem('alfalah_jeddah_teachers', JSON.stringify(DEFAULT_TEACHERS));
+      localStorage.setItem('alfalah_jeddah_teachers_ver', 'v_alfalah_jeddah_2026');
+      renderTeachersListTable();
+      initTeachers();
+    }
+
+    function initDate() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('visitDate').value = today;
+    }
+
+    function handleTeacherChange() {
+      const select = document.getElementById('teacherSelect');
+      const val = select.value;
+      if (!val) return;
+      const teachers = JSON.parse(localStorage.getItem('alfalah_jeddah_teachers') || '[]');
+      const t = teachers.find(item => item.id == val);
+      if (t) {
+        // Populate subject & subjects datalist
+        const subList = document.getElementById('subjectsDatalist');
+        if (subList) {
+          subList.innerHTML = '';
+          const subjs = t.subject ? t.subject.split('،').map(s => s.trim()) : [];
+          subjs.forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s;
+            subList.appendChild(opt);
+          });
+          document.getElementById('visitSubject').value = subjs[0] || t.subject || '';
+        } else {
+          document.getElementById('visitSubject').value = t.subject || '';
+        }
+
+        // Populate class/grade & classes datalist
+        const classList = document.getElementById('classesDatalist');
+        if (classList) {
+          classList.innerHTML = '';
+          if (t.classes && t.classes.length > 0) {
+            t.classes.forEach(c => {
+              const opt = document.createElement('option');
+              opt.value = c;
+              classList.appendChild(opt);
+            });
+            document.getElementById('visitGrade').value = t.classes[0];
+          } else {
+            document.getElementById('visitGrade').value = t.grade || '';
+          }
+        } else {
+          document.getElementById('visitGrade').value = t.grade || '';
+        }
+      }
+    }
+
+    function openEvaluatorModal() {
+      document.getElementById('evaluatorModal').style.display = 'flex';
+    }
+
+    function selectEvaluator(name, role) {
+      currentEvaluator = { name, role };
+      localStorage.setItem('alfalah_jeddah_evaluator', JSON.stringify(currentEvaluator));
+      updateEvaluatorDisplay();
+      document.getElementById('evaluatorModal').style.display = 'none';
+    }
+
+    function updateEvaluatorDisplay() {
+      const disp = document.getElementById('activeEvaluatorDisplay');
+      if (currentEvaluator) {
+        disp.textContent = `👤 ${currentEvaluator.role}: ${currentEvaluator.name}`;
+      } else {
+        disp.textContent = '👤 لم يتم تحديد المسؤول';
+      }
+    }
+
+    // ─── 3. Render Standards Form ────────────────────────────────────────────────
+    function renderDomains() {
+      const container = document.getElementById('domainsContainer');
+      container.innerHTML = '';
+
+      OFFICIAL_DATA.forEach(domain => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.overflow = 'hidden';
+
+        let html = `
+          <div class="domain-title">
+            <span>المجال ${domain.id}: مجال ${domain.name}</span>
+            <span style="font-size: 0.8rem; background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 12px;" id="domainScoreBadge_${domain.id}">
+              0 / 100
+            </span>
+          </div>
+          <table class="standard-table">
+            <thead>
+              <tr>
+                <th style="width: 50px; text-align: center;">الرقم</th>
+                <th style="text-align: right;">المحور وشواهد الملاحظة</th>
+                <th style="width: 185px; text-align: center;">النتيجة</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        domain.standards.forEach(std => {
+          const state = scoresState[std.id] || { score: 1, indicators: [] };
+          html += `
+            <tr id="row_${std.id}">
+              <td class="standard-num">${std.num}</td>
+              <td class="standard-content">
+                <div class="standard-text">${std.text}</div>
+                <div class="indicators-box">
+                  <div style="font-size: 0.75rem; font-weight: 700; color: var(--gray);">شواهد ومؤشرات الأداء الملاحظة:</div>
+                  ${std.indicators.map((ind, i) => `
+                    <label class="indicator-item">
+                      <input type="checkbox" onchange="toggleIndicator(${std.id}, '${ind.replace(/'/g, "\\'")}', this.checked)" ${state.indicators.includes(ind) ? 'checked' : ''}>
+                      <span>${ind}</span>
+                    </label>
+                  `).join('')}
+                </div>
+                <input type="text" class="form-control" style="font-size: 0.8rem; padding: 6px 10px; margin-top: 8px;" placeholder="ملاحظات وشواهد إضافية..." oninput="setEvidence(${std.id}, this.value)" value="${state.evidence || ''}">
+              </td>
+              <td>
+                <div class="rating-buttons">
+                  <button type="button" class="rating-btn ${state.score === 1 ? 'active-1' : ''}" onclick="setRating(${std.id}, 1)">
+                    ● منخفضة (1)
+                  </button>
+                  <button type="button" class="rating-btn ${state.score === 2 ? 'active-2' : ''}" onclick="setRating(${std.id}, 2)">
+                    ● متوسطة (2)
+                  </button>
+                  <button type="button" class="rating-btn ${state.score === 3 ? 'active-3' : ''}" onclick="setRating(${std.id}, 3)">
+                    ● مرتفعة (3)
+                  </button>
+                  <button type="button" class="rating-btn ${state.score === 4 ? 'active-4' : ''}" onclick="setRating(${std.id}, 4)">
+                    ● مرتفعة جداً (4)
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+        });
+
+        html += `</tbody></table>`;
+        card.innerHTML = html;
+        container.appendChild(card);
+      });
+    }
+
+    function toggleIndicator(standardId, indicator, isChecked) {
+      const state = scoresState[standardId];
+      if (isChecked) {
+        if (!state.indicators.includes(indicator)) state.indicators.push(indicator);
+      } else {
+        state.indicators = state.indicators.filter(i => i !== indicator);
+      }
+
+      // Auto-suggest score based on count of checked indicators
+      let std = null;
+      for (const d of OFFICIAL_DATA) {
+        std = d.standards.find(s => s.id === standardId);
+        if (std) break;
+      }
+      if (std) {
+        const totalInd = std.indicators.length;
+        const checkedCount = state.indicators.length;
+        if (checkedCount === 0) state.score = 1;
+        else if (checkedCount === totalInd) state.score = 4;
+        else if (totalInd === 3) state.score = checkedCount === 1 ? 2 : 3;
+        else if (totalInd === 2) state.score = 3;
+      }
+
+      updateRowButtons(standardId);
+      updateScoreSummary();
+    }
+
+    function setRating(standardId, score) {
+      scoresState[standardId].score = score;
+      updateRowButtons(standardId);
+      updateScoreSummary();
+    }
+
+    function setEvidence(standardId, value) {
+      scoresState[standardId].evidence = value;
+    }
+
+    function updateRowButtons(standardId) {
+      const row = document.getElementById(`row_${standardId}`);
+      if (!row) return;
+      const score = scoresState[standardId].score;
+      const btns = row.querySelectorAll('.rating-btn');
+      btns.forEach((b, idx) => {
+        b.className = 'rating-btn';
+        if (idx + 1 === score) {
+          b.classList.add(`active-${score}`);
+        }
+      });
+    }
+
+    // ─── 4. Live Score Calculation (Out of 100) ──────────────────────────────────
+    function calculateTotals() {
+      let totalPoints = 0; // max 25 * 4 = 100
+      let completedCount = 0;
+      const domainScores = {};
+
+      OFFICIAL_DATA.forEach(d => {
+        let domainSum = 0;
+        d.standards.forEach(s => {
+          const sc = scoresState[s.id].score;
+          if (sc >= 1) {
+            domainSum += sc;
+            completedCount++;
+          }
+        });
+        const domainMax = d.standards.length * 4;
+        const domainPercent = domainMax > 0 ? Math.round((domainSum / domainMax) * 100) : 0;
+        domainScores[d.id] = {
+          sum: domainSum,
+          percent: domainPercent,
+          name: d.name
+        };
+        totalPoints += domainSum;
+      });
+
+      // Total score out of 100:
+      const overallPercent = totalPoints; // exactly out of 100!
+
+      let overallLevel = 'متحقق بدرجة منخفضة';
+      if (overallPercent >= 85) overallLevel = 'متحقق بدرجة مرتفعة جداً';
+      else if (overallPercent >= 65) overallLevel = 'متحقق بدرجة مرتفعة';
+      else if (overallPercent >= 50) overallLevel = 'متحقق بدرجة متوسطة';
+
+      return {
+        totalPoints,
+        overallPercent,
+        overallLevel,
+        completedCount,
+        domainScores
+      };
+    }
+
+    function updateScoreSummary() {
+      const calc = calculateTotals();
+      document.getElementById('liveTotalScore').textContent = calc.totalPoints;
+      document.getElementById('completedStandardsCount').textContent = calc.completedCount;
+      const badge = document.getElementById('liveLevelBadge');
+      badge.textContent = calc.overallLevel;
+
+      // Update Domain Badges
+      OFFICIAL_DATA.forEach(d => {
+        const el = document.getElementById(`domainScoreBadge_${d.id}`);
+        if (el) el.textContent = `${calc.domainScores[d.id].percent} / 100`;
+      });
+    }
+
+    function resetForm() {
+      if (confirm('هل أنت متأكد من رغبتك في إعادة ضبط كامل الدرجات؟')) {
+        OFFICIAL_DATA.forEach(d => {
+          d.standards.forEach(s => {
+            scoresState[s.id] = { score: 1, evidence: '', indicators: [] };
+          });
+        });
+        renderDomains();
+        updateScoreSummary();
+      }
+    }
+
+    // ─── 5. Report & PDF Generation ──────────────────────────────────────────────
+    function finishAndGenerateReport(isArchiveView = false) {
+      const teacherSelect = document.getElementById('teacherSelect');
+      if (!teacherSelect.value) {
+        alert('يرجى اختيار المعلم المزار أولاً.');
+        return;
+      }
+      if (!currentEvaluator) {
+        openEvaluatorModal();
+        return;
+      }
+
+      const calc = calculateTotals();
+
+      // Find teacher
+      const teachers = JSON.parse(localStorage.getItem('alfalah_jeddah_teachers') || '[]');
+      const teacher = teachers.find(t => t.id == teacherSelect.value) || { name: 'المعلم', empId: '-' };
+
+      // Fill Visit General Info in Report
+      const vDate = document.getElementById('visitDate').value || '-';
+      const vPeriod = document.getElementById('visitPeriod') ? document.getElementById('visitPeriod').value : 'الحصة الأولى';
+      const vSubject = document.getElementById('visitSubject').value || teacher.subject || '-';
+      const vGrade = document.getElementById('visitGrade').value || teacher.grade || '-';
+      const vLesson = document.getElementById('visitLesson').value || '-';
+      const visitType = document.getElementById('visitType').value;
+      const vAtt = document.getElementById('visitAttendance').value;
+      const vAbs = document.getElementById('visitAbsence').value;
+
+      document.getElementById('repTeacherName').textContent = teacher.name;
+      document.getElementById('repTeacherId').textContent = teacher.empId || '-';
+      document.getElementById('repSubject').textContent = vSubject;
+      document.getElementById('repGrade').textContent = vGrade + (teacher.specialization && teacher.specialization !== teacher.subject ? ` (تخصص: ${teacher.specialization})` : '');
+      document.getElementById('repLessonTitle').textContent = vLesson;
+      document.getElementById('repDate').textContent = `${vDate} | ${vPeriod}`;
+      document.getElementById('repAttendance').textContent = `الحضور: ${vAtt} | الغياب: ${vAbs}`;
+
+      const todayDate = new Date().toLocaleDateString('ar-SA');
+      document.getElementById('reportMetaSubtitle').textContent = `نوع الزيارة: زيارة ${visitType} | تاريخ الإصدار: ${todayDate}`;
+
+      // Fill Overall Score
+      document.getElementById('repOverallScoreNum').textContent = calc.totalPoints;
+      document.getElementById('repOverallLevelText').textContent = `النتيجة الكلية: ${calc.overallLevel}`;
+      document.getElementById('repOverallScorePercent').textContent = `${calc.totalPoints}%`;
+
+      // Fill Domains Summary Table
+      const summaryTbody = document.getElementById('repDomainSummaryRows');
+      summaryTbody.innerHTML = '';
+      const strengths = [];
+      const weaknesses = [];
+
+      OFFICIAL_DATA.forEach(d => {
+        const ds = calc.domainScores[d.id];
+        let level = 'متحقق بدرجة منخفضة';
+        if (ds.percent >= 85) level = 'متحقق بدرجة مرتفعة جداً';
+        else if (ds.percent >= 65) level = 'متحقق بدرجة مرتفعة';
+        else if (ds.percent >= 50) level = 'متحقق بدرجة متوسطة';
+
+        if (ds.percent >= 75) strengths.push(`${d.name} (${ds.percent}%)`);
+        if (ds.percent < 65) weaknesses.push({ id: d.id, name: d.name, percent: ds.percent, level });
+
+        const tr = document.createElement('tr');
+        tr.style.borderBottom = '1px solid var(--border)';
+        tr.innerHTML = `
+          <td style="padding: 8px 12px; font-weight: 700;">مجال ${d.name}</td>
+          <td style="padding: 8px 12px; text-align: center; font-weight: 800;">${ds.percent} من 100</td>
+          <td style="padding: 8px 12px; text-align: center;">${level}</td>
+          <td style="padding: 8px 12px; text-align: center; font-weight: 700;">${ds.percent}%</td>
+        `;
+        summaryTbody.appendChild(tr);
+      });
+
+      // Strengths & Weaknesses
+      const strList = document.getElementById('repStrengthsList');
+      strList.innerHTML = strengths.length > 0 ? strengths.map(s => `<li>تميز في ${s}</li>`).join('') : '<li>لا توجد نقاط قوة بارزة مسجلة.</li>';
+
+      const weakList = document.getElementById('repWeaknessesList');
+      weakList.innerHTML = weaknesses.length > 0 ? weaknesses.map(w => `<li>يحتاج دعماً في ${w.name} (${w.percent}%)</li>`).join('') : '<li>جميع النطاقات بمستوى مرتفع أو أعلى 👏</li>';
+
+      // Fill Treatment Plan (with editable fields)
+      const planContainer = document.getElementById('repTreatmentPlanContainer');
+      planContainer.innerHTML = '';
+      if (weaknesses.length === 0) {
+        planContainer.innerHTML = `
+          <div style="padding: 14px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; color: #166534; font-size: 0.9rem;">
+            👏 أداء متميز ومكتمل في كافة المجالات. يوصى بالاستمرار على هذا المستوى ونقل الخبرة والممارسات المتميزة للزملاء في التخصص.
+          </div>
+        `;
+      } else {
+        weaknesses.forEach(w => {
+          const tpl = TREATMENT_PLANS[w.name] || {
+            goal: `تحسين وتطوير الأداء في مجال ${w.name}`,
+            actions: '1. عقد جلسة نقاش تفاعلية لتحديد الاحتياج.\n2. تطبيق ممارسات بديلة وتوثيقها.',
+            successIndicators: 'تحسن الملاحظة في الزيارة القادمة.'
+          };
+          const box = document.createElement('div');
+          box.className = 'plan-box';
+          box.innerHTML = `
+            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🎯 خطة علاجية وتطويرية لمجال: ${w.name} (الدرجة: ${w.percent}%)</span>
+              <button type="button" class="no-print" style="background: none; border: none; color: var(--danger); cursor: pointer; font-size: 0.85rem;" onclick="this.closest('.plan-box').remove()">✕ حذف</button>
+            </h4>
+            <div style="font-size: 0.85rem; line-height: 1.6; color: #1e293b;">
+              <div><strong>الهدف الاستراتيجي:</strong> <span contenteditable="true" class="editable-box" title="انقر لتعديل الهدف">${tpl.goal}</span></div>
+              <div style="margin: 6px 0;"><strong>الإجراءات والتدخلات العلاجية:</strong> <div contenteditable="true" class="editable-box" style="white-space: pre-line;" title="انقر لتعديل الإجراءات">${tpl.actions}</div></div>
+              <div><strong>مؤشر التحقق والنجاح:</strong> <span contenteditable="true" class="editable-box" title="انقر لتعديل مؤشر النجاح">${tpl.successIndicators}</span></div>
+            </div>
+          `;
+          planContainer.appendChild(box);
+        });
+      }
+
+      // Visitor Notes & Recommendations
+      const notesContainer = document.getElementById('repNotesContainer');
+      const notesText = document.getElementById('repNotesText');
+      if (notesContainer && notesText) {
+        const allVisits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+        const rec = allVisits.find(item => item.id === currentActiveVisitId);
+        if (rec && rec.notes && rec.notes.trim()) {
+          notesText.textContent = rec.notes;
+          notesContainer.style.display = 'block';
+        } else {
+          notesContainer.style.display = 'none';
+        }
+      }
+
+      // Detailed Standards Table in Report
+      const detContainer = document.getElementById('repDetailedStandardsContainer');
+      detContainer.innerHTML = '';
+      OFFICIAL_DATA.forEach(d => {
+        const sec = document.createElement('div');
+        sec.style.marginBottom = '16px';
+        sec.style.border = '1px solid var(--border)';
+        sec.style.borderRadius = '8px';
+        sec.style.overflow = 'hidden';
+
+        let secHtml = `
+          <div style="background: var(--primary); color: white; padding: 6px 12px; font-size: 0.85rem; font-weight: 800; display: flex; justify-content: space-between;">
+            <span>المجال: ${d.name}</span>
+            <span>الدرجة: ${calc.domainScores[d.id].percent} من 100</span>
+          </div>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.78rem;">
+            <thead>
+              <tr style="background: #f1f5f9; border-bottom: 1px solid var(--border);">
+                <th style="padding: 6px; width: 40px; text-align: center;">م</th>
+                <th style="padding: 6px 10px; text-align: right;">المعيار ومؤشرات الأداء</th>
+                <th style="padding: 6px; width: 140px; text-align: center;">النتيجة</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        d.standards.forEach(s => {
+          const st = scoresState[s.id];
+          const labels = ['', 'متحقق بدرجة منخفضة', 'متحقق بدرجة متوسطة', 'متحقق بدرجة مرتفعة', 'متحقق بدرجة مرتفعة جداً'];
+          const colors = ['', '#dc2626', '#d97706', '#2563eb', '#16a34a'];
+          const bgs = ['', '#fee2e2', '#fef3c7', '#eff6ff', '#dcfce7'];
+
+          secHtml += `
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 6px; text-align: center; font-weight: 700; color: var(--primary);">${s.num}</td>
+              <td style="padding: 6px 10px; line-height: 1.4;">
+                <div style="font-weight: 700; color: #0f172a; margin-bottom: 4px;">${s.text}</div>
+                ${s.indicators.map(ind => `
+                  <div style="font-size: 0.73rem; color: ${st.indicators.includes(ind) ? '#166534' : '#64748b'}; font-weight: ${st.indicators.includes(ind) ? '600' : '400'};">
+                    ${st.indicators.includes(ind) ? '☑' : '☐'} ${ind}
+                  </div>
+                `).join('')}
+                ${st.evidence ? `<div style="color: var(--primary-light); font-size: 0.72rem; margin-top: 2px;">ملاحظة: ${st.evidence}</div>` : ''}
+              </td>
+              <td style="padding: 6px; text-align: center; vertical-align: middle;">
+                <span style="display: inline-block; padding: 2px 8px; border-radius: 12px; background: ${bgs[st.score]}; color: ${colors[st.score]}; font-weight: 700; font-size: 0.74rem;">
+                  ${labels[st.score]}
+                </span>
+                <div style="font-size: 0.7rem; color: var(--gray); margin-top: 2px;">درجة: ${st.score} من 4</div>
+              </td>
+            </tr>
+          `;
+        });
+
+        secHtml += `</tbody></table>`;
+        sec.innerHTML = secHtml;
+        detContainer.appendChild(sec);
+      });
+
+      // Signatures handling (Strictly Visitor & Visited Teacher - without electronic signature images)
+      const isPrincipal = currentEvaluator.role.includes('مدير') || currentEvaluator.name.includes('الجهبلي');
+      const evalTitleEl = document.getElementById('repEvaluatorSignatureTitle');
+      const evalNameEl = document.getElementById('repEvaluatorSignatureName');
+
+      if (evalTitleEl) evalTitleEl.textContent = isPrincipal ? 'مدير المدرسة (المشرف الزائر):' : `${currentEvaluator.role} (المشرف الزائر):`;
+      if (evalNameEl) evalNameEl.textContent = currentEvaluator.name;
+      document.getElementById('repTeacherSignatureName').textContent = teacher.name;
+
+      // Auto-save to archive if fresh visit
+      if (!isArchiveView) {
+        const visitRecord = {
+          id: currentActiveVisitId || Date.now(),
+          date: vDate,
+          period: vPeriod,
+          teacherId: teacher.id,
+          teacherName: teacher.name,
+          teacherEmpId: teacher.empId,
+          subject: vSubject,
+          grade: vGrade,
+          lessonTitle: vLesson,
+          visitType: visitType,
+          attendance: vAtt,
+          absence: vAbs,
+          evaluatorName: currentEvaluator.name,
+          evaluatorRole: currentEvaluator.role,
+          totalScore: calc.totalPoints,
+          overallLevel: calc.overallLevel,
+          domainScores: calc.domainScores,
+          scoresState: JSON.parse(JSON.stringify(scoresState)),
+          strengths,
+          weaknesses
+        };
+        currentActiveVisitId = visitRecord.id;
+        saveVisitToArchive(visitRecord);
+      }
+
+      // Switch View
+      switchView('report');
+    }
+
+    function backToForm() {
+      switchView('form');
+    }
+
+    // ─── 6. View Navigation & Quick Bulk Rate ─────────────────────────────────────
+    function switchView(viewName) {
+      document.getElementById('observationFormView').style.display = viewName === 'form' ? 'block' : 'none';
+      document.getElementById('reportView').style.display = viewName === 'report' ? 'block' : 'none';
+      document.getElementById('archiveView').style.display = viewName === 'archive' ? 'block' : 'none';
+      document.getElementById('dashboardView').style.display = viewName === 'dashboard' ? 'block' : 'none';
+
+      const tabForm = document.getElementById('tabForm');
+      const tabArchive = document.getElementById('tabArchive');
+      const tabDashboard = document.getElementById('tabDashboard');
+
+      if (tabForm) tabForm.className = `nav-tab ${viewName === 'form' ? 'active' : ''}`;
+      if (tabArchive) tabArchive.className = `nav-tab ${viewName === 'archive' ? 'active' : ''}`;
+      if (tabDashboard) tabDashboard.className = `nav-tab ${viewName === 'dashboard' ? 'active' : ''}`;
+
+      if (viewName === 'archive') renderArchiveTable();
+      if (viewName === 'dashboard') renderDashboard();
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function quickBulkRate(score) {
+      OFFICIAL_DATA.forEach(d => {
+        d.standards.forEach(s => {
+          scoresState[s.id].score = score;
+          if (score === 4) {
+            scoresState[s.id].indicators = [...s.indicators];
+          } else if (score === 3) {
+            scoresState[s.id].indicators = s.indicators.slice(0, 2);
+          } else if (score === 2) {
+            scoresState[s.id].indicators = s.indicators.slice(0, 1);
+          } else {
+            scoresState[s.id].indicators = [];
+          }
+        });
+      });
+      renderDomains();
+      updateScoreSummary();
+    }
+
+    function addCustomTreatmentGoal() {
+      const planContainer = document.getElementById('repTreatmentPlanContainer');
+      const customId = Date.now();
+      const box = document.createElement('div');
+      box.className = 'plan-box';
+      box.id = `customPlan_${customId}`;
+      box.innerHTML = `
+        <h4 style="display: flex; justify-content: space-between; align-items: center;">
+          <span>🎯 هدف علاجي وتوصية مخصصة</span>
+          <button type="button" class="no-print" style="background: none; border: none; color: var(--danger); cursor: pointer; font-size: 0.85rem;" onclick="this.closest('.plan-box').remove()">✕ حذف</button>
+        </h4>
+        <div style="font-size: 0.85rem; line-height: 1.6; color: #1e293b;">
+          <div><strong>الهدف الاستراتيجي:</strong> <span contenteditable="true" class="editable-box" title="انقر لتعديل الهدف">تنويع استراتيجيات التدريس النشط وتقديم تغذية راجعة فورية</span></div>
+          <div style="margin: 6px 0;"><strong>الإجراءات والتدخلات العلاجية:</strong> <div contenteditable="true" class="editable-box" style="white-space: pre-line;" title="انقر لتعديل الإجراءات">1. المشاركة في مجتمعات التعلم المهنية داخل المدرسة.\n2. تنفيذ تدريس مصغر وتطبيق نماذج تدريسية تفاعلية.</div></div>
+          <div><strong>مؤشر التحقق والنجاح:</strong> <span contenteditable="true" class="editable-box" title="انقر لتعديل مؤشر النجاح">تطبيق استراتيجيتين إضافيتين وتوثيق أثرهما في الزيارة الصفية القادمة.</span></div>
+        </div>
+      `;
+      planContainer.appendChild(box);
+    }
+
+    // ─── 7. Archive & Visits History Management ───────────────────────────────────
+    function saveVisitToArchive(record) {
+      let visits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+      const idx = visits.findIndex(v => v.id === record.id);
+      if (idx >= 0) {
+        visits[idx] = record;
+      } else {
+        visits.unshift(record);
+      }
+      localStorage.setItem('alfalah_jeddah_visits', JSON.stringify(visits));
+      updateArchiveBadge();
+    }
+
+    function updateArchiveBadge() {
+      const visits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+      const badge = document.getElementById('archiveCountBadge');
+      if (badge) badge.textContent = visits.length;
+    }
+
+    function startNewFreshVisit() {
+      currentActiveVisitId = null;
+      resetForm();
+      document.getElementById('teacherSelect').value = '';
+      document.getElementById('visitSubject').value = '';
+      document.getElementById('visitGrade').value = '';
+      document.getElementById('visitLesson').value = '';
+      switchView('form');
+    }
+
+    function renderArchiveTable() {
+      const visits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+      const search = (document.getElementById('archiveSearchInput')?.value || '').trim().toLowerCase();
+      const filterEval = document.getElementById('archiveEvaluatorFilter')?.value || 'all';
+
+      const tbody = document.getElementById('archiveTableTbody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const filtered = visits.filter(v => {
+        const matchSearch = !search ||
+          v.teacherName.toLowerCase().includes(search) ||
+          v.subject.toLowerCase().includes(search) ||
+          v.grade.toLowerCase().includes(search) ||
+          v.evaluatorName.toLowerCase().includes(search);
+        const matchEval = filterEval === 'all' || v.evaluatorName === filterEval;
+        return matchSearch && matchEval;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 24px; color: var(--gray);">
+              لا توجد زيارات مسجلة تطابق البحث. يمكنك الضغط على "بدء زيارة صفية جديدة".
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      filtered.forEach((v, index) => {
+        const tr = document.createElement('tr');
+        tr.style.borderBottom = '1px solid var(--border)';
+
+        let badgeBg = '#fee2e2', badgeColor = '#dc2626';
+        if (v.totalScore >= 85) { badgeBg = '#dcfce7'; badgeColor = '#16a34a'; }
+        else if (v.totalScore >= 65) { badgeBg = '#eff6ff'; badgeColor = '#2563eb'; }
+        else if (v.totalScore >= 50) { badgeBg = '#fef3c7'; badgeColor = '#d97706'; }
+
+        tr.innerHTML = `
+          <td style="padding: 10px; text-align: center; font-weight: 700; color: var(--gray);">${index + 1}</td>
+          <td style="padding: 10px;">
+            <div style="font-weight: 700; color: var(--dark);">${v.date}</div>
+            <div style="font-size: 0.75rem; color: var(--gray);">${v.period || 'الحصة الأولى'}</div>
+          </td>
+          <td style="padding: 10px; font-weight: 800; color: var(--primary);">${v.teacherName}</td>
+          <td style="padding: 10px;">
+            <div>${v.subject}</div>
+            <div style="font-size: 0.75rem; color: var(--gray);">${v.grade}</div>
+          </td>
+          <td style="padding: 10px;">
+            <div style="font-weight: 600;">${v.evaluatorName}</div>
+            <div style="font-size: 0.72rem; color: var(--gray);">${v.evaluatorRole}</div>
+          </td>
+          <td style="padding: 10px; text-align: center;">
+            <span style="display: inline-block; padding: 4px 10px; border-radius: 12px; background: ${badgeBg}; color: ${badgeColor}; font-weight: 800; font-size: 0.85rem;">
+              ${v.totalScore} / 100
+            </span>
+            <div style="font-size: 0.7rem; color: var(--gray); margin-top: 2px;">${v.overallLevel}</div>
+          </td>
+          <td style="padding: 10px; text-align: center;">
+            <div style="display: flex; gap: 6px; justify-content: center;">
+              <button type="button" class="btn btn-outline" style="padding: 4px 8px; font-size: 0.78rem;" onclick="viewVisitFromArchive(${v.id})" title="عرض التقرير وطباعة PDF">
+                👁 عرض التقرير
+              </button>
+              <button type="button" class="btn btn-outline" style="padding: 4px 8px; font-size: 0.78rem; color: var(--danger); border-color: #fca5a5;" onclick="deleteVisitFromArchive(${v.id})" title="حذف الزيارة">
+                🗑
+              </button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function viewVisitFromArchive(visitId) {
+      const visits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+      const v = visits.find(item => item.id === visitId);
+      if (!v) return;
+
+      currentActiveVisitId = v.id;
+      currentEvaluator = { name: v.evaluatorName, role: v.evaluatorRole };
+      scoresState = JSON.parse(JSON.stringify(v.scoresState));
+
+      document.getElementById('teacherSelect').value = v.teacherId;
+      document.getElementById('visitSubject').value = v.subject;
+      document.getElementById('visitGrade').value = v.grade;
+      document.getElementById('visitLesson').value = v.lessonTitle || '';
+      document.getElementById('visitDate').value = v.date;
+      if (document.getElementById('visitPeriod')) document.getElementById('visitPeriod').value = v.period || 'الحصة الأولى';
+      if (document.getElementById('visitType')) document.getElementById('visitType').value = v.visitType || 'أولى';
+      if (document.getElementById('visitAttendance')) document.getElementById('visitAttendance').value = v.attendance || 28;
+      if (document.getElementById('visitAbsence')) document.getElementById('visitAbsence').value = v.absence || 2;
+
+      renderDomains();
+      updateScoreSummary();
+      finishAndGenerateReport(true);
+    }
+
+    function deleteVisitFromArchive(visitId) {
+      if (!confirm('هل أنت متأكد من حذف هذه الزيارة من السجل؟')) return;
+      let visits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+      visits = visits.filter(v => v.id !== visitId);
+      localStorage.setItem('alfalah_jeddah_visits', JSON.stringify(visits));
+      updateArchiveBadge();
+      renderArchiveTable();
+      renderDashboard();
+    }
+
+    function clearAllArchiveVisits() {
+      if (!confirm('تحذير: هل أنت متأكد من مسح جميع الزيارات المؤرشفة؟')) return;
+      localStorage.setItem('alfalah_jeddah_visits', JSON.stringify([]));
+      updateArchiveBadge();
+      renderArchiveTable();
+      renderDashboard();
+    }
+
+    // ─── 8. Analytics Dashboard Calculation ───────────────────────────────────────
+    function renderDashboard() {
+      const visits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+      const total = visits.length;
+
+      document.getElementById('dashTotalVisits').textContent = total;
+
+      if (total === 0) {
+        document.getElementById('dashAvgScore').innerHTML = `0 <span style="font-size: 0.85rem; color: var(--gray);">من 100</span>`;
+        document.getElementById('dashHighPercent').textContent = '0%';
+        document.getElementById('dashTeachersCovered').innerHTML = `0 <span style="font-size: 0.85rem; color: var(--gray);">/ 24</span>`;
+        document.getElementById('dashEvaluatorsList').innerHTML = '<div style="color: var(--gray); text-align: center; padding: 16px;">لا توجد زيارات مسجلة حتى الآن.</div>';
+        document.getElementById('dashDomainsList').innerHTML = '<div style="color: var(--gray); text-align: center; padding: 16px;">لا توجد زيارات مسجلة حتى الآن.</div>';
+        document.getElementById('dashTopStandardsList').innerHTML = '<div style="color: var(--gray); text-align: center; padding: 16px;">لا توجد بيانات مسجلة.</div>';
+        document.getElementById('dashLowestStandardsList').innerHTML = '<div style="color: var(--gray); text-align: center; padding: 16px;">لا توجد بيانات مسجلة.</div>';
+        return;
+      }
+
+      // 1. General Metrics
+      const sumScore = visits.reduce((acc, v) => acc + (v.totalScore || 0), 0);
+      const avg = Math.round(sumScore / total);
+      document.getElementById('dashAvgScore').innerHTML = `${avg} <span style="font-size: 0.85rem; color: var(--gray);">من 100</span>`;
+
+      const highCount = visits.filter(v => v.totalScore >= 65).length;
+      const highPct = Math.round((highCount / total) * 100);
+      document.getElementById('dashHighPercent').textContent = `${highPct}%`;
+
+      const uniqueTeachers = new Set(visits.map(v => v.teacherName)).size;
+      document.getElementById('dashTeachersCovered').innerHTML = `${uniqueTeachers} <span style="font-size: 0.85rem; color: var(--gray);">/ 24</span>`;
+
+      // 2. Evaluators Breakdown
+      const evalCounts = {};
+      visits.forEach(v => {
+        evalCounts[v.evaluatorName] = (evalCounts[v.evaluatorName] || 0) + 1;
+      });
+      const evalList = document.getElementById('dashEvaluatorsList');
+      evalList.innerHTML = '';
+      const evaluators = [
+        { name: 'عبدالله محمد الجهبلي', role: 'مدير المدرسة' },
+        { name: 'حسن محمد محنشي', role: 'وكيل المدرسة' }
+      ];
+      evaluators.forEach(e => {
+        const c = evalCounts[e.name] || 0;
+        const pct = total > 0 ? Math.round((c / total) * 100) : 0;
+        const row = document.createElement('div');
+        row.style.marginBottom = '12px';
+        row.innerHTML = `
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+            <span style="font-weight: 700;">${e.name} (${e.role})</span>
+            <span style="font-weight: 800; color: var(--primary);">${c} زيارة (${pct}%)</span>
+          </div>
+          <div style="background: #e2e8f0; border-radius: 6px; height: 8px; overflow: hidden;">
+            <div style="background: var(--primary); width: ${pct}%; height: 100%;"></div>
+          </div>
+        `;
+        evalList.appendChild(row);
+      });
+
+      // 3. Domains Averages
+      const domainTotals = {};
+      OFFICIAL_DATA.forEach(d => { domainTotals[d.id] = { sum: 0, count: 0, name: d.name }; });
+      visits.forEach(v => {
+        if (v.domainScores) {
+          Object.keys(v.domainScores).forEach(dId => {
+            if (domainTotals[dId]) {
+              domainTotals[dId].sum += v.domainScores[dId].percent;
+              domainTotals[dId].count++;
+            }
+          });
+        }
+      });
+
+      const domList = document.getElementById('dashDomainsList');
+      domList.innerHTML = '';
+      OFFICIAL_DATA.forEach(d => {
+        const info = domainTotals[d.id];
+        const domAvg = info.count > 0 ? Math.round(info.sum / info.count) : 0;
+        let color = '#dc2626';
+        if (domAvg >= 85) color = '#16a34a';
+        else if (domAvg >= 65) color = '#2563eb';
+        else if (domAvg >= 50) color = '#d97706';
+
+        const row = document.createElement('div');
+        row.style.marginBottom = '10px';
+        row.innerHTML = `
+          <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;">
+            <span style="font-weight: 700;">مجال ${info.name}</span>
+            <span style="font-weight: 800; color: ${color};">${domAvg}%</span>
+          </div>
+          <div style="background: #e2e8f0; border-radius: 6px; height: 8px; overflow: hidden;">
+            <div style="background: ${color}; width: ${domAvg}%; height: 100%;"></div>
+          </div>
+        `;
+        domList.appendChild(row);
+      });
+
+      // 4. Standards Breakdown for Training Needs Analysis
+      const stdScores = {};
+      visits.forEach(v => {
+        if (v.scoresState) {
+          Object.keys(v.scoresState).forEach(stdId => {
+            if (!stdScores[stdId]) stdScores[stdId] = { sum: 0, count: 0 };
+            stdScores[stdId].sum += v.scoresState[stdId].score;
+            stdScores[stdId].count++;
+          });
+        }
+      });
+
+      const stdAvgList = [];
+      OFFICIAL_DATA.forEach(d => {
+        d.standards.forEach(s => {
+          const entry = stdScores[s.id];
+          if (entry && entry.count > 0) {
+            const stdAvg = entry.sum / entry.count;
+            stdAvgList.push({ id: s.id, num: s.num, text: s.text, domain: d.name, avg: stdAvg });
+          }
+        });
+      });
+
+      stdAvgList.sort((a, b) => b.avg - a.avg);
+
+      const topListEl = document.getElementById('dashTopStandardsList');
+      topListEl.innerHTML = '';
+      const top3 = stdAvgList.slice(0, 3);
+      if (top3.length === 0) topListEl.innerHTML = '<div style="color: var(--gray); padding: 8px;">لا توجد بيانات كافية بعد.</div>';
+      else {
+        top3.forEach(s => {
+          const pct = Math.round((s.avg / 4) * 100);
+          topListEl.innerHTML += `
+            <div style="padding: 8px 12px; background: #f0fdf4; border-radius: 6px; border: 1px solid #bbf7d0; margin-bottom: 6px;">
+              <div style="font-weight: 700; color: #166534;">معيار ${s.num}: ${s.text}</div>
+              <div style="font-size: 0.75rem; color: #15803d; margin-top: 2px;">نسبة التحقق: <strong>${pct}%</strong> (${s.avg.toFixed(1)} / 4) | مجال ${s.domain}</div>
+            </div>
+          `;
+        });
+      }
+
+      const lowListEl = document.getElementById('dashLowestStandardsList');
+      lowListEl.innerHTML = '';
+      const lowest3 = [...stdAvgList].reverse().slice(0, 3);
+      if (lowest3.length === 0) lowListEl.innerHTML = '<div style="color: var(--gray); padding: 8px;">لا توجد بيانات كافية بعد.</div>';
+      else {
+        lowest3.forEach(s => {
+          const pct = Math.round((s.avg / 4) * 100);
+          lowListEl.innerHTML += `
+            <div style="padding: 8px 12px; background: #fffbeb; border-radius: 6px; border: 1px solid #fde68a; margin-bottom: 6px;">
+              <div style="font-weight: 700; color: #92400e;">معيار ${s.num}: ${s.text}</div>
+              <div style="font-size: 0.75rem; color: #b45309; margin-top: 2px;">نسبة التحقق: <strong>${pct}%</strong> (${s.avg.toFixed(1)} / 4) — يوصى ببرنامج تدريبي وتطويري</div>
+            </div>
+          `;
+        });
+      }
+    }
+
+    // ─── 9. Export to Excel (CSV) & Full Backup / Restore ────────────────────────
+    function exportVisitsToCSV() {
+      const visits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+      if (visits.length === 0) {
+        alert('لا توجد أي زيارات محفوظة في السجل لتصديرها حالياً.');
+        return;
+      }
+
+      const headers = [
+        'رقم الزيارة',
+        'تاريخ الزيارة',
+        'رقم الحصة',
+        'المعلم المزار',
+        'رقم الهوية',
+        'المادة الدراسية',
+        'الصف والفصل',
+        'عنوان الدرس',
+        'نوع الزيارة',
+        'عدد الحضور',
+        'عدد الغياب',
+        'المشرف الزائر',
+        'صفة المشرف',
+        'الدرجة الكلية (من 100)',
+        'مستوى التحقق',
+        'درجة بيئة التعلم (%)',
+        'درجة التدريس والتعلم (%)',
+        'درجة تنمية المهارات (%)',
+        'درجة التقويم (%)',
+        'درجة سلوك المتعلمين (%)',
+        'نقاط القوة',
+        'مجالات التحسين'
+      ];
+
+      function escapeCSV(val) {
+        if (val === null || val === undefined) return '""';
+        const str = String(val).replace(/"/g, '""');
+        return `"${str}"`;
+      }
+
+      const rows = [headers.map(escapeCSV).join(',')];
+
+      visits.forEach((v, idx) => {
+        const dScores = v.domainScores || {};
+        const d1 = dScores[1] ? dScores[1].percent : '-';
+        const d2 = dScores[2] ? dScores[2].percent : '-';
+        const d3 = dScores[3] ? dScores[3].percent : '-';
+        const d4 = dScores[4] ? dScores[4].percent : '-';
+        const d5 = dScores[5] ? dScores[5].percent : '-';
+
+        const strengthsText = (v.strengths || []).join(' | ');
+        const weaknessesText = (v.weaknesses || []).map(w => `${w.name} (${w.percent}%)`).join(' | ');
+
+        const row = [
+          idx + 1,
+          v.date,
+          v.period || 'الحصة الأولى',
+          v.teacherName,
+          v.teacherEmpId || '-',
+          v.subject,
+          v.grade,
+          v.lessonTitle || '-',
+          v.visitType || 'أولى',
+          v.attendance || 0,
+          v.absence || 0,
+          v.evaluatorName,
+          v.evaluatorRole,
+          v.totalScore,
+          v.overallLevel,
+          d1,
+          d2,
+          d3,
+          d4,
+          d5,
+          strengthsText,
+          weaknessesText
+        ];
+        rows.push(row.map(escapeCSV).join(','));
+      });
+
+      // UTF-8 with BOM for Excel Arabic compatibility
+      const csvContent = '\uFEFF' + rows.join('\r\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const today = new Date().toISOString().split('T')[0];
+      a.href = url;
+      a.download = `زيارات_متوسطة_الفلاح_بجدة_${today}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function exportBackupJSON() {
+      const visits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+      const teachers = JSON.parse(localStorage.getItem('alfalah_jeddah_teachers') || '[]');
+      const evaluator = JSON.parse(localStorage.getItem('alfalah_jeddah_evaluator') || 'null');
+
+      const backupData = {
+        app: 'alfalah_jeddah_classroom_visits',
+        version: '2.0',
+        exportedAt: new Date().toISOString(),
+        school: 'متوسطة الفلاح بجدة',
+        evaluator: evaluator,
+        teachers: teachers,
+        visits: visits
+      };
+
+      const jsonStr = JSON.stringify(backupData, null, 2);
+      const blob = new Blob([jsonStr], { type: 'application/json;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const today = new Date().toISOString().split('T')[0];
+      a.href = url;
+      a.download = `نسخة_احتياطية_متوسطة_الفلاح_بجدة_${today}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function triggerImportBackup() {
+      const input = document.getElementById('backupFileInput');
+      if (input) {
+        input.value = '';
+        input.click();
+      }
+    }
+
+    function handleImportBackupFile(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (!data || (!data.visits && !Array.isArray(data))) {
+            alert('الملف المحدد غير صالح كنسخة احتياطية لنظام الزيارات.');
+            return;
+          }
+
+          const importedVisits = data.visits || (Array.isArray(data) ? data : []);
+          const importedTeachers = data.teachers || [];
+
+          const choice = confirm(
+            `تم العثور على (${importedVisits.length}) زيارة و (${importedTeachers.length}) معلماً بالملف.\n\n` +
+            `اضغط "موافق (OK)" للدمج مع البيانات الحالية، أو "إلغاء الأمر (Cancel)" للاستبدال الكامل.`
+          );
+
+          let currentVisits = JSON.parse(localStorage.getItem('alfalah_jeddah_visits') || '[]');
+          let currentTeachers = JSON.parse(localStorage.getItem('alfalah_jeddah_teachers') || '[]');
+
+          if (choice) {
+            // Merge mode: Add visits that don't exist by ID
+            const existingVisitIds = new Set(currentVisits.map(v => v.id));
+            importedVisits.forEach(v => {
+              if (!existingVisitIds.has(v.id)) {
+                currentVisits.push(v);
+              }
+            });
+
+            // Merge teachers by name
+            const existingTeacherNames = new Set(currentTeachers.map(t => t.name));
+            importedTeachers.forEach(t => {
+              if (!existingTeacherNames.has(t.name)) {
+                currentTeachers.push(t);
+              }
+            });
+          } else {
+            // Overwrite mode
+            if (importedVisits.length > 0) currentVisits = importedVisits;
+            if (importedTeachers.length > 0) currentTeachers = importedTeachers;
+          }
+
+                    // Normalize evaluator names in imported visits
+          currentVisits.forEach(v => {
+            if (v.evaluatorName && v.evaluatorName.includes('الجهبلي')) {
+              v.evaluatorName = 'عبدالله محمد الجهبلي';
+            }
+            if (v.evaluatorName && v.evaluatorName.includes('محنشي')) {
+              v.evaluatorName = 'حسن محمد محنشي';
+            }
+          });
+
+          localStorage.setItem('alfalah_jeddah_visits', JSON.stringify(currentVisits));
+          if (currentTeachers.length > 0) {
+            localStorage.setItem('alfalah_jeddah_teachers', JSON.stringify(currentTeachers));
+          }
+
+          updateArchiveBadge();
+          initTeachers();
+          renderArchiveTable();
+          renderDashboard();
+
+          alert(`✅ تم استيراد البيانات بنجاح!\nإجمالي الزيارات الآن: ${currentVisits.length}`);
+        } catch (err) {
+          alert('حدث خطأ أثناء قراءة ملف النسخة الاحتياطية: ' + err.message);
+        }
+      };
+      reader.readAsText(file, 'utf-8');
+    }
+  </script>
+</body>
+</html>

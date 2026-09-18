@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة رصد الاختبار التشخيصي وتحليل الفاقد التعليمي | متوسطة الفلاح بمكة</title>
+  
+  <!-- Google Fonts: Cairo & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Chart.js for High-End Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+  <!-- Background Glow Accents -->
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- Header & Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="logo-emblem">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="brand-text">
+          <h1>منصة الاختبار التشخيصي وتحليل الفاقد التعليمي</h1>
+          <p>متوسطة الفلاح بمكة المكرمة — مادة اللغة الإنجليزية — الفصل الأول 1448هـ</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="btn-icon" title="تبديل المظهر (ليلي / نهاري)">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="btnPrintCenter" class="btn btn-outline" style="border-color: #3b82f6; color: #60a5fa; font-weight: 600;" title="خيارات الطباعة المستقلة لكل تقرير">
+          <i class="fa-solid fa-print"></i>
+          <span>مركز الطباعة</span>
+        </button>
+        <button id="btnJumpToFinalReport" class="btn btn-outline" style="color: var(--text-main);" title="الانتقال المباشر للتقرير الختامي بنهاية الصفحة">
+          <i class="fa-solid fa-file-signature"></i>
+          <span>التقرير الختامي بالأسفل</span>
+        </button>
+        <button id="showReportBtn" class="btn btn-primary" style="background: linear-gradient(135deg, #059669, #10b981);">
+          <i class="fa-solid fa-file-contract"></i>
+          <span>التقرير الختامي الشامل (نافذة)</span>
+        </button>
+        <button id="exportCsvBtn" class="btn btn-outline" title="تحميل ملف الإكسل للكشف">
+          <i class="fa-solid fa-file-excel"></i>
+          <span>تصدير Excel</span>
+        </button>
+        <button id="showKeyBtn" class="btn btn-primary">
+          <i class="fa-solid fa-key"></i>
+          <span>نموذج الإجابة والمعايير</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    <!-- Class Selector Tabs & Filters -->
+    <section class="controls-card">
+      <div class="class-tabs">
+        <button class="tab-btn active" data-class="class_2_3">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>الصف الثاني متوسط / 3</span>
+          <span class="badge" id="badgeCount_2_3">26 طالب</span>
+        </button>
+        <button class="tab-btn" data-class="class_2_4">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>الصف الثاني متوسط / 4</span>
+          <span class="badge" id="badgeCount_2_4">27 طالب</span>
+        </button>
+        <button class="tab-btn" data-class="class_3_3">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>الصف الثالث متوسط / 3</span>
+          <span class="badge" id="badgeCount_3_3">28 طالب</span>
+        </button>
+        <button class="tab-btn" data-class="class_3_4">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>الصف الثالث متوسط / 4</span>
+          <span class="badge" id="badgeCount_3_4">28 طالب</span>
+        </button>
+        <button class="tab-btn" data-class="comparison">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>الرسوم البيانية والمقارنة الشاملة</span>
+        </button>
+        <button class="tab-btn" data-class="remedial_hub">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span>مركز الخطط العلاجية</span>
+        </button>
+        <button class="tab-btn" data-class="final_report">
+          <i class="fa-solid fa-file-contract"></i>
+          <span>التقرير الختامي الشامل الإضافي</span>
+        </button>
+      </div>
+
+      <div class="search-filter-bar" id="searchFilterBar">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="ابحث باسم الطالب أو رقم القيد...">
+        </div>
+        <div class="filter-group">
+          <select id="levelFilter" class="custom-select">
+            <option value="all">جميع المستويات</option>
+            <option value="متقن">المتقنون (>= 85%)</option>
+            <option value="متوسط / متمكن">المتوسطون (60-84%)</option>
+            <option value="يحتاج دعم وتدخل">يحتاج دعم (< 60%)</option>
+            <option value="غائب">الطلاب الغائبون</option>
+          </select>
+          <select id="sortFilter" class="custom-select">
+            <option value="id_asc">ترتيب حسب: رقم الكشف (تصاعدي)</option>
+            <option value="id_desc">ترتيب حسب: رقم الكشف (تنازلي)</option>
+            <option value="score_desc">ترتيب حسب: الدرجة (الأعلى أولاً)</option>
+            <option value="score_asc">ترتيب حسب: الدرجة (الأقل أولاً)</option>
+            <option value="name_asc">ترتيب حسب: الاسم (أبجدياً)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top KPI Dashboard Cards -->
+    <section class="stats-grid" id="statsGrid">
+      <!-- Injected dynamically via JS -->
+    </section>
+
+    <!-- Chart Visualization Grid (Interactive Charts with Chart.js) -->
+    <section class="charts-dashboard" id="chartsDashboard">
+      <div class="charts-grid-main">
+        <!-- Chart 1: Mastery Level Distribution (Donut) -->
+        <div class="chart-box">
+          <div class="chart-box-header">
+            <div class="chart-box-title">
+              <i class="fa-solid fa-chart-pie"></i>
+              <h3>توزيع مستويات الإتقان للطلاب</h3>
+            </div>
+            <span class="chart-hint" id="chart1Hint">الفصل الحالي</span>
+          </div>
+          <div class="chart-canvas-wrapper" style="height: 260px;">
+            <canvas id="masteryChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Skills Comparison Radar -->
+        <div class="chart-box">
+          <div class="chart-box-header">
+            <div class="chart-box-title">
+              <i class="fa-solid fa-radar"></i>
+              <h3>مستوى إتقان المهارات الأربعة</h3>
+            </div>
+            <span class="chart-hint">فهم المقروء، المفردات، القواعد، الإملاء</span>
+          </div>
+          <div class="chart-canvas-wrapper" style="height: 260px;">
+            <canvas id="skillsRadarChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Charts Row: Comparison & Score Distribution -->
+      <div class="charts-grid-main" style="margin-top: 1.5rem;">
+        <!-- Chart 4: Comparative Skills Chart (Class 2/3 vs 2/4) -->
+        <div class="chart-box">
+          <div class="chart-box-header">
+            <div class="chart-box-title">
+              <i class="fa-solid fa-chart-simple"></i>
+              <h3>مقارنة إتقان المهارات بين الصفوف (2/3 و 2/4 و 3/3 و 3/4)</h3>
+            </div>
+            <span class="chart-hint">مقارنة بالأعمدة المزدوجة</span>
+          </div>
+          <div class="chart-canvas-wrapper" style="height: 260px;">
+            <canvas id="comparisonSkillsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 5: Score Distribution Histogram -->
+        <div class="chart-box">
+          <div class="chart-box-header">
+            <div class="chart-box-title">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <h3>المنحنى التكراري لتوزيع فئات الدرجات</h3>
+            </div>
+            <span class="chart-hint">تركز أعداد الطلاب حسب فئات الدرجة</span>
+          </div>
+          <div class="chart-canvas-wrapper" style="height: 260px;">
+            <canvas id="scoreDistChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart 3: Question Error Rates (Horizontal Bars) -->
+      <div class="chart-box" style="margin-top: 1.5rem;">
+        <div class="chart-box-header">
+          <div class="chart-box-title">
+            <i class="fa-solid fa-chart-column"></i>
+            <h3>مصفوفة الفاقد التعليمي: نسبة الخطأ في كل سؤال (س1 - س20)</h3>
+          </div>
+          <span class="chart-hint">انقر على أي عمود لتصفية الطلاب الذين أخطأوا في هذا السؤال مباشرة</span>
+        </div>
+        <div class="chart-canvas-wrapper" style="height: 320px;">
+          <canvas id="questionsErrorChart"></canvas>
+        </div>
+
+        <!-- Dynamic Filter Alert Banner -->
+        <div id="chartFilterAlert" class="chart-filter-alert" style="display: none;">
+          <div class="alert-content">
+            <i class="fa-solid fa-filter-circle-dollar"></i>
+            <span>يتم الآن عرض الطلاب الذين أخطأوا في <strong><span id="filterQuestionText">السؤال</span></strong></span>
+          </div>
+          <button class="btn btn-outline btn-sm" id="clearChartFilterBtn">
+            <i class="fa-solid fa-rotate-left"></i> إلغاء التصفية وعرض الكل
+          </button>
+        </div>
+      </div>
+
+      <!-- Visual Loss Severity Matrix -->
+      <div class="chart-box" style="margin-top: 1.5rem;">
+        <div class="chart-box-header">
+          <div class="chart-box-title">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>المصفوفة البصرية لتصنيف الأسئلة حسب شدة الفاقد</h3>
+          </div>
+          <span class="chart-hint">تصنيف سريع وفق معايير وزارة التعليم: حرج (أحمر) - متوسط (برتقالي) - متقن (أخضر)</span>
+        </div>
+        <div class="loss-matrix-grid" id="lossMatrixBadgesGrid">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Class Diagnostic Matrix Section -->
+    <section class="matrix-card" id="matrixSection">
+      <div class="card-header">
+        <div class="card-title">
+          <i class="fa-solid fa-table-list"></i>
+          <h2 id="currentClassTitle">مصفوفة الرصد والمهارات الفردية</h2>
+        </div>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+          <button id="btnPrintCurrentClassRoster" class="btn btn-outline btn-sm" style="border-color: #10b981; color: #10b981; font-weight: 600;" title="طباعة كشف درجات ورصد مهارات الفصل الحالي بنسخة ورقية A4">
+            <i class="fa-solid fa-print"></i>
+            <span>طباعة كشف درجات الفصل</span>
+          </button>
+          <div class="matrix-summary-pill" id="matrixPillSummary">
+            عرض 24 طالباً حاضراً
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="diagnostic-table">
+          <thead>
+            <tr>
+              <th style="width: 70px;">رقم الكشف</th>
+              <th>اسم الطالب</th>
+              <th style="width: 100px;">الحالة</th>
+              <th>فهم المقروء (4)</th>
+              <th>المفردات (6)</th>
+              <th>القواعد (6)</th>
+              <th>الإملاء (4)</th>
+              <th style="width: 120px;">الدرجة (20)</th>
+              <th style="width: 130px;">مستوى الإتقان</th>
+              <th style="width: 180px;">الإجراءات والشاهد</th>
+            </tr>
+          </thead>
+          <tbody id="matrixTableBody">
+            <!-- Injected dynamically via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Remedial Hub Section -->
+    <section class="remedial-hub-section" id="remedialHubSection" style="display: none;">
+      <div class="action-plan-card">
+        <div class="card-header">
+          <div class="card-title">
+            <i class="fa-solid fa-heart-pulse" style="color: var(--danger);"></i>
+            <h2>الخطة العلاجية الشاملة لتطوير مهارات الضعف (فصول 2/3، 2/4، 3/3، 3/4)</h2>
+          </div>
+          <button class="btn btn-outline btn-sm" id="btnPrintRemedialHub" title="طباعة تقرير الخطة العلاجية والفاقد التعليمي فقط">
+            <i class="fa-solid fa-print"></i> طباعة الخطة العلاجية (A4)
+          </button>
+        </div>
+        
+        <div class="remedial-strategies-grid">
+          <!-- Strategy 1 -->
+          <div class="strategy-card">
+            <div class="strategy-header danger">
+              <div class="strat-badge">أولوية قصوى (نسبة الفاقد 78%)</div>
+              <h3>1. مهارة القواعد: صياغة النفي في زمن المستقبل البسيط (won't)</h3>
+            </div>
+            <div class="strategy-body">
+              <p><strong>تشخيص الخلل:</strong> عدم قدرة أغلب الطلاب على التمييز بين صيغ النفي المختصرة، والخلط بين (won't) و (isn't) و (not will).</p>
+              <div class="strat-actions">
+                <h4>الأنشطة والتدخلات العلاجية المقترحة:</h4>
+                <ul>
+                  <li><strong>خريطة المفاهيم:</strong> تصميم لوحة بصرية توضح (will + not = won't + base verb).</li>
+                  <li><strong>لعبة تصحيح الأخطاء (Find & Fix):</strong> عرض جمل خاطئة شائعة مثل "She not will play" وجعل الطلاب يصححونها إلى "She won't play".</li>
+                  <li><strong>ورقة عمل تفاعلية 5 دقائق:</strong> تدريب يومي في بداية الحصة (Warm-up) لمدة أسبوع.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strategy 2 -->
+          <div class="strategy-card">
+            <div class="strategy-header warning">
+              <div class="strat-badge">أولوية عالية (نسبة الفاقد 64.5%)</div>
+              <h3>2. مهارة الرسم الإملائي: الحروف المضعفة (Double Letters)</h3>
+            </div>
+            <div class="strategy-body">
+              <p><strong>تشخيص الخلل:</strong> صعوبة إدراك وتذكر الحرف المكرر في الكلمات متعددة المقاطع (مثل كلمة allergic).</p>
+              <div class="strat-actions">
+                <h4>الأنشطة والتدخلات العلاجية المقترحة:</h4>
+                <ul>
+                  <li><strong>استراتيجية التجزئة الصوتية (Chunking):</strong> تقسيم الكلمة إلى مقاطع (al - ler - gic).</li>
+                  <li><strong>بطاقات الحروف الملونة (Color-coded Phonics):</strong> كتابة الحرف المكرر بلون مميز لترسيخ الذاكرة البصرية.</li>
+                  <li><strong>تطبيق الإملاء السريع (Look, Say, Cover, Write, Check).</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strategy 3 -->
+          <div class="strategy-card">
+            <div class="strategy-header primary">
+              <div class="strat-badge">أولوية متوسطة (نسبة الفاقد 57.5%)</div>
+              <h3>3. مهارة المفردات: توظيف الصفات المعجمية للأماكن (peaceful vs noisy)</h3>
+            </div>
+            <div class="strategy-body">
+              <p><strong>تشخيص الخلل:</strong> فقر في الحصيلة المعجمية للصفات الوصفية المتقدمة وحاجة لربط الكلمة بسياقها (مكان للاسترخاء = مكان هادئ).</p>
+              <div class="strat-actions">
+                <h4>الأنشطة والتدخلات العلاجية المقترحة:</h4>
+                <ul>
+                  <li><strong>سلسلة الكلمة وضدها (Antonyms Flashcards):</strong> إقران كلمة (peaceful) بـ (noisy) مع صور معبرة.</li>
+                  <li><strong>سياقات جمل قصيرة:</strong> استخدام الكلمات في مواقف حياتية واقعية (The library is peaceful).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strategy 4 -->
+          <div class="strategy-card">
+            <div class="strategy-header success">
+              <div class="strat-badge">أولوية متابعة (نسبة الفاقد 53.5%)</div>
+              <h3>4. مهارة القواعد: المضارع البسيط للروتين مع ضمائر الجمع (We sleep)</h3>
+            </div>
+            <div class="strategy-body">
+              <p><strong>تشخيص الخلل:</strong> خلط الطلاب بين تصريف الفعل مع المفرد (sleeps) ومع الجمع (sleep)، وإضافة s دون تمييز.</p>
+              <div class="strat-actions">
+                <h4>الأنشطة والتدخلات العلاجية المقترحة:</h4>
+                <ul>
+                  <li><strong>قاعدة ميزان الجمع والمفرد:</strong> (He/She/It يحب حرف S، بينما I/We/They/You لا يحب S).</li>
+                  <li><strong>تمرين الاختيار من متعدد السريع (Speed Quiz)</strong> عبر منصة تفاعلية.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Targeted Remedial Groups -->
+        <div class="remedial-groups-container" style="margin-top: 2rem;">
+          <h3 style="margin-bottom: 1rem;"><i class="fa-solid fa-users-viewfinder"></i> مجموعات الدعم والتدخل الصفي (حسب حاجة الطلاب):</h3>
+          <div class="groups-grid" id="remedialGroupsGrid">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- Remedial 3-Week Execution Plan -->
+        <div class="remedial-timeline-card" style="margin-top: 2rem;">
+          <h3 style="margin-bottom: 1rem;"><i class="fa-solid fa-calendar-check"></i> الجدول الزمني لتنفيذ الخطة العلاجية (3 أسابيع):</h3>
+          <div class="timeline-grid">
+            <div class="timeline-week-box">
+              <div class="week-title"><i class="fa-solid fa-calendar-week"></i> الأسبوع الأول (التركيز: القواعد س13 و س16)</div>
+              <ul>
+                <li>شرح قاعدة زمن المستقبل المنفي (won't) مع أوراق عمل مدتها 10 دقائق يومياً.</li>
+                <li>تطبيق قاعدة تصريف المضارع مع الجمع والمفرد عبر بطاقات المطابقة السريعة.</li>
+                <li>اختبار بنائي قصير (5 أسئلة) بنهاية الأسبوع لقياس التحسن.</li>
+              </ul>
+            </div>
+            <div class="timeline-week-box">
+              <div class="week-title"><i class="fa-solid fa-calendar-week"></i> الأسبوع الثاني (التركيز: الإملاء س19)</div>
+              <ul>
+                <li>تدريب صوتي يومي على الحروف المضعفة (allergic, different, dinner).</li>
+                <li>استخدام إستراتيجية انظر-قل-غط-اكتب-تحقق (Look-Say-Cover-Write-Check).</li>
+                <li>مسابقة إملاء سريعة في بداية كل حصة دراسية.</li>
+              </ul>
+            </div>
+            <div class="timeline-week-box">
+              <div class="week-title"><i class="fa-solid fa-calendar-week"></i> الأسبوع الثالث (التركيز: المفردات س5 والتقييم البعدي)</div>
+              <ul>
+                <li>مراجعة معجمية لصفات الأماكن والمشاعر (peaceful vs noisy).</li>
+                <li>تطبيق الاختبار البعدي التكويني (Post-test) الموازي لقياس زوال الفاقد.</li>
+                <li>رصد النتائج وتكريم الطلاب الذين حققوا نسبة تعافٍ كاملة.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permanent Additional Executive & Diagnostic End Report Section -->
+    <section class="final-report-section" id="finalReportSection">
+      <div class="final-report-wrapper">
+        <!-- Top Toolbar -->
+        <div class="report-toolbar no-print">
+          <div class="toolbar-title">
+            <i class="fa-solid fa-file-signature text-success"></i>
+            <h3>التقرير الختامي الشامل لرصد الفاقد التعليمي والخطة العلاجية المعتمدة</h3>
+          </div>
+          <div class="toolbar-actions">
+            <button class="btn btn-primary" id="btnPrintFinalReportOfficial" style="background: linear-gradient(135deg, #059669, #10b981);" title="طباعة التقرير العام لمدير المدرسة والإدارة فقط">
+              <i class="fa-solid fa-print"></i>
+              <span>طباعة التقرير الختامي للمدير (A4)</span>
+            </button>
+            <button class="btn btn-outline" id="btnExportAllCsv">
+              <i class="fa-solid fa-file-excel"></i>
+              <span>تصدير تقرير الإكسل الشامل</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Official Report Paper Container -->
+        <div class="official-paper">
+          <!-- Institutional Header -->
+          <div class="report-official-header">
+            <div class="official-side">
+              <strong>المملكة العربية السعودية</strong><br>
+              وزارة التعليم<br>
+              الإدارة العامة للتعليم بمنطقة مكة المكرمة<br>
+              متوسطة الفلاح بمكة المكرمة
+            </div>
+            <div style="text-align: center;">
+              <div class="official-school-title">التقرير التشخيصي الختامي الشامل والخطط العلاجية</div>
+              <div style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-top: 0.25rem;">
+                تحليل نتائج نواتج التعلم وتسكين الفاقد التعليمي لمادة اللغة الإنجليزية (1448هـ)
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">
+                الصفوف المستهدفة: الثاني متوسط (فصل 2/3، 2/4) والثالث متوسط (فصل 3/3، 3/4)
+              </div>
+            </div>
+            <div class="official-side" style="text-align: left;">
+              تاريخ الاعتماد: 1448/01/20هـ<br>
+              الدرجة العظمى: 20 درجة<br>
+              عدد الفصول: 4 فصول كاملة<br>
+              الجهة: الإشراف التربوي وإدارة المدرسة
+            </div>
+          </div>
+
+          <!-- Diagnostic Framework Box -->
+          <div class="report-section" style="background: var(--bg-hover); border-radius: 8px; padding: 1.1rem 1.25rem; border: 1px solid var(--border-color);">
+            <h4 class="report-sec-title" style="margin-top: 0; font-size: 1.05rem; color: var(--primary-light);">
+              <i class="fa-solid fa-compass-drafting" style="margin-left: 0.5rem; color: var(--primary);"></i>
+              الإطار المنهجي والأهداف العامة للاختبار التشخيصي
+            </h4>
+            <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-sub); margin: 0;">
+              انطلاقاً من اللوائح المنظمة لتقويم نواتج التعلم وتسكين الفاقد التعليمي الموروث، طبقت مدرسة الفلاح المتوسطة بمكة المكرمة مع انطلاقة الفصل الدراسي الأول 1448هـ الاختبار التشخيصي المقنن في مادة اللغة الإنجليزية على كافة فصول الصفين الثاني والثالث المتوسط البالغ قوامهم <strong>109 طلاب مقيدين</strong> (حضر منهم <strong>97 طالباً</strong>، وتغيب <strong>12 طالباً</strong> بعذر). هدف الاختبار لقياس الجاهزية المعرفية في <strong>4 مجالات مهارية كبرى</strong> موزعة على <strong>20 فقرة اختبارية</strong> ذات معايير محددة (فهم المقروء: 4 درجات، المفردات اللغوية: 6 درجات، القواعد والتراكيب: 6 درجات، الرسم الإملائي: 4 درجات). اعتُمدت نسبة <strong>85% فأعلى (17-20)</strong> كمؤشر إتقان متقدم، ونسبة <strong>60%-84% (12-16)</strong> للمستوى المتوسط المتمكن، والدرجة <strong>دون 60% (أقل من 12)</strong> كمستوى فاقد حرج يستوجب تدخلاً علاجياً عاجلاً ومكثفاً.
+            </p>
+          </div>
+
+          <!-- Section 1: Statistical Summary Table -->
+          <div class="report-section">
+            <h4 class="report-sec-title">أولاً: ملخص المؤشرات الإحصائية العامة للتشخيص (مقارنة الفصول الأربعة)</h4>
+            <div class="table-responsive">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th>المؤشر الإحصائي</th>
+                    <th>الصف 2/3</th>
+                    <th>الصف 2/4</th>
+                    <th>الصف 3/3</th>
+                    <th>الصف 3/4</th>
+                    <th>المجموع الكلي / المتوسط العام</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>إجمالي الطلاب المقيدين رسمياً</strong></td>
+                    <td>26 طالباً</td>
+                    <td>27 طالباً</td>
+                    <td>28 طالباً</td>
+                    <td>28 طالباً</td>
+                    <td><strong>109 طلاب (100%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>عدد الطلاب الذين أدوا الاختبار (حاضر)</strong></td>
+                    <td>24 طالباً (92.3%)</td>
+                    <td>21 طالباً (77.8%)</td>
+                    <td>24 طالباً (85.7%)</td>
+                    <td>28 طالباً (100.0%)</td>
+                    <td><strong>97 طالباً (89.0%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>عدد الطلاب المتغيبين عن الاختبار (غائب)</strong></td>
+                    <td>2 طالبان (#9، #19)</td>
+                    <td>6 طلاب (#2، #4، #7، #10، #11، #20)</td>
+                    <td>4 طلاب (#1، #9، #15، #24)</td>
+                    <td>0 طلاب (0.0%)</td>
+                    <td><strong>12 طالباً (11.0%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>متوسط الدرجات المحققة (من 20)</strong></td>
+                    <td><strong>12.83 / 20</strong> (64.2%)</td>
+                    <td><strong>13.62 / 20</strong> (68.1%)</td>
+                    <td><strong>15.58 / 20</strong> (77.9%)</td>
+                    <td><strong>17.07 / 20</strong> (85.4%)</td>
+                    <td><strong>14.91 / 20</strong> (74.5%)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>الطلاب المتقنون والمتفوقون (>= 85%)</strong></td>
+                    <td>4 طلاب (16.7%)</td>
+                    <td>3 طلاب (14.3%)</td>
+                    <td>11 طالباً (45.8%)</td>
+                    <td>18 طالباً (64.3%)</td>
+                    <td><strong>36 طالباً (37.1%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>الطلاب في المستوى المتوسط المتمكن (60% - 84%)</strong></td>
+                    <td>11 طالباً (45.8%)</td>
+                    <td>12 طالباً (57.1%)</td>
+                    <td>11 طالباً (45.8%)</td>
+                    <td>7 طلاب (25.0%)</td>
+                    <td><strong>41 طالباً (42.3%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>الطلاب ذوو الفاقد الحرج وبحاجة لدعم (< 60%)</strong></td>
+                    <td>9 طلاب (37.5%)</td>
+                    <td>6 طلاب (28.6%)</td>
+                    <td>2 طالبان (8.3%)</td>
+                    <td>3 طلاب (10.7%)</td>
+                    <td><strong>20 طالباً (20.6%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>الطلاب الحاصلون على الدرجة الكاملة (20/20)</strong></td>
+                    <td>طالب واحد (وجيد مليباري)</td>
+                    <td>طالبان (حنبلي، عالم)</td>
+                    <td>طالبان (مطر، الغامدي)</td>
+                    <td>10 طلاب متفوقين</td>
+                    <td><strong>15 طالباً متميزاً (15.5%)</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Grade Comparison Card -->
+            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.9rem 1.1rem; margin-top: 0.75rem; font-size: 0.88rem; line-height: 1.6;">
+              <strong style="color: var(--primary);"><i class="fa-solid fa-chart-line"></i> القراءة التحليلية المقارنة بين الصفين:</strong>
+              أظهرت النتائج نضجاً لغوياً ملحوظاً لدى طلاب <strong>الصف الثالث متوسط</strong> (متوسط 16.38 / 20 بنسبة إتقان 81.9% وحضور 92.9%) مقارنة بـ <strong>الصف الثاني متوسط</strong> (متوسط 13.20 / 20 بنسبة إتقان 66.0% وحضور 84.9%). كما انحسرت نسبة الفاقد الحرج بشكل حاد من 33.3% في الثاني متوسط إلى 9.6% فقط في الثالث متوسط، مما يؤكد أثر التراكم المعرفي ونجاعة تدريس المناهج بالسنوات السابقة.
+            </div>
+          </div>
+
+          <!-- Section 2: Skills Comparative Breakdown -->
+          <div class="report-section">
+            <h4 class="report-sec-title">ثانياً: تحليل نسب إتقان المهارات اللغوية الأربعة والتشخيص النوعي</h4>
+            <div class="table-responsive">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th>المجال المهاري المستهدف</th>
+                    <th>الدرجة القصوى</th>
+                    <th>نسبة إتقان فصل 2/3</th>
+                    <th>نسبة إتقان فصل 2/4</th>
+                    <th>نسبة إتقان فصل 3/3</th>
+                    <th>نسبة إتقان فصل 3/4</th>
+                    <th>متوسط الإتقان العام</th>
+                    <th>حالة المهارة بالمدرسة</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>فهم المقروء (Reading Comprehension)</strong></td>
+                    <td>4 درجات</td>
+                    <td>90.6%</td>
+                    <td>96.4%</td>
+                    <td>99.0%</td>
+                    <td>100.0%</td>
+                    <td><strong>96.6%</strong></td>
+                    <td><span class="level-tag success">مستوى متقدم ومتقن جداً</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>المفردات وتوظيفها (Vocabulary)</strong></td>
+                    <td>6 درجات</td>
+                    <td>61.1%</td>
+                    <td>63.5%</td>
+                    <td>78.5%</td>
+                    <td>83.3%</td>
+                    <td><strong>72.3%</strong></td>
+                    <td><span class="level-tag success">مستوى جيد جداً ومتمكن</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>القواعد والتراكيب اللغوية (Grammar)</strong></td>
+                    <td>6 درجات</td>
+                    <td>58.3%</td>
+                    <td>61.1%</td>
+                    <td>72.2%</td>
+                    <td>81.0%</td>
+                    <td><strong>68.9%</strong></td>
+                    <td><span class="level-tag warning">فاقد متوسط في صياغة النفي والروتين</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>الرسم الإملائي والصوتي (Orthography)</strong></td>
+                    <td>4 درجات</td>
+                    <td>51.0%</td>
+                    <td>57.1%</td>
+                    <td>64.6%</td>
+                    <td>80.4%</td>
+                    <td><strong>64.2%</strong></td>
+                    <td><span class="level-tag danger">أولوية خطة علاجية مكثفة (الحرف المضعف)</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- In-depth Qualitative Skill Breakdown -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0.9rem; margin-top: 0.75rem;">
+              <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem; background: var(--bg-hover);">
+                <div style="font-weight: bold; color: var(--success); margin-bottom: 0.3rem;"><i class="fa-solid fa-circle-check"></i> 1. فهم المقروء (96.6%):</div>
+                <div style="font-size: 0.84rem; color: var(--text-sub); line-height: 1.5;">
+                  <strong>نقاط القوة:</strong> إتقان استثنائي لاستخراج المعلومات الصريحة والتفاصيل الزمنية واسترجاع الأوصاف (الأسئلة 1، 2، 3، 4 بنسب صواب فاقت 96%).<br>
+                  <strong>التشخيص:</strong> لا توجد أي فجوات حرجة؛ تمثل ركيزة الثقة اللغوية لكافة طلاب المدرسة.
+                </div>
+              </div>
+              <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem; background: var(--bg-hover);">
+                <div style="font-weight: bold; color: #0284c7; margin-bottom: 0.3rem;"><i class="fa-solid fa-spell-check"></i> 2. المفردات اللغوية (72.3%):</div>
+                <div style="font-size: 0.84rem; color: var(--text-sub); line-height: 1.5;">
+                  <strong>نقاط القوة:</strong> تمييز مصطلحات المناسبات (graduation) والرياضات ومفردات التسلق (س6، س7، س10).<br>
+                  <strong>الفجوة:</strong> ضعف في صفات الأماكن الوصفية الهادئة (س5: peaceful - خطأ 41.2%) والمطبوعات (س9: brochure - 33.0%).
+                </div>
+              </div>
+              <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem; background: var(--bg-hover);">
+                <div style="font-weight: bold; color: var(--warning); margin-bottom: 0.3rem;"><i class="fa-solid fa-triangle-exclamation"></i> 3. القواعد والتراكيب (68.9%):</div>
+                <div style="font-size: 0.84rem; color: var(--text-sub); line-height: 1.5;">
+                  <strong>الفجوة الكبرى:</strong> عجز حرج في صياغة نفي المستقبل البسيط (س13: will not = won't - خطأ 59.8%)، ومطابقة فاعل الجمع في المضارع البسيط (س16: We sleep - خطأ 43.3%).<br>
+                  <strong>السبب:</strong> تداخل القواعد والخلط بين صياغة النفي بأفعال be ونفي الأفعال المساعدة will.
+                </div>
+              </div>
+              <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem; background: var(--bg-hover);">
+                <div style="font-weight: bold; color: var(--danger); margin-bottom: 0.3rem;"><i class="fa-solid fa-circle-xmark"></i> 4. الرسم الإملائي (64.2%):</div>
+                <div style="font-size: 0.84rem; color: var(--text-sub); line-height: 1.5;">
+                  <strong>الفجوة الكبرى:</strong> ضعف حاد في الحروف المضعفة في الكلمات متعددة المقاطع (س19: allergic -> L - خطأ 52.6%)، وتهجئة كلمات الطوارئ (س18: emergency -> m - خطأ 38.1%).<br>
+                  <strong>السبب:</strong> قصور في الوعي الصوتي الصرفي والتهجئة القائمة على التجزئة المقطعية.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: All 20 Questions Ranked Matrix -->
+          <div class="report-section">
+            <h4 class="report-sec-title">ثالثاً: مصفوفة التحليل الإحصائي لكافة فقرات الاختبار (الـ 20 سؤالاً) مرتبة حسب شدة الفاقد</h4>
+            <div class="table-responsive">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th style="width: 45px;">الرقم</th>
+                    <th>المجال المهاري</th>
+                    <th>المعيار التعليمي وناتج التعلم المستهدف</th>
+                    <th style="width: 55px;">المفتاح</th>
+                    <th>الإجابات الصحيحة</th>
+                    <th>عدد المخفقين</th>
+                    <th>نسبة الخطأ %</th>
+                    <th>تصنيف الفاقد والأولوية</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background: rgba(239, 68, 68, 0.08);">
+                    <td class="center"><strong>س13</strong></td>
+                    <td><strong>القواعد والتراكيب</strong></td>
+                    <td>صياغة النفي في زمن المستقبل البسيط (will not -> won't)</td>
+                    <td class="center"><strong>A</strong></td>
+                    <td class="center">39 طالباً</td>
+                    <td class="center"><strong style="color: var(--danger);">58 طالباً</strong></td>
+                    <td class="center"><strong style="color: var(--danger);">59.8%</strong></td>
+                    <td class="center"><span class="level-tag danger">فاقد حرج جداً (أولوية 1)</span></td>
+                  </tr>
+                  <tr style="background: rgba(239, 68, 68, 0.08);">
+                    <td class="center"><strong>س19</strong></td>
+                    <td><strong>الرسم الإملائي</strong></td>
+                    <td>تمييز الحروف المضعفة في الكلمات الشائعة (allergic -> L)</td>
+                    <td class="center"><strong>B</strong></td>
+                    <td class="center">46 طالباً</td>
+                    <td class="center"><strong style="color: var(--danger);">51 طالباً</strong></td>
+                    <td class="center"><strong style="color: var(--danger);">52.6%</strong></td>
+                    <td class="center"><span class="level-tag danger">فاقد حرج جداً (أولوية 2)</span></td>
+                  </tr>
+                  <tr style="background: rgba(239, 68, 68, 0.05);">
+                    <td class="center"><strong>س16</strong></td>
+                    <td><strong>القواعد والتراكيب</strong></td>
+                    <td>استخدام المضارع البسيط للروتين مع ضمائر الجمع (We sleep)</td>
+                    <td class="center"><strong>A</strong></td>
+                    <td class="center">55 طالباً</td>
+                    <td class="center"><strong style="color: var(--danger);">42 طالباً</strong></td>
+                    <td class="center"><strong style="color: var(--danger);">43.3%</strong></td>
+                    <td class="center"><span class="level-tag danger">فاقد حرج (أولوية 3)</span></td>
+                  </tr>
+                  <tr style="background: rgba(239, 68, 68, 0.05);">
+                    <td class="center"><strong>س05</strong></td>
+                    <td><strong>المفردات والدلالة</strong></td>
+                    <td>توظيف صفات الأماكن والمعاني المعجمية (peaceful vs noisy)</td>
+                    <td class="center"><strong>B</strong></td>
+                    <td class="center">57 طالباً</td>
+                    <td class="center"><strong style="color: var(--danger);">40 طالباً</strong></td>
+                    <td class="center"><strong style="color: var(--danger);">41.2%</strong></td>
+                    <td class="center"><span class="level-tag danger">فاقد حرج (أولوية 4)</span></td>
+                  </tr>
+                  <tr style="background: rgba(245, 158, 11, 0.08);">
+                    <td class="center"><strong>س18</strong></td>
+                    <td><strong>الرسم الإملائي</strong></td>
+                    <td>التهجئة الصحيحة لمفردات الطوارئ والحوادث (emergency -> m)</td>
+                    <td class="center"><strong>A</strong></td>
+                    <td class="center">60 طالباً</td>
+                    <td class="center"><strong style="color: var(--warning);">37 طالباً</strong></td>
+                    <td class="center"><strong style="color: var(--warning);">38.1%</strong></td>
+                    <td class="center"><span class="level-tag warning">فاقد متوسط (أولوية 5)</span></td>
+                  </tr>
+                  <tr style="background: rgba(245, 158, 11, 0.06);">
+                    <td class="center"><strong>س09</strong></td>
+                    <td><strong>المفردات والدلالة</strong></td>
+                    <td>التعرف على مسميات المطبوعات والوسائط الإعلانية (brochure)</td>
+                    <td class="center"><strong>A</strong></td>
+                    <td class="center">65 طالباً</td>
+                    <td class="center"><strong style="color: var(--warning);">32 طالباً</strong></td>
+                    <td class="center"><strong style="color: var(--warning);">33.0%</strong></td>
+                    <td class="center"><span class="level-tag warning">فاقد متوسط</span></td>
+                  </tr>
+                  <tr style="background: rgba(245, 158, 11, 0.06);">
+                    <td class="center"><strong>س15</strong></td>
+                    <td><strong>القواعد والتراكيب</strong></td>
+                    <td>استخدام صيغة الماضي البسيط في السؤال مع الأفعال الشاذة (did)</td>
+                    <td class="center"><strong>D</strong></td>
+                    <td class="center">67 طالباً</td>
+                    <td class="center"><strong style="color: var(--warning);">30 طالباً</strong></td>
+                    <td class="center"><strong style="color: var(--warning);">30.9%</strong></td>
+                    <td class="center"><span class="level-tag warning">فاقد متوسط</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س08</strong></td>
+                    <td>المفردات والدلالة</td>
+                    <td>تمييز مفردات الظواهر الطبيعية والمناخية (hurricane)</td>
+                    <td class="center"><strong>D</strong></td>
+                    <td class="center">68 طالباً</td>
+                    <td class="center">29 طالباً</td>
+                    <td class="center">29.9%</td>
+                    <td class="center"><span class="level-tag warning">فاقد متوسط</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س20</strong></td>
+                    <td>الرسم الإملائي</td>
+                    <td>التهجئة الصحيحة لصفات المشاعر والانفعالات (nervous -> v)</td>
+                    <td class="center"><strong>C</strong></td>
+                    <td class="center">68 طالباً</td>
+                    <td class="center">29 طالباً</td>
+                    <td class="center">29.9%</td>
+                    <td class="center"><span class="level-tag warning">فاقد متوسط</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س17</strong></td>
+                    <td>الرسم الإملائي</td>
+                    <td>إكمال الكلمات بالحروف الصحيحة لوصف الطقس (windy -> d)</td>
+                    <td class="center"><strong>D</strong></td>
+                    <td class="center">75 طالباً</td>
+                    <td class="center">22 طالباً</td>
+                    <td class="center">22.7%</td>
+                    <td class="center"><span class="level-tag success">مستوى متمكن</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س06</strong></td>
+                    <td>المفردات والدلالة</td>
+                    <td>تصنيف المفردات ضمن حقولها الدلالية (أنواع الرياضات)</td>
+                    <td class="center"><strong>C</strong></td>
+                    <td class="center">76 طالباً</td>
+                    <td class="center">21 طالباً</td>
+                    <td class="center">21.6%</td>
+                    <td class="center"><span class="level-tag success">مستوى متمكن</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س10</strong></td>
+                    <td>المفردات والدلالة</td>
+                    <td>تمييز مفردات المناسبات والاحتفالات المدرسية (graduation)</td>
+                    <td class="center"><strong>B</strong></td>
+                    <td class="center">76 طالباً</td>
+                    <td class="center">21 طالباً</td>
+                    <td class="center">21.6%</td>
+                    <td class="center"><span class="level-tag success">مستوى متمكن</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س11</strong></td>
+                    <td>القواعد والتراكيب</td>
+                    <td>التعبير عن الخطط المستقبلية بصيغة Be going to</td>
+                    <td class="center"><strong>D</strong></td>
+                    <td class="center">76 طالباً</td>
+                    <td class="center">21 طالباً</td>
+                    <td class="center">21.6%</td>
+                    <td class="center"><span class="level-tag success">مستوى متمكن</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س12</strong></td>
+                    <td>القواعد والتراكيب</td>
+                    <td>استخدام أدوات الاستفهام للسؤال عن المكان (Where)</td>
+                    <td class="center"><strong>B</strong></td>
+                    <td class="center">78 طالباً</td>
+                    <td class="center">19 طالباً</td>
+                    <td class="center">19.6%</td>
+                    <td class="center"><span class="level-tag success">مستوى متميز</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س07</strong></td>
+                    <td>المفردات والدلالة</td>
+                    <td>الربط البصري لمفردات رياضات المغامرة (Cliff hanging)</td>
+                    <td class="center"><strong>C</strong></td>
+                    <td class="center">79 طالباً</td>
+                    <td class="center">18 طالباً</td>
+                    <td class="center">18.6%</td>
+                    <td class="center"><span class="level-tag success">مستوى متميز</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س14</strong></td>
+                    <td>القواعد والتراكيب</td>
+                    <td>صياغة الإجابات القصيرة المثبتة في الماضي المستمر (Yes, he was)</td>
+                    <td class="center"><strong>C</strong></td>
+                    <td class="center">86 طالباً</td>
+                    <td class="center">11 طالباً</td>
+                    <td class="center">11.3%</td>
+                    <td class="center"><span class="level-tag success">مستوى متقدم ومتميز</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س01</strong></td>
+                    <td>فهم المقروء</td>
+                    <td>استخراج معلومات صريحة ومباشرة من النص القرائي</td>
+                    <td class="center"><strong>A</strong></td>
+                    <td class="center">93 طالباً</td>
+                    <td class="center">4 طلاب</td>
+                    <td class="center">4.1%</td>
+                    <td class="center"><span class="level-tag success">إتقان تام وتفوق</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س02</strong></td>
+                    <td>فهم المقروء</td>
+                    <td>التحقق من صحة تفاصيل النص والتمييز بين الحقائق</td>
+                    <td class="center"><strong>B</strong></td>
+                    <td class="center">93 طالباً</td>
+                    <td class="center">4 طلاب</td>
+                    <td class="center">4.1%</td>
+                    <td class="center"><span class="level-tag success">إتقان تام وتفوق</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س04</strong></td>
+                    <td>فهم المقروء</td>
+                    <td>استرجاع الدلالات الزمنية والروتين اليومي من النص</td>
+                    <td class="center"><strong>D</strong></td>
+                    <td class="center">93 طالباً</td>
+                    <td class="center">4 طلاب</td>
+                    <td class="center">4.1%</td>
+                    <td class="center"><span class="level-tag success">إتقان تام وتفوق</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><strong>س03</strong></td>
+                    <td>فهم المقروء</td>
+                    <td>استرجاع الأوصاف والصفات التوصيفية من النص القرائي</td>
+                    <td class="center"><strong>C</strong></td>
+                    <td class="center">96 طالباً</td>
+                    <td class="center">طالب واحد</td>
+                    <td class="center">1.0%</td>
+                    <td class="center"><span class="level-tag success">إتقان شبه كامل (99%)</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 4: Critical Learning Loss Gaps & Action Priorities -->
+          <div class="report-section">
+            <h4 class="report-sec-title">رابعاً: مصفوفة الفاقد التعليمي الحرج (أولويات التدخل والإنقاذ العاجل بالمدرسة)</h4>
+            <div class="priority-actions-list">
+              <div class="action-item-box" style="border-right: 4px solid var(--danger);">
+                <div class="act-header" style="color: var(--danger);">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span>الأولوية 1 (س13 - القواعد): صياغة النفي في زمن المستقبل البسيط (won't) — نسبة خطأ 59.8%</span>
+                </div>
+                <p>أخفق فيه <strong>58 طالباً من أصل 97 حاضراً</strong> بالمدرسة. الخلل يكمن في عدم استيعاب دمج will not لتصبح won't واستخدام صيغ شائعة خاطئة مثل isn't will أو not will. <strong>الإجراء التدخلي:</strong> تدريس الفكرة باستخدام بطاقات المعادلات (will + not = won't) وتخصيص تدريب يومي لمدة أسبوع كامل.</p>
+              </div>
+              <div class="action-item-box" style="border-right: 4px solid var(--danger);">
+                <div class="act-header" style="color: var(--danger);">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <span>الأولوية 2 (س19 - الإملاء): تمييز الحروف المضعفة في الكلمات متعددة المقاطع (allergic -> L) — نسبة خطأ 52.6%</span>
+                </div>
+                <p>أخفق فيه <strong>51 طالباً من أصل 97 حاضراً</strong>. السبب: عدم إدراك الحرف المزدوج L في الكلمات ذات الأصل اللاتيني والاعتماد على السمع المجرد. <strong>الإجراء التدخلي:</strong> تفعيل استراتيجية التجزئة الصوتية (Chunknig: al-ler-gic) وبطاقات التلوين الإملائي للحروف المضعفة.</p>
+              </div>
+              <div class="action-item-box" style="border-right: 4px solid var(--warning);">
+                <div class="act-header" style="color: var(--warning);">
+                  <i class="fa-solid fa-spell-check"></i>
+                  <span>الأولوية 3 (س16 - القواعد): تصريف المضارع البسيط للروتين مع ضمائر الجمع (We sleep) — نسبة خطأ 43.3%</span>
+                </div>
+                <p>أخفق فيه <strong>42 طالباً من أصل 97 حاضراً</strong>. السبب: الخلط الميكانيكي بين إضافة s الشخص الثالث للمفرد وترك الفعل مجرداً مع ضمائر الجمع. <strong>الإجراء التدخلي:</strong> نشاط "ميزان الفاعل والفعل" وتمارين الاختيار السريع في الإحماء الصفي.</p>
+              </div>
+              <div class="action-item-box" style="border-right: 4px solid var(--primary);">
+                <div class="act-header" style="color: var(--primary-light);">
+                  <i class="fa-solid fa-book-open-reader"></i>
+                  <span>الأولوية 4 (س05 - المفردات): توظيف صفات الأماكن المعجمية (peaceful vs noisy) — نسبة خطأ 41.2%</span>
+                </div>
+                <p>أخفق فيه <strong>40 طالباً من أصل 97 حاضراً</strong>. السبب: قصور في الحصيلة المعجمية لصفات الهدوء والاسترخاء مقابل الصخب. <strong>الإجراء التدخلي:</strong> ربط المفردات بالصور الواقعية وتدريب الطلاب على سياقات الضد والترادف المعجمي.</p>
+              </div>
+              <div class="action-item-box" style="border-right: 4px solid #8b5cf6;">
+                <div class="act-header" style="color: #8b5cf6;">
+                  <i class="fa-solid fa-pen-ruler"></i>
+                  <span>الأولوية 5 (س18 - الإملاء): التهجئة الصحيحة لمفردات الطوارئ (emergency -> m) — نسبة خطأ 38.1%</span>
+                </div>
+                <p>أخفق فيه <strong>37 طالباً من أصل 97 حاضراً</strong>. السبب: صعوبة تهجئة الكلمات الطويلة والتشابه الصوتي. <strong>الإجراء التدخلي:</strong> تدريبات الإملاء المنظور وقوائم التهجئة الأسبوعية المصغرة.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5: Tripartite Remedial Plan -->
+          <div class="report-section">
+            <h4 class="report-sec-title">خامساً: خطة التدخل والمعالجة العلاجية الثلاثية المعتمدة (الجدول الزمني: 3 أسابيع)</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem;">
+              <div style="border: 2px solid var(--danger); border-radius: 8px; padding: 1rem; background: rgba(239, 68, 68, 0.04);">
+                <h5 style="color: var(--danger); margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 800;">
+                  <i class="fa-solid fa-user-shield"></i> المسار الأول: الدعم العلاجي المكثف
+                </h5>
+                <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0.5rem;">
+                  <strong>الفئة المستهدفة:</strong> 20 طالباً حازوا نسبة أقل من 60% (أقل من 12/20).
+                </p>
+                <ul style="padding-right: 1.2rem; font-size: 0.84rem; color: var(--text-sub); line-height: 1.6; margin: 0;">
+                  <li>تخصيص 10 دقائق في بداية كل حصة لمراجعة المفاهيم الحرجة فردياً.</li>
+                  <li>تسليم بطاقة الخطة الفردية لكل طالب متضمنة أوراق العمل التفاعلية.</li>
+                  <li>جلسة عيادة لغوية أسبوعية (يوم الثلاثاء) بإشراف معلم المادة.</li>
+                  <li>متابعة منزلية مستمرة عبر إرسال التقارير التوجيهية لأولياء الأمور.</li>
+                </ul>
+              </div>
+
+              <div style="border: 2px solid var(--warning); border-radius: 8px; padding: 1rem; background: rgba(245, 158, 11, 0.04);">
+                <h5 style="color: var(--warning); margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 800;">
+                  <i class="fa-solid fa-layer-group"></i> المسار الثاني: التمكين والتثبيت
+                </h5>
+                <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0.5rem;">
+                  <strong>الفئة المستهدفة:</strong> 41 طالباً في المستوى المتوسط المتمكن (60% - 84%).
+                </p>
+                <ul style="padding-right: 1.2rem; font-size: 0.84rem; color: var(--text-sub); line-height: 1.6; margin: 0;">
+                  <li>أنشطة علاجية صفية تركز حصراً على معالجة فاقد النفي (won't) والحروف المضعفة.</li>
+                  <li>ألعاب لغوية ومسابقات إلكترونية عبر منصة مدرستي لتعزيز الحصيلة المعجمية.</li>
+                  <li>خرائط ذهنية ملخصة لقواعد الأزمنة (المستقبل، المضارع، والماضي).</li>
+                  <li>رفع نسبة الإتقان لدى هذه الفئة لتجاوز عتبة الـ 85% خلال 3 أسابيع.</li>
+                </ul>
+              </div>
+
+              <div style="border: 2px solid var(--success); border-radius: 8px; padding: 1rem; background: rgba(16, 185, 129, 0.04);">
+                <h5 style="color: var(--success); margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 800;">
+                  <i class="fa-solid fa-award"></i> المسار الثالث: الإثراء ورعاية الموهوبين
+                </h5>
+                <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0.5rem;">
+                  <strong>الفئة المستهدفة:</strong> 36 طالباً متقناً (منهم 15 طالباً حققوا 20/20).
+                </p>
+                <ul style="padding-right: 1.2rem; font-size: 0.84rem; color: var(--text-sub); line-height: 1.6; margin: 0;">
+                  <li>تفعيل استراتيجية التعلم بالأقران وتكليفهم بمهام "المعلم الصغير".</li>
+                  <li>إشراكهم في نادي المحادثة المدرسية باللغة الإنجليزية والمناظرات المصغرة.</li>
+                  <li>تكليفهم بقراءة قصص إثرائية قصيرة وكتابة ملخصات إبداعية.</li>
+                  <li>تكريمهم في الإذاعة المدرسية ومنحهم شهادات شكر وتقدير رسمية.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 6: Targeted Students Roster -->
+          <div class="report-section">
+            <h4 class="report-sec-title">سادساً: كشف حصر الطلاب المستهدفين بالرعاية والتدخل العلاجي المكثف (الدرجة أقل من 12/20 - 20 طالباً)</h4>
+            <div class="table-responsive">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th style="width: 45px;">#</th>
+                    <th>اسم الطالب</th>
+                    <th>الصف</th>
+                    <th>رقم الكشف</th>
+                    <th>الدرجة (من 20)</th>
+                    <th>المجالات المهارية الأضعف</th>
+                    <th>الإجراء العلاجي المعتمد</th>
+                  </tr>
+                </thead>
+                <tbody id="targetedStudentsTableBody">
+                  <!-- Injected dynamically via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 7: Absent Students Roster -->
+          <div class="report-section">
+            <h4 class="report-sec-title">سابعاً: كشف حصر الطلاب الغائبين وجدول الاختبار الاستدراكي (12 طالباً)</h4>
+            <div class="table-responsive">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th style="width: 45px;">#</th>
+                    <th>اسم الطالب</th>
+                    <th>الصف</th>
+                    <th>رقم الكشف</th>
+                    <th>سبب الغياب المسجل</th>
+                    <th>موعد الاختبار الاستدراكي</th>
+                    <th>المشرف على التنفيذ</th>
+                  </tr>
+                </thead>
+                <tbody id="absentStudentsTableBody">
+                  <!-- Injected dynamically via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 8: Actionable Recommendations -->
+          <div class="report-section">
+            <h4 class="report-sec-title">ثامناً: التوصيات الإدارية والتربوية المعتمدة لضمان جودة الأداء</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.9rem;">
+              <div style="background: var(--bg-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.9rem;">
+                <strong style="color: var(--primary);"><i class="fa-solid fa-school"></i> 1. توصيات للإدارة المدرسية:</strong>
+                <ul style="padding-right: 1.2rem; font-size: 0.84rem; color: var(--text-sub); line-height: 1.6; margin: 0.4rem 0 0 0;">
+                  <li>توفير الحصص الإضافية لعيادة اللغة الإنجليزية الصباحية وتجهيز الوسائل المساعدة.</li>
+                  <li>متابعة تنفيذ الاختبار الاستدراكي للطلاب الـ 12 الغائبين ورصدهم بالنظام.</li>
+                  <li>اعتماد خطة الاختبار البعدي بعد 3 أسابيع من تنفيذ البرنامج العلاجي.</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.9rem;">
+                <strong style="color: var(--success);"><i class="fa-solid fa-chalkboard-user"></i> 2. توصيات لمعلمي المادة:</strong>
+                <ul style="padding-right: 1.2rem; font-size: 0.84rem; color: var(--text-sub); line-height: 1.6; margin: 0.4rem 0 0 0;">
+                  <li>الالتزام التام بالـ 10 دقائق العلاجية الأولى في كل حصة صفية وفق كشف المهارات.</li>
+                  <li>تنويع استراتيجيات التدريس لترسيخ نفي المستقبل (won't) والوعي الصوتي الإملائي.</li>
+                  <li>الاحتفاظ بنماذج أوراق العمل وشواهد التطور في ملف إنجاز معالجة الفاقد.</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.9rem;">
+                <strong style="color: #0284c7;"><i class="fa-solid fa-user-tie"></i> 3. توصيات للتوجيه الطلابي:</strong>
+                <ul style="padding-right: 1.2rem; font-size: 0.84rem; color: var(--text-sub); line-height: 1.6; margin: 0.4rem 0 0 0;">
+                  <li>عقد جلسات إرشادية فردية للطلاب المتعثرين لتعزيز دافعيتهم وثقتهم بأنفسهم.</li>
+                  <li>التواصل مع أولياء أمور الطلاب الـ 20 المستهدفين وتزويدهم بالخطط الإرشادية.</li>
+                  <li>متابعة أسباب الغياب المتكرر للطلاب الغائبين وتذليل الصعوبات الاجتماعية أو الصحية.</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.9rem;">
+                <strong style="color: #f59e0b;"><i class="fa-solid fa-house-chimney-user"></i> 4. توصيات للأسرة وولي الأمر:</strong>
+                <ul style="padding-right: 1.2rem; font-size: 0.84rem; color: var(--text-sub); line-height: 1.6; margin: 0.4rem 0 0 0;">
+                  <li>تخصيص 15 دقيقة يومياً لمراجعة قائمة المفردات والبطاقات الإملائية المنزلية.</li>
+                  <li>تشجيع الطالب على الاستماع للنصوص الإنجليزية المسموعة لتطوير الإدراك الصوتي.</li>
+                  <li>التفاعل المستمر مع المدرسة والرد على رسائل المتابعة الدورية عبر الواتساب.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 9: Official Signatures & School Stamp -->
+          <div class="report-section">
+            <h4 class="report-sec-title">تاسعاً: محضر اعتماد التقرير التشخيصي والخطة العلاجية</h4>
+            <div class="signatures-grid">
+              <div class="sig-box">
+                <div class="sig-role">معلم مادة اللغة الإنجليزية</div>
+                <div class="sig-name">أ. محمد بن أحمد الزهراني</div>
+                <div class="sig-line">التوقيع: .......................................</div>
+                <div class="sig-date">التاريخ: 1448 / 01 / 20 هـ</div>
+              </div>
+              <div class="sig-box">
+                <div class="sig-role">رئيس الشعبة / المشرف التربوي</div>
+                <div class="sig-name">أ. خالد بن سعيد الغامدي</div>
+                <div class="sig-line">التوقيع: .......................................</div>
+                <div class="sig-date">التاريخ: 1448 / 01 / 22 هـ</div>
+              </div>
+              <div class="sig-box">
+                <div class="sig-role">الموجه الطلابي</div>
+                <div class="sig-name">أ. عبدالرحمن بن عمر الشريف</div>
+                <div class="sig-line">التوقيع: .......................................</div>
+                <div class="sig-date">التاريخ: 1448 / 01 / 20 هـ</div>
+              </div>
+              <div class="sig-box stamp-container">
+                <div class="sig-role">مدير متوسطة الفلاح بمكة المكرمة</div>
+                <div class="sig-name">أ. فيصل بن عبدالله الحربي</div>
+                <div class="sig-line">التوقيع: .......................................</div>
+                <div class="official-stamp-circle">
+                  <span>ختم المدرسة الرسمي<br>1448هـ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Student Detail & Evidence Dossier Modal -->
+  <div class="modal-overlay" id="studentModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="student-header-info">
+          <div class="student-avatar" id="modalStudentAvatar">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+          <div>
+            <h2 id="modalStudentName">اسم الطالب</h2>
+            <div class="student-tags">
+              <span class="tag" id="modalStudentClass">الصف 2/3</span>
+              <span class="tag" id="modalStudentRosterId">رقم الكشف: 1</span>
+              <span class="tag status-tag" id="modalStudentStatus">حاضر</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-header-actions">
+          <button class="btn btn-sm btn-success" id="btnParentMessage" title="إنشاء رسالة تربوية لولي أمر الطالب عبر الواتساب أو SMS" style="background: linear-gradient(135deg, #059669, #10b981); color: white; border: none; font-weight: 600;">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>رسالة ولي الأمر</span>
+          </button>
+          <button class="btn btn-primary btn-sm" id="btnStudentRemedialPrint" title="فتح وطباعة بطاقة الخطة العلاجية الفردية للطالب" style="background: linear-gradient(135deg, #7c3aed, #9333ea);">
+            <i class="fa-solid fa-id-card-clip"></i>
+            <span>بطاقة الخطة الفردية</span>
+          </button>
+          <button class="btn btn-outline btn-sm" id="modalPrintBtn" title="طباعة تقرير الطالب المستقل مع الشواهد (A4)">
+            <i class="fa-solid fa-print"></i>
+            <span>طباعة التقرير والشواهد (A4)</span>
+          </button>
+          <button class="btn-close" id="modalCloseBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Top Metrics Row -->
+        <div class="modal-stats-row">
+          <div class="score-card">
+            <div class="score-number" id="modalScoreDisplay">15<small>/20</small></div>
+            <div class="score-label" id="modalLevelDisplay">متقن</div>
+            <div class="score-bar">
+              <div class="score-bar-fill" id="modalScoreBarFill" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="mini-skills-grid" id="modalSkillsBreakdown">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- Tabs inside Modal: Detailed Analysis vs Evidence Sheet -->
+        <div class="modal-inner-tabs">
+          <button class="inner-tab active" data-tab="evidence">
+            <i class="fa-solid fa-file-image"></i>
+            <span>شاهد ورقة الإجابة الممسوحة ضوئياً (الأصلية)</span>
+          </button>
+          <button class="inner-tab" data-tab="analysis">
+            <i class="fa-solid fa-list-check"></i>
+            <span>تفصيل الأسئلة والفاقد التعليمي</span>
+          </button>
+          <button class="inner-tab" data-tab="individual_remedial">
+            <i class="fa-solid fa-stethoscope"></i>
+            <span>خطة المعالجة الفردية للطالب</span>
+          </button>
+          <button class="inner-tab" data-tab="parent_message">
+            <i class="fa-brands fa-whatsapp" style="color: #10b981;"></i>
+            <span>رسالة ولي الأمر التربوية</span>
+          </button>
+        </div>
+
+        <!-- Evidence Tab Content -->
+        <div class="inner-tab-pane active" id="paneEvidence">
+          <div class="evidence-toolbar">
+            <div class="page-switch-buttons">
+              <button class="btn btn-sm btn-outline active" id="btnShowPage1">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>الصفحة 1 (ورقة ZipGrade وتظليل الطالب)</span>
+              </button>
+              <button class="btn btn-sm btn-outline" id="btnShowPage2">
+                <i class="fa-solid fa-file-circle-check"></i>
+                <span>الصفحة 2 (ورقة الأسئلة والتوصيل والإملاء)</span>
+              </button>
+              <button class="btn btn-sm btn-outline" id="btnShowBothPages">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>عرض الصفحتين معاً (جنباً إلى جنب)</span>
+              </button>
+            </div>
+            <div class="evidence-zoom-controls">
+              <button class="btn-icon btn-sm" id="btnZoomOut" title="تصغير"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+              <button class="btn-icon btn-sm" id="btnZoomReset" title="إعادة التعيين"><i class="fa-solid fa-rotate-left"></i></button>
+              <button class="btn-icon btn-sm" id="btnZoomIn" title="تكبير"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+              <a class="btn-icon btn-sm" id="btnDownloadEvidence" download title="فتح الصورة الأصلية" target="_blank">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="evidence-viewport" id="evidenceViewport">
+            <div class="evidence-container-inner" id="evidenceContainerInner">
+              <img src="" id="modalEvidenceImg" alt="شاهد ورقة الاختبار" class="evidence-img">
+              <img src="" id="modalEvidenceImg2" alt="شاهد الصفحة الثانية" class="evidence-img" style="display: none;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Analysis Tab Content -->
+        <div class="inner-tab-pane" id="paneAnalysis">
+          <!-- Targeted Remedial Plan Banner -->
+          <div class="remedial-box" id="modalRemedialBox">
+            <h3><i class="fa-solid fa-lightbulb"></i> تشخيص الفاقد التعليمي للطالب:</h3>
+            <ul id="modalRemedialList">
+              <!-- Injected via JS -->
+            </ul>
+          </div>
+
+          <!-- Questions Table -->
+          <div class="table-responsive" style="margin-top: 1.5rem;">
+            <table class="questions-table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">س#</th>
+                  <th>المجال / المهارة</th>
+                  <th>المعيار التعليمي المستهدف</th>
+                  <th style="width: 100px;">إجابة الطالب</th>
+                  <th style="width: 100px;">الإجابة الصحيحة</th>
+                  <th style="width: 80px;">النتيجة</th>
+                </tr>
+              </thead>
+              <tbody id="modalQuestionsTableBody">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Individual Remedial Tab Content -->
+        <div class="inner-tab-pane" id="paneIndividualRemedial">
+          <div class="individual-remedial-container" id="individualRemedialContent">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- Parent Message Tab Content -->
+        <div class="inner-tab-pane" id="paneParentMessage">
+          <div class="parent-message-card">
+            <div class="parent-message-header">
+              <div class="pm-info">
+                <span class="pm-badge"><i class="fa-brands fa-whatsapp"></i> رسالة رسمية وتربوية موجهة لولي الأمر</span>
+                <p>تم استخلاص نقاط القوة ومجالات التحسين والخطة المشتركة آلياً من واقع إجابات الطالب في الاختبار التشخيصي.</p>
+              </div>
+              <div class="pm-actions">
+                <button class="btn btn-success btn-sm" id="btnCopyParentMessage">
+                  <i class="fa-solid fa-copy"></i>
+                  <span>نسخ الرسالة للواتساب</span>
+                </button>
+                <button class="btn btn-sm" id="btnSendWhatsappDirect" style="background: #25d366; color: white; font-weight: 600;">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span>إرسال عبر WhatsApp</span>
+                </button>
+                <button class="btn btn-outline btn-sm" id="btnCopySmsMessage">
+                  <i class="fa-solid fa-comment-sms"></i>
+                  <span>نسخ رسالة SMS</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="message-preview-container">
+              <label for="parentMessageTextarea" class="preview-label">
+                <i class="fa-solid fa-pen-to-square"></i> نص الرسالة (قابلة للتعديل والإضافة المباشرة قبل الإرسال):
+              </label>
+              <textarea id="parentMessageTextarea" class="parent-message-textarea" rows="14" dir="rtl"></textarea>
+            </div>
+
+            <div class="pm-footer-bar">
+              <div class="pm-tags">
+                <span class="pm-tag"><i class="fa-solid fa-school"></i> إدارة متوسطة الفلاح بمكة المكرمة</span>
+                <span class="pm-tag"><i class="fa-solid fa-chalkboard-user"></i> معلم المادة: أ. محمود السعيد</span>
+              </div>
+              <span id="copyFeedbackToast" class="copy-toast" style="display: none;">
+                <i class="fa-solid fa-circle-check"></i> تم نسخ الرسالة بنجاح إلى الحافظة!
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Individual Remedial Card Modal (Official Printable Dossier) -->
+  <div class="modal-overlay" id="studentRemedialCardModal">
+    <div class="modal-dialog modal-lg" style="max-width: 960px;">
+      <div class="modal-header">
+        <div class="student-header-info">
+          <div class="student-avatar" style="background: linear-gradient(135deg, #7c3aed, #9333ea);">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <div>
+            <h2>بطاقة الخطة العلاجية الفردية للطالب</h2>
+            <p>سجل معالجة الفاقد التعليمي ومتابعة التحصيل الدراسي — متوسطة الفلاح بمكة</p>
+          </div>
+        </div>
+        <div class="modal-header-actions">
+          <button class="btn btn-primary btn-sm" id="btnPrintRemedialCardModal" style="background: linear-gradient(135deg, #7c3aed, #9333ea);" title="طباعة بطاقة الخطة الفردية فقط A4">
+            <i class="fa-solid fa-print"></i>
+            <span>طباعة البطاقة الفردية (A4)</span>
+          </button>
+          <button class="btn-close" id="remedialCardModalCloseBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body" id="studentRemedialCardBody">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Standalone Parent Message Modal (Direct WhatsApp / SMS Dispatcher) -->
+  <div class="modal-overlay" id="parentMessageModal">
+    <div class="modal-dialog modal-lg" style="max-width: 860px;">
+      <div class="modal-header">
+        <div class="student-header-info">
+          <div class="student-avatar" style="background: linear-gradient(135deg, #059669, #10b981);">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <h2 id="pmModalTitle">رسالة تربوية موجهة لولي أمر الطالب</h2>
+            <p id="pmModalSubtitle">إشعار رسمي بنتيجة الاختبار التشخيصي ونقاط القوة وخطة الدعم — متوسطة الفلاح بمكة</p>
+          </div>
+        </div>
+        <div class="modal-header-actions">
+          <button class="btn btn-outline btn-sm" id="pmModalPrintNoticeBtn" title="طباعة إشعار رسمي ورقي لولي الأمر (A4)">
+            <i class="fa-solid fa-print"></i>
+            <span>طباعة إشعار ورقي</span>
+          </button>
+          <button class="btn btn-success btn-sm" id="pmModalCopyBtn">
+            <i class="fa-solid fa-copy"></i>
+            <span>نسخ الرسالة</span>
+          </button>
+          <button class="btn btn-sm" id="pmModalWhatsappBtn" style="background: #25d366; color: white; font-weight: 600;">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>إرسال واتساب</span>
+          </button>
+          <button class="btn-close" id="pmModalCloseBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="parent-message-card">
+          <div class="pm-student-summary-strip" id="pmModalStudentStrip">
+            <!-- Injected via JS -->
+          </div>
+          <div class="message-preview-container">
+            <label for="pmModalTextarea" class="preview-label">
+              <i class="fa-solid fa-pen-to-square"></i> نص الرسالة المخصصة (يمكنك التعديل أو إضافة أي ملاحظة شخصية قبل الإرسال):
+            </label>
+            <textarea id="pmModalTextarea" class="parent-message-textarea" rows="14" dir="rtl"></textarea>
+          </div>
+          <div class="pm-footer-bar">
+            <div class="pm-tags">
+              <span class="pm-tag"><i class="fa-solid fa-school"></i> إدارة متوسطة الفلاح بمكة المكرمة</span>
+              <span class="pm-tag"><i class="fa-solid fa-chalkboard-user"></i> معلم المادة: أ. محمود السعيد</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <button class="btn btn-outline btn-sm" id="pmModalSmsBtn">
+                <i class="fa-solid fa-comment-sms"></i>
+                <span>نسخ كرسالة SMS</span>
+              </button>
+              <span id="pmModalCopyToast" class="copy-toast" style="display: none;">
+                <i class="fa-solid fa-circle-check"></i> تم النسخ بنجاح!
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master Key Modal -->
+  <div class="modal-overlay" id="masterKeyModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div class="student-header-info">
+          <div class="student-avatar" style="background: var(--primary);">
+            <i class="fa-solid fa-key"></i>
+          </div>
+          <div>
+            <h2>نموذج الإجابة الإلكتروني المعتمد ومصفوفة المعايير</h2>
+            <p>20 سؤالاً موضوعياً — 4 مجالات مهارية كبرى (الدرجة الكلية: 20)</p>
+          </div>
+        </div>
+        <button class="btn-close" id="keyModalCloseBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="questions-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">#</th>
+                <th style="width: 160px;">المجال</th>
+                <th>المعيار التعليمي المستهدف (Standard)</th>
+                <th style="width: 90px; text-align: center;">الإجابة</th>
+                <th>التشخيص عند الخطأ والخطة العلاجية</th>
+              </tr>
+            </thead>
+            <tbody id="masterKeyTableBody">
+              <!-- Injected via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full Executive Report Modal -->
+  <div class="modal-overlay" id="executiveReportModal">
+    <div class="modal-dialog modal-lg" style="max-width: 1200px;">
+      <div class="modal-header">
+        <div class="student-header-info">
+          <div class="student-avatar" style="background: linear-gradient(135deg, #059669, #10b981);">
+            <i class="fa-solid fa-file-contract"></i>
+          </div>
+          <div>
+            <h2>التقرير التشخيصي الختامي الشامل لإدارة المدرسة والمعلم</h2>
+            <p>تحليل نتائج الاختبار التشخيصي ومعالجة الفاقد التعليمي — متوسطة الفلاح بمكة (1448هـ)</p>
+          </div>
+        </div>
+        <div class="modal-header-actions">
+          <button class="btn btn-primary btn-sm" id="btnPrintExecutiveReportModal" style="background: linear-gradient(135deg, #059669, #10b981);" title="طباعة التقرير الرسمي الشامل للإدارة والمدير (A4)">
+            <i class="fa-solid fa-print"></i>
+            <span>طباعة تقرير المدير (A4)</span>
+          </button>
+          <button class="btn-close" id="reportModalCloseBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body" id="executiveReportContent">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Print Center Modal (Selective Modular Print Hub) -->
+  <div class="modal-overlay" id="printCenterModal">
+    <div class="modal-dialog modal-lg" style="max-width: 840px;">
+      <div class="modal-header">
+        <div class="student-header-info">
+          <div class="student-avatar" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+            <i class="fa-solid fa-print"></i>
+          </div>
+          <div>
+            <h2>مركز الطباعة الانتقائية المستقلة (Selective Print Center)</h2>
+            <p>اختر التقرير المطلوب طباعته مستقلاً دون أي تداخل مع صفحات أو عناصر المنصة الأخرى (A4)</p>
+          </div>
+        </div>
+        <button class="btn-close" id="printCenterCloseBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="print-options-grid">
+          <!-- Option 1: Executive Report for Principal -->
+          <div class="print-option-card">
+            <div class="po-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+              <i class="fa-solid fa-file-contract"></i>
+            </div>
+            <div class="po-content">
+              <h3>التقرير العام الشامل لإدارة المدرسة والمدير</h3>
+              <p>تقرير رسمي معتمد يتضمن إحصائيات الأداء، مقارنة الفصول، كشف الطلاب المستهدفين والغائبين، والتوصيات مع التوقيعات المعتمدة.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" id="btnPCPrintExecutive" style="background: linear-gradient(135deg, #059669, #10b981);">
+              <i class="fa-solid fa-print"></i> طباعة تقرير المدير
+            </button>
+          </div>
+
+          <!-- Option 2: Remedial Action Plan -->
+          <div class="print-option-card">
+            <div class="po-icon" style="background: rgba(239, 68, 68, 0.15); color: #ef4444;">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div class="po-content">
+              <h3>وثيقة الخطة العلاجية والفاقد التعليمي</h3>
+              <p>وثيقة الخطة التدخلية متضمنة تحليل مهارات الفاقد حسب الأولوية، مجموعات الدعم، والجدول الزمني لتنفيذ الخطة (3 أسابيع).</p>
+            </div>
+            <button class="btn btn-outline btn-sm" id="btnPCPrintRemedial" style="border-color: #ef4444; color: #ef4444; font-weight: 600;">
+              <i class="fa-solid fa-print"></i> طباعة الخطة العلاجية
+            </button>
+          </div>
+
+          <!-- Option 3: Current Class Roster -->
+          <div class="print-option-card">
+            <div class="po-icon" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;">
+              <i class="fa-solid fa-table-list"></i>
+            </div>
+            <div class="po-content">
+              <h3>كشف رصد درجات ومهارات الفصل الحالي</h3>
+              <p>كشف رسمي لطلاب الفصل الحالي بدرجات المهارات الفرعية ومستوى الإتقان جاهز للاعتماد والأرشفة المدرسية.</p>
+            </div>
+            <button class="btn btn-outline btn-sm" id="btnPCPrintClassRoster" style="border-color: #3b82f6; color: #3b82f6; font-weight: 600;">
+              <i class="fa-solid fa-print"></i> طباعة كشف الفصل
+            </button>
+          </div>
+
+          <!-- Option 4: Student Dossier with Evidence -->
+          <div class="print-option-card">
+            <div class="po-icon" style="background: rgba(124, 58, 237, 0.15); color: #8b5cf6;">
+              <i class="fa-solid fa-file-shield"></i>
+            </div>
+            <div class="po-content">
+              <h3>تقرير الطالب الفردي مع شواهد أوراق الاختبار الأصلية</h3>
+              <p>ملف الطالب الشامل متضمناً تفصيل النتيجة والمهارات والأسئلة بالإضافة لشواهد ورقة الاختبار الممسوحة ضوئياً (صفحة 1 و 2).</p>
+            </div>
+            <button class="btn btn-outline btn-sm" id="btnPCPrintActiveStudent" style="border-color: #8b5cf6; color: #8b5cf6; font-weight: 600;">
+              <i class="fa-solid fa-print"></i> طباعة تقرير الطالب والشواهد
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Isolated Print Engine Container (Exclusively visible during printing) -->
+  <div id="isolatedPrintContainer" class="isolated-print-root"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>تم إعداد وتطوير المنصة لصالح <strong>متوسطة الفلاح بمكة المكرمة</strong> لمعالجة الفاقد التعليمي 1448هـ</p>
+      <div class="footer-meta">
+        <span><i class="fa-solid fa-circle-check text-success"></i> تم تدقيق ومطابقة 72 ورقة اختبار مع الكشوف الرسمية لـ 81 طالباً في 3 فصول</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

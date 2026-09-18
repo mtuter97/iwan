@@ -276,4 +276,22 @@ $(document).ready(function() {
         }, 1500);
     });
 
+    // ============================================
+    // Showcase Filter Handler
+    // ============================================
+    $('.showcase-filter .filter-btn').on('click', function() {
+        $('.showcase-filter .filter-btn').removeClass('active');
+        $(this).addClass('active');
+
+        var filterValue = $(this).attr('data-filter');
+
+        if (filterValue === 'all') {
+            $('.showcase-item').stop(true, true).fadeIn(300);
+        } else {
+            $('.showcase-item').stop(true, true).hide();
+            $('.showcase-item[data-category="' + filterValue + '"]').stop(true, true).fadeIn(300);
+        }
+    });
+
 });
+

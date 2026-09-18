@@ -1567,3 +1567,274 @@ html {
     }
 }
 
+/* ============================================
+   Showcase & School MVPs Section
+   ============================================ */
+.showcase-section {
+    background: #0d1b2e;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.showcase-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.showcase-filter .filter-btn {
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.showcase-filter .filter-btn:hover {
+    background: rgba(16, 172, 132, 0.15);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.showcase-filter .filter-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 15px rgba(16, 172, 132, 0.35);
+}
+
+.showcase-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.showcase-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(16, 172, 132, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.showcase-card:hover::before {
+    opacity: 1;
+}
+
+.showcase-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.showcase-school-badge {
+    font-size: 12px;
+    color: var(--secondary);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(212, 168, 67, 0.12);
+    padding: 4px 10px;
+    border-radius: 15px;
+}
+
+.showcase-status-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.showcase-status-badge.status-success {
+    background: rgba(16, 172, 132, 0.15);
+    color: #10ac84;
+}
+
+.showcase-status-badge.status-primary {
+    background: rgba(41, 128, 185, 0.15);
+    color: #3498db;
+}
+
+.showcase-status-badge.status-gold {
+    background: rgba(212, 168, 67, 0.15);
+    color: #d4a843;
+}
+
+.showcase-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(16, 172, 132, 0.15), rgba(212, 168, 67, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--primary);
+    margin-bottom: 16px;
+    border: 1px solid rgba(16, 172, 132, 0.2);
+}
+
+.showcase-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.showcase-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.showcase-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 14px;
+}
+
+.showcase-features li {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.showcase-features li i {
+    color: var(--primary);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.showcase-footer {
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-demo-view {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 14px;
+    background: var(--primary);
+    color: #ffffff !important;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+.btn-demo-view:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 4px 15px rgba(16, 172, 132, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-demo-request {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+.btn-demo-request:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.showcase-cta-box {
+    background: linear-gradient(135deg, rgba(16, 172, 132, 0.12), rgba(10, 22, 40, 0.85));
+    border: 1px solid rgba(16, 172, 132, 0.3);
+    border-radius: var(--radius-md);
+    padding: 35px 40px;
+    margin-top: 40px;
+    color: #ffffff;
+}
+
+.showcase-cta-box h3 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--secondary);
+}
+
+.showcase-cta-box p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .showcase-footer {
+        flex-direction: column;
+    }
+    .showcase-cta-box {
+        padding: 25px 20px;
+        text-align: center;
+    }
+    .showcase-cta-box .text-left {
+        text-align: center !important;
+        margin-top: 15px;
+    }
+}
+
+
