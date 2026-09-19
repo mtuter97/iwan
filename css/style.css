@@ -405,10 +405,11 @@ a:hover {
 .hero-title {
     font-family: 'Cairo', sans-serif;
     font-size: 52px;
-    font-weight: 800;
+    font-weight: 900;
     color: var(--white);
     margin-bottom: 20px;
     line-height: 1.2;
+    text-shadow: 0 0 30px rgba(16, 172, 132, 0.35), 0 0 60px rgba(16, 172, 132, 0.15), 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title span {
@@ -543,9 +544,11 @@ a:hover {
 .section-title {
     font-family: 'Cairo', sans-serif;
     font-size: 40px;
-    font-weight: 800;
+    font-weight: 900;
     color: var(--text-dark);
     margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(16, 172, 132, 0.25), 0 0 40px rgba(16, 172, 132, 0.1);
+    letter-spacing: -0.5px;
 }
 
 .section-subtitle {
@@ -668,10 +671,11 @@ a:hover {
 .program-card .card-title {
     font-family: 'Cairo', sans-serif;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text-dark);
     margin-bottom: 8px;
     line-height: 1.4;
+    text-shadow: 0 1px 8px rgba(16, 172, 132, 0.15);
 }
 
 .program-card .card-desc {
@@ -880,9 +884,10 @@ a:hover {
 .feature-item .feature-title {
     font-family: 'Cairo', sans-serif;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text-dark);
     margin-bottom: 12px;
+    text-shadow: 0 1px 10px rgba(16, 172, 132, 0.15);
 }
 
 .feature-item .feature-desc {
