@@ -52,14 +52,12 @@
     <nav class="navbar-custom" id="navbar">
         <div class="container">
             <a href="#" class="navbar-brand" id="nav-logo">
-                <span class="logo-badge">Ewan</span>
                 <span class="logo-text">إيوان <span>للبرمجيات</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="scroll active" id="nav-home">الرئيسية</a></li>
                 <li><a href="#programs" class="scroll" id="nav-programs">البرامج</a></li>
-                <li><a href="#showcase" class="scroll" id="nav-showcase">شواهد ومشاريع</a></li>
                 <li><a href="#features" class="scroll" id="nav-features">المميزات</a></li>
                 <li><a href="#stats" class="scroll" id="nav-stats">إنجازاتنا</a></li>
                 <li><a href="#testimonials" class="scroll" id="nav-testimonials">آراء العملاء</a></li>
@@ -132,125 +130,245 @@
                 <div class="section-icon wow fadeIn">
                     <i class="fa fa-laptop"></i>
                 </div>
-                <h2 class="section-title wow fadeInUp">برامجنا التعليمية</h2>
+                <h2 class="section-title wow fadeInUp">المنظومات والمشاريع المطبقة</h2>
                 <hr class="section-divider wow fadeIn">
                 <p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">
-                    نقدم مجموعة متكاملة من البرامج المصممة خصيصاً لتلبية احتياجات المؤسسات التعليمية
+                    استكشف نماذج تشغيلية حقيقية تم بناؤها وتطبيقها بنجاح في الميدان التعليمي مع شواهد رقمية حية
                 </p>
             </div>
 
             <div class="row">
 
-                <!-- Program 1: School Management -->
+                <!-- Real Project 1: Diagnostic Test -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="program-card wow fadeInUp" data-wow-delay="0.1s" id="program-school-mgmt">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.1s" id="program-diagnostic">
                         <div class="card-image">
-                            <img src="images/program-1.jpg" alt="نظام إدارة المدارس">
+                            <span class="card-school-badge"><i class="fa fa-map-marker"></i> متوسطة الفلاح بمكة</span>
+                            <span class="card-status-pill"><i class="fa fa-check-circle"></i> مُطبق ومعتمد</span>
+                            <img src="images/real-demo-diagnostic.png" alt="منصة رصد الاختبار التشخيصي وتحليل الفاقد التعليمي">
                             <div class="card-overlay">
-                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                                <div class="card-overlay-btns">
+                                    <a href="demos/diagnostic-test/index.html" target="_blank" rel="noopener" class="btn-overlay-view">
+                                        <i class="fa fa-external-link"></i> معاينة النموذج الحي
+                                    </a>
+                                    <a href="#contact" class="btn-overlay-req scroll">
+                                        <i class="fa fa-envelope-o"></i> طلب نموذج مماثل
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="card-icon">
-                                <i class="fa fa-university"></i>
+                                <i class="fa fa-bar-chart"></i>
                             </div>
-                            <h3 class="card-title">نظام إدارة المدارس</h3>
-                            <p class="card-desc">نظام شامل لإدارة جميع عمليات المدرسة من التسجيل والجداول إلى التقارير الإدارية.</p>
+                            <h3 class="card-title">منصة رصد الاختبار التشخيصي والفاقد التعليمي</h3>
+                            <p class="card-desc">منظومة متقدمة لرصد درجات الطلاب وحساب نسب الفاقد التعليمي بدقة لكل مهارة، مع توليد شارتات Chart.js تفاعلية وتقارير معتمدة للإدارة وأولياء الأمور.</p>
+                            <div class="card-tags">
+                                <span>تحليل المهارات</span>
+                                <span>شارتات بيانية</span>
+                                <span>طباعة كشوفات</span>
+                            </div>
+                            <div class="card-action-footer">
+                                <a href="demos/diagnostic-test/index.html" target="_blank" rel="noopener" class="btn-card-demo">
+                                    <i class="fa fa-play-circle"></i> معاينة حية
+                                </a>
+                                <a href="#contact" class="btn-card-req scroll">اطلب نموذجاً <i class="fa fa-angle-left"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Program 2: Student Tracking -->
+                <!-- Real Project 2: Teacher Mentor Analysis -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="program-card wow fadeInUp" data-wow-delay="0.2s" id="program-student-tracking">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.2s" id="program-teacher-mentor">
                         <div class="card-image">
-                            <img src="images/program-2.jpg" alt="نظام تتبع الطلاب">
+                            <span class="card-school-badge"><i class="fa fa-map-marker"></i> متوسطة الفلاح (التوجيه)</span>
+                            <span class="card-status-pill" style="background: rgba(79, 70, 229, 0.9);"><i class="fa fa-check-circle"></i> تشغيلي معتمد</span>
+                            <img src="images/real-demo-teacher-mentor.png" alt="منظومة تحليل سجل المعلم الموجّه للطلاب">
                             <div class="card-overlay">
-                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                                <div class="card-overlay-btns">
+                                    <a href="demos/teacher-mentor/index.html" target="_blank" rel="noopener" class="btn-overlay-view">
+                                        <i class="fa fa-external-link"></i> معاينة النموذج الحي
+                                    </a>
+                                    <a href="#contact" class="btn-overlay-req scroll">
+                                        <i class="fa fa-envelope-o"></i> طلب نموذج مماثل
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="card-icon">
-                                <i class="fa fa-users"></i>
+                                <i class="fa fa-user-circle-o"></i>
                             </div>
-                            <h3 class="card-title">نظام تتبع الطلاب</h3>
-                            <p class="card-desc">تتبع الأداء الأكاديمي والحضور والسلوك لكل طالب مع تقارير مفصلة لأولياء الأمور.</p>
+                            <h3 class="card-title">منظومة تحليل سجل المعلم الموجّه للطلاب</h3>
+                            <p class="card-desc">لوحة تحكم ذكية لتحليل سجلات المعلم الموجه ورصد الحالات الطلابية السلوكية والدراسية، وقياس مؤشرات التحسن ومتابعة خطط الرعاية الفردية بدقة.</p>
+                            <div class="card-tags">
+                                <span>رصد الحالات</span>
+                                <span>مؤشرات التحسن</span>
+                                <span>خطط الرعاية</span>
+                            </div>
+                            <div class="card-action-footer">
+                                <a href="demos/teacher-mentor/index.html" target="_blank" rel="noopener" class="btn-card-demo">
+                                    <i class="fa fa-play-circle"></i> معاينة حية
+                                </a>
+                                <a href="#contact" class="btn-card-req scroll">اطلب نموذجاً <i class="fa fa-angle-left"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Program 3: Resource Management -->
+                <!-- Real Project 3: Classroom Visits Tool -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="program-card wow fadeInUp" data-wow-delay="0.3s" id="program-resource-mgmt">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.3s" id="program-classroom-visits">
                         <div class="card-image">
-                            <img src="images/program-3.jpg" alt="نظام إدارة الموارد">
+                            <span class="card-school-badge"><i class="fa fa-map-marker"></i> متوسطة الفلاح بجدة</span>
+                            <span class="card-status-pill" style="background: rgba(217, 119, 6, 0.9);"><i class="fa fa-check-circle"></i> أداة إشرافية</span>
+                            <img src="images/real-demo-classroom-visits.png" alt="أداة إدارة وتوثيق الزيارات الصفية">
                             <div class="card-overlay">
-                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                                <div class="card-overlay-btns">
+                                    <a href="demos/classroom-visits/index.html" target="_blank" rel="noopener" class="btn-overlay-view">
+                                        <i class="fa fa-external-link"></i> معاينة النموذج الحي
+                                    </a>
+                                    <a href="#contact" class="btn-overlay-req scroll">
+                                        <i class="fa fa-envelope-o"></i> طلب نموذج مماثل
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="card-icon">
-                                <i class="fa fa-cogs"></i>
+                                <i class="fa fa-check-square-o"></i>
                             </div>
-                            <h3 class="card-title">نظام إدارة الموارد</h3>
-                            <p class="card-desc">إدارة ذكية للموارد المالية والمادية والبشرية مع تحليلات متقدمة لتحسين الكفاءة.</p>
+                            <h3 class="card-title">أداة إدارة وتوثيق الزيارات الصفية</h3>
+                            <p class="card-desc">نظام متكامل لمديري المدارس والمشرفين التربويين لتقييم الحصص الدراسية ورصد معايير الأداء التدريسي مع نظام التوقيع الإلكتروني والاعتماد الفوري للطباعة.</p>
+                            <div class="card-tags">
+                                <span>استمارات معيارية</span>
+                                <span>توقيع إلكتروني</span>
+                                <span>اعتماد فوري</span>
+                            </div>
+                            <div class="card-action-footer">
+                                <a href="demos/classroom-visits/index.html" target="_blank" rel="noopener" class="btn-card-demo">
+                                    <i class="fa fa-play-circle"></i> معاينة حية
+                                </a>
+                                <a href="#contact" class="btn-card-req scroll">اطلب نموذجاً <i class="fa fa-angle-left"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Program 4: E-Learning -->
+                <!-- Real Project 4: Excellence Center -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="program-card wow fadeInUp" data-wow-delay="0.4s" id="program-elearning">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.4s" id="program-excellence">
                         <div class="card-image">
-                            <img src="images/program-4.jpg" alt="منصة التعلم الإلكتروني">
+                            <span class="card-school-badge"><i class="fa fa-university"></i> حوكمة التميز والجودة</span>
+                            <span class="card-status-pill"><i class="fa fa-shield"></i> معايير مؤسسية</span>
+                            <img src="images/real-demo-excellence.png" alt="مركز قيادة التميز المدرسي ومستودع الشواهد">
                             <div class="card-overlay">
-                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                                <div class="card-overlay-btns">
+                                    <a href="demos/excellence-center/index.html" target="_blank" rel="noopener" class="btn-overlay-view">
+                                        <i class="fa fa-external-link"></i> معاينة النموذج الحي
+                                    </a>
+                                    <a href="#contact" class="btn-overlay-req scroll">
+                                        <i class="fa fa-envelope-o"></i> طلب نموذج مماثل
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="card-icon">
-                                <i class="fa fa-graduation-cap"></i>
+                                <i class="fa fa-trophy"></i>
                             </div>
-                            <h3 class="card-title">منصة التعلم الإلكتروني</h3>
-                            <p class="card-desc">منصة تعليمية متكاملة تدعم الفصول الافتراضية والمحتوى التفاعلي والاختبارات الإلكترونية.</p>
+                            <h3 class="card-title">مركز قيادة التميز المدرسي ومستودع الشواهد</h3>
+                            <p class="card-desc">مركز عمليات رقمي لمتابعة مجالات التميز المدرسي وإدارة مستودع الشواهد والأدلة، وقياس الفجوات التشغيلية لضمان الاستدامة وأثر المبادرات المدرسية.</p>
+                            <div class="card-tags">
+                                <span>مستودع الشواهد</span>
+                                <span>مصفوفة الفجوات</span>
+                                <span>قياس الأثر</span>
+                            </div>
+                            <div class="card-action-footer">
+                                <a href="demos/excellence-center/index.html" target="_blank" rel="noopener" class="btn-card-demo">
+                                    <i class="fa fa-play-circle"></i> معاينة حية
+                                </a>
+                                <a href="#contact" class="btn-card-req scroll">اطلب نموذجاً <i class="fa fa-angle-left"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Program 5: Reports & Analytics -->
+                <!-- Real Project 5: Self-Evaluation & Improvement -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="program-card wow fadeInUp" data-wow-delay="0.5s" id="program-reports">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.5s" id="program-school-improvement">
                         <div class="card-image">
-                            <img src="images/program-5.jpg" alt="نظام التقارير والتحليلات">
+                            <span class="card-school-badge"><i class="fa fa-map-marker"></i> متوسطة الفلاح الأهلية</span>
+                            <span class="card-status-pill" style="background: rgba(79, 70, 229, 0.9);"><i class="fa fa-star"></i> هيئة التقويم</span>
+                            <img src="images/real-demo-school-improvement.png" alt="تحليل نتائج التقويم الذاتي وخطة التحسين">
                             <div class="card-overlay">
-                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                                <div class="card-overlay-btns">
+                                    <a href="demos/school-improvement/index.html" target="_blank" rel="noopener" class="btn-overlay-view">
+                                        <i class="fa fa-external-link"></i> معاينة النموذج الحي
+                                    </a>
+                                    <a href="#contact" class="btn-overlay-req scroll">
+                                        <i class="fa fa-envelope-o"></i> طلب نموذج مماثل
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="card-icon">
                                 <i class="fa fa-line-chart"></i>
                             </div>
-                            <h3 class="card-title">التقارير والتحليلات</h3>
-                            <p class="card-desc">لوحات بيانات ذكية وتقارير تحليلية شاملة لاتخاذ قرارات مبنية على البيانات.</p>
+                            <h3 class="card-title">تحليل نتائج التقويم الذاتي وخطة التحسين</h3>
+                            <p class="card-desc">لوحة تحكم ذكية لعرض وتحليل نتائج التقويم الذاتي المدرسي وفق معايير هيئة تقويم التعليم والتدريب، مع إعداد ومتابعة خطة التحسين الشاملة للمدرسة.</p>
+                            <div class="card-tags">
+                                <span>معايير وطنية</span>
+                                <span>فرص التحسين</span>
+                                <span>خطة تنفيذية</span>
+                            </div>
+                            <div class="card-action-footer">
+                                <a href="demos/school-improvement/index.html" target="_blank" rel="noopener" class="btn-card-demo">
+                                    <i class="fa fa-play-circle"></i> معاينة حية
+                                </a>
+                                <a href="#contact" class="btn-card-req scroll">اطلب نموذجاً <i class="fa fa-angle-left"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Program 6: Library Management -->
+                <!-- Real Project 6: Quran Tahfeez System -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="program-card wow fadeInUp" data-wow-delay="0.6s" id="program-library">
+                    <div class="program-card wow fadeInUp" data-wow-delay="0.6s" id="program-quran">
                         <div class="card-image">
-                            <img src="images/program-6.jpg" alt="نظام إدارة المكتبات">
+                            <span class="card-school-badge"><i class="fa fa-book"></i> مجمعات تحفيظ القرآن</span>
+                            <span class="card-status-pill" style="background: rgba(217, 119, 6, 0.9);"><i class="fa fa-certificate"></i> برنامج تحفيز</span>
+                            <img src="images/real-demo-quran-tahfeez.png" alt="برنامج تحفيز — إدارة حلقات القرآن الكريم">
                             <div class="card-overlay">
-                                <a href="#contact" class="btn-view scroll">اطلب عرض تجريبي</a>
+                                <div class="card-overlay-btns">
+                                    <a href="demos/quran-tahfeez/index.html" target="_blank" rel="noopener" class="btn-overlay-view">
+                                        <i class="fa fa-external-link"></i> معاينة النموذج الحي
+                                    </a>
+                                    <a href="#contact" class="btn-overlay-req scroll">
+                                        <i class="fa fa-envelope-o"></i> طلب نموذج مماثل
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="card-icon">
-                                <i class="fa fa-book"></i>
+                                <i class="fa fa-bookmark"></i>
                             </div>
-                            <h3 class="card-title">نظام إدارة المكتبات</h3>
-                            <p class="card-desc">نظام رقمي متطور لإدارة المكتبات المدرسية يشمل الفهرسة والإعارة والمحتوى الرقمي.</p>
+                            <h3 class="card-title">برنامج تحفيز — إدارة حلقات القرآن الكريم</h3>
+                            <p class="card-desc">نظام تفاعلي متكامل لإدارة حلقات تحفيظ القرآن الكريم بالمدارس، رصد الحفظ والتسميع والمراجعة، مع نظام تحفيزي ذكي بنقاط ومكافآت دورية.</p>
+                            <div class="card-tags">
+                                <span>سجل التسميع</span>
+                                <span>نقاط تحفيزية</span>
+                                <span>لوحة شرف</span>
+                            </div>
+                            <div class="card-action-footer">
+                                <a href="demos/quran-tahfeez/index.html" target="_blank" rel="noopener" class="btn-card-demo">
+                                    <i class="fa fa-play-circle"></i> معاينة حية
+                                </a>
+                                <a href="#contact" class="btn-card-req scroll">اطلب نموذجاً <i class="fa fa-angle-left"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>

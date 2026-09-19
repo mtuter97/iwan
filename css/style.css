@@ -261,7 +261,7 @@ a:hover {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -270,12 +270,13 @@ a:hover {
 .nav-links li a {
     color: rgba(255,255,255,0.85);
     font-family: 'Cairo', sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
-    padding: 8px 18px;
+    padding: 8px 12px;
     border-radius: var(--radius-xl);
     transition: var(--transition);
     display: block;
+    white-space: nowrap;
 }
 
 .nav-links li a:hover,
@@ -288,8 +289,9 @@ a:hover {
     background: var(--gradient-secondary) !important;
     color: var(--white) !important;
     font-weight: 600 !important;
-    padding: 10px 24px !important;
+    padding: 8px 18px !important;
     border-radius: var(--radius-xl) !important;
+    font-size: 13px !important;
 }
 
 .nav-cta:hover {
@@ -588,7 +590,7 @@ a:hover {
 
 .program-card .card-image {
     overflow: hidden;
-    height: 220px;
+    height: 180px;
     position: relative;
 }
 
@@ -641,19 +643,19 @@ a:hover {
 }
 
 .program-card .card-body {
-    padding: 25px;
+    padding: 18px 20px;
 }
 
 .program-card .card-body .card-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: var(--radius-sm);
     background: rgba(26,115,232,0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
-    font-size: 22px;
+    margin-bottom: 10px;
+    font-size: 18px;
     color: var(--primary);
     transition: var(--transition);
 }
@@ -665,17 +667,172 @@ a:hover {
 
 .program-card .card-title {
     font-family: 'Cairo', sans-serif;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--text-dark);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 
 .program-card .card-desc {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-light);
-    line-height: 1.7;
+    line-height: 1.6;
     margin: 0;
+}
+
+/* Real Project Cards Enhancements */
+.program-card .card-school-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    z-index: 5;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.program-card .card-status-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(16, 185, 129, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    z-index: 5;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-overlay-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 85%;
+    align-items: center;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.program-card:hover .card-overlay-btns {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-overlay-btns .btn-overlay-view {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: #fff !important;
+    padding: 9px 18px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.45);
+}
+.card-overlay-btns .btn-overlay-view:hover {
+    transform: scale(1.03);
+    background: linear-gradient(135deg, #047857, #059669);
+    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.6);
+}
+
+.card-overlay-btns .btn-overlay-req {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e293b !important;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+.card-overlay-btns .btn-overlay-req:hover {
+    background: #fff;
+    color: #059669 !important;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 10px 0 12px;
+}
+.card-tags span {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+}
+
+.card-action-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 10px;
+}
+.card-action-footer .btn-card-demo {
+    background: #ecfdf5;
+    color: #059669;
+    padding: 7px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+.card-action-footer .btn-card-demo:hover {
+    background: #059669;
+    color: #fff;
+}
+.card-action-footer .btn-card-req {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.card-action-footer .btn-card-req:hover {
+    color: #059669;
 }
 
 /* ============================================
