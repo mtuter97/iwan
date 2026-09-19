@@ -1330,6 +1330,80 @@ textarea.form-control-custom {
     transform: translateY(-3px);
 }
 
+/* Contact Social Buttons (Redesigned) */
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn i {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    color: #fff !important;
+}
+
+.social-btn.social-twitter {
+    background: linear-gradient(135deg, #1DA1F2, #0d8bd9);
+}
+.social-btn.social-twitter:hover {
+    box-shadow: 0 8px 25px rgba(29, 161, 242, 0.45);
+}
+
+.social-btn.social-linkedin {
+    background: linear-gradient(135deg, #0077B5, #005a8c);
+}
+.social-btn.social-linkedin:hover {
+    box-shadow: 0 8px 25px rgba(0, 119, 181, 0.45);
+}
+
+.social-btn.social-whatsapp {
+    background: linear-gradient(135deg, #25D366, #1ebc59);
+}
+.social-btn.social-whatsapp:hover {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+}
+
+.social-btn.social-youtube {
+    background: linear-gradient(135deg, #FF0000, #cc0000);
+}
+.social-btn.social-youtube:hover {
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+@media (max-width: 480px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .footer-bottom {
     text-align: center;
 }
